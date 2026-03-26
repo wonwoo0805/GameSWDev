@@ -21,6 +21,8 @@ public class Player_St1 : MonoBehaviour
     {
         walkSpeed = 5f;
         runSpeed = 10f;
+        Cursor.lockState = CursorLockMode.Locked; // 커서 중앙 고정
+        Cursor.visible = false; // 커서 안보이게함
     }
 
     // Update is called once per frame
@@ -31,7 +33,17 @@ public class Player_St1 : MonoBehaviour
     }
 
 
+    public void OnESC(InputValue value)
+    {
+        //만약 esc 누르면
+        if (value.isPressed)
+        {
+            Cursor.lockState = CursorLockMode.None; // 고정해제
+            Cursor.visible = true; // 다시 보이게
 
+            Debug.Log("커서 잠금 해제");
+        }
+    }
     void SetHp(int health)
     {
         hp = health;
@@ -56,10 +68,16 @@ public class Player_St1 : MonoBehaviour
     }
     private void ProcessMoving()
     {
+        //최종 속도는 isSprint 값에 의해 결정됨
         finalSpeed = isSprint ? runSpeed : walkSpeed; 
-        float xOffset = movement.x * finalSpeed * Time.deltaTime;//xAxis movement
-        float zOffset = movement.y * finalSpeed * Time.deltaTime;//zAxis movement
-        transform.localPosition += new Vector3(xOffset, 0f, zOffset);
+
+        Vector3 forward = transform.forward;//앞
+        Vector3 right = transform.right;//우측 (둘다 보는 방향 기준임)
+
+        Vector3 moveDirection = (forward * movement.y + right * movement.x).normalized;
+        
+        transform.position += moveDirection * finalSpeed * Time.deltaTime;// deltaTime 사용함으로써 프레임 따라 계산되게 함
+        
 
     }
 
