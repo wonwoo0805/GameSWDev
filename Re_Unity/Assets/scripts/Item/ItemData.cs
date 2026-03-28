@@ -1,15 +1,24 @@
-using Mono.Cecil;
 using UnityEngine;
+
+public enum ItemType { Weapon, Armor, Chip, Use }
+public enum ItemRarity {  Common, Rare, Epic, Unique, Legendary}
 
 public class ItemData : ScriptableObject
 {
-    //define rarity (#define)
-    public const int COMMON = 1, RARE = 2, EPIC = 3, UNIQUE = 4, LEGENDARY = 5;
-
     //define string type
-    protected string itemName, itemType;
+    [SerializeField] private string itemName;
 
     //define int type
-    protected int money, weight;
-    
+    [SerializeField] private int money, weight, num;
+
+    //define image(sprite, etc...) type
+    [SerializeField] private Sprite inventoryImage;
+
+    [SerializeField] private ItemType itemType;
+    [SerializeField] private ItemRarity itemRarity;
+
+    //access indirectly to inventoryImage
+    public Sprite itemDataImage => inventoryImage;
+    public ItemType itemDataType => itemType;
+    public ItemRarity itemDataRarity => itemRarity;
 }
