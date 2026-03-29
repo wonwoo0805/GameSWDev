@@ -1,11 +1,8 @@
 using UnityEngine;
 
-
+[CreateAssetMenu(fileName = "New Gun", menuName = "Item/Weapon")]
 public class Weapons : ItemData
 {
-    public Weapons()
-    {
-        itemType = "Weapon";
-    }
     
+    [SerializeField] public int damage, maxAmmo, fireRate, reloadSpeed;
 }
