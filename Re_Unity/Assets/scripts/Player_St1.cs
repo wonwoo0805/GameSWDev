@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 public class Player_St1 : MonoBehaviour
 {
     private CharacterController controller;
+    
 
 
     protected int hp;
@@ -10,6 +11,7 @@ public class Player_St1 : MonoBehaviour
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
     private bool isSprint = false;
+    private bool isFiring = false;
     private Vector2 movement;
     private Vector3 jumpVelocity;
     public float finalSpeed = 0f;
@@ -17,6 +19,7 @@ public class Player_St1 : MonoBehaviour
     public float gravity = -9.81f;
     public float mouseSensitivity = 0.1f;
     public Transform playerView;
+    public FireSystem currentWeapon;
 
     private Vector2 lookInput;
     private float xRotation = 0f;
@@ -39,6 +42,7 @@ public class Player_St1 : MonoBehaviour
     {
         ProcessMoving();
         ProcessRotation();
+        FireCheck();
     }
 
 
@@ -51,6 +55,19 @@ public class Player_St1 : MonoBehaviour
             Cursor.visible = true; // 다시 보이게
 
             Debug.Log("커서 잠금 해제");
+        }
+    }
+
+    public void OnFire(InputValue value)
+    {
+        isFiring = value.isPressed;
+    }
+
+    private void FireCheck()
+    {
+        if (isFiring && currentWeapon != null)
+        {
+            currentWeapon.TryShoot();
         }
     }
 
