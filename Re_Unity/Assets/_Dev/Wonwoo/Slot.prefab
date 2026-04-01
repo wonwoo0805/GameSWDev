@@ -89,8 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362307f98b423e44eb52c80119b30233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlotUI
+  slotType: 3
   slotImage: {fileID: 0}
   itemImage: {fileID: 6054963243737003191}
+  slotData:
+    itemInSlot: {fileID: 0}
+    quantity: 0
 --- !u!1 &6916658287063174799
 GameObject:
   m_ObjectHideFlags: 0

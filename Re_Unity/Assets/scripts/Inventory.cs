@@ -11,24 +11,28 @@ public class Inventory : MonoBehaviour
         inventory.Clear();
         for (int i = 0; i < size; i++)
         {
-            inventory.Add(ScriptableObject.CreateInstance<ItemSlot>());
+            inventory.Add(new ItemSlot());
         }
     }
 
-    // 아이템 추가 로직 (기존 코드 그대로)
+    
     public int addItem(ItemData newItem)
     {
         for (int i = 0; i < inventory.Count; i++)
         {
+            //현재 인벤토리에 들어있는 아이템이 들어왔다면 개수를 중첩
             if (inventory[i].itemInSlot != null &&
-                (int)inventory[i].itemInSlot.itemDataType >= 3 &&
+                (int)inventory[i].itemInSlot.itemDataType >= 4 &&
                 inventory[i].itemInSlot.itemDataImage == newItem.itemDataImage)
             {
                 inventory[i].itemInSlot = newItem;
+                //아이템 수량을 중첩시키는 부분(미구현)
+                //inventory[i].quantity += 
                 return i;
             }
         }
 
+        //중첩이 가능하지 않다면 가능한 빈칸 중 맨 앞(왼쪽 위 기준)에 아이템 추가
         for (int i = 0; i < inventory.Count; i++)
         {
             if (inventory[i].isEmpty)

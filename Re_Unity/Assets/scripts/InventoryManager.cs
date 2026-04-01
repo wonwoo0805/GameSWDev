@@ -5,15 +5,19 @@ public class InventoryManager : MonoBehaviour
 {
     [Header("UI Panel")]
     public GameObject inventoryPanel;
+    public GameObject equipmentPanel;
 
     [Header("Scripts")]
     public Inventory invData;
     public InventoryUI invUI;
+    public Inventory eqptData;
+    public InventoryUI eqptUI;
 
     private void Awake()
     {
         // 1. UI 스크립트에게 프리팹을 찍어내라고 명령
         invUI.InitSlots();
+        
 
         // 2. 생성된 UI 개수만큼 데이터 스크립트에게 칸을 만들라고 명령
         invData.InitializeData(invUI.inventoryUI.Count);

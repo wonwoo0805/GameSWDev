@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum ItemType { Weapon, Armor, Chip, Use }
+public enum ItemType { Weapon, Armor, Chip, Any, Use }
 public enum ItemRarity {  Common, Rare, Epic, Unique, Legendary}
 
 public class ItemData : ScriptableObject
