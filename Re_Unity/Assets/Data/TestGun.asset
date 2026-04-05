@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: testing
   money: 500
   weight: 10
-  num: 0
+  num: 1
   inventoryImage: {fileID: -2413806693520163455, guid: 0aa9ffb823fc2fc45aa34baaf4006113, type: 3}
   itemType: 0
   itemRarity: 2

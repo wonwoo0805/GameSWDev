@@ -21,4 +21,5 @@ public class ItemData : ScriptableObject
     public Sprite itemDataImage => inventoryImage;
     public ItemType itemDataType => itemType;
     public ItemRarity itemDataRarity => itemRarity;
+    public int itemDataNum => num;
 }

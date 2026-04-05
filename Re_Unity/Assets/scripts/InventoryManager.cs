@@ -21,6 +21,17 @@ public class InventoryManager : MonoBehaviour
 
         // 2. 생성된 UI 개수만큼 데이터 스크립트에게 칸을 만들라고 명령
         invData.InitializeData(invUI.inventoryUI.Count);
+
+        invData.inventory.Clear();
+        foreach (SlotUI slot in invUI.inventoryUI)
+            invData.inventory.Add(slot.slotData);
+    }
+
+    private void Start()
+    {
+        SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
+        foreach (SlotUI slot in eqptSlots)
+            invData.equipment.Add(slot.slotData);
     }
 
     private void Update()

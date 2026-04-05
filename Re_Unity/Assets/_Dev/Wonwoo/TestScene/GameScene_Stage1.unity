@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 2562076004909683821, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+      propertyPath: slotType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8289400142156582666, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -344,6 +348,10 @@ PrefabInstance:
     - target: {fileID: 1071685942753130910, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Name
       value: Slot_Chip3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562076004909683821, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+      propertyPath: slotType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8289400142156582666, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Pivot.x
@@ -936,6 +944,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_Chip1
       objectReference: {fileID: 0}
+    - target: {fileID: 2562076004909683821, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+      propertyPath: slotType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8289400142156582666, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1117,6 +1129,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_Armor
       objectReference: {fileID: 0}
+    - target: {fileID: 2562076004909683821, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+      propertyPath: slotType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3000748442064551534, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1235,6 +1251,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot_Chip2
       objectReference: {fileID: 0}
+    - target: {fileID: 2562076004909683821, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+      propertyPath: slotType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8289400142156582666, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1336,6 +1356,10 @@ PrefabInstance:
     - target: {fileID: 1071685942753130910, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Name
       value: Slot_Chip4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562076004909683821, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+      propertyPath: slotType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8289400142156582666, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Pivot.x
@@ -1490,6 +1514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   inventory: []
+  equipment: []
 --- !u!114 &1670477681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1503,7 +1528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
   inventoryPanel: {fileID: 814661203}
-  equipmentPanel: {fileID: 0}
+  equipmentPanel: {fileID: 1997099449}
   invData: {fileID: 1670477680}
   invUI: {fileID: 1670477679}
   eqptData: {fileID: 1670477680}
@@ -1831,6 +1856,10 @@ PrefabInstance:
     - target: {fileID: 1071685942753130910, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Name
       value: Slot_Use
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562076004909683821, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+      propertyPath: slotType
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8289400142156582666, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
       propertyPath: m_Pivot.x

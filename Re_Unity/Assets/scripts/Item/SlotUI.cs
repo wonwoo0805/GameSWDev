@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 
 public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
 {
+    
     public ItemType slotType = ItemType.Any;
     public Image slotImage;    //slot background
     public Image itemImage;
@@ -11,6 +12,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     private static GameObject dragIcon;
 
+    private Inventory inventory;
     private void Awake()
     {
         // 유니티 시스템이 완전히 준비된 Awake 시점에 생성자를 호출합니다.
@@ -19,6 +21,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
             slotData = new ItemSlot();
             
         }
+        inventory = FindAnyObjectByType<Inventory>();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -54,7 +57,9 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         if (startSlot != null)
         {
             // [조건 체크] 이 슬롯이 요구하는 타입과 아이템 타입이 맞는지 확인
-            if (this.slotType == ItemType.Any || startSlot.slotData.itemInSlot.itemDataType == this.slotType)
+            if ((startSlot.slotData.itemInSlot != null) &&
+                (this.slotType == ItemType.Any || startSlot.slotData.itemInSlot.itemDataType == this.slotType) &&
+                (this.slotData.itemInSlot == null || startSlot.slotType == ItemType.Any || this.slotData.itemInSlot.itemDataType == startSlot.slotType))
             {
                 // 데이터 교환(Swap) 로직 실행
                 SwapItems(startSlot);
@@ -64,14 +69,19 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void SwapItems(SlotUI other)
     {
+        
+
         // 1. 데이터 교환 (값 복사 또는 참조 교환)
         ItemSlot temp = new ItemSlot(this.slotData.itemInSlot, this.slotData.quantity);
 
         // 내 슬롯을 상대방 데이터로 업데이트
         this.UpdateSlot(new ItemSlot(other.slotData.itemInSlot, other.slotData.quantity));
-
+        inventory.exchangeItemData(this, other);
         // 상대방 슬롯을 내 데이터(temp)로 업데이트
         other.UpdateSlot(temp);
+
+        
+        
     }
 
     public void UpdateSlot(ItemSlot newItem)
@@ -82,13 +92,11 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         {
             slotData.itemInSlot = null;
             slotData.quantity = 0;
-            Debug.Log("if 1번 참");
         }
         else
         {
             slotData.itemInSlot = newItem.itemInSlot;
             slotData.quantity = newItem.quantity;
-            Debug.Log("if 1번 거짓");
         }
 
         // 2. 이제 별도의 변수 없이 '내 데이터'만 보고 UI를 결정합니다.
@@ -98,14 +106,12 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
             // 내 데이터에 저장된 이미지를 내 이미지 컴포넌트에 바로 넣습니다.
             itemImage.sprite = slotData.itemInSlot.itemDataImage;
             itemImage.enabled = true; // 아이콘 보이기
-            Debug.Log("if 2번 참");
         }
         // 슬롯이 비어있다면?
         else
         {
             itemImage.sprite = null;
             itemImage.enabled = false; // 아이콘 숨기기 (이게 없어서 잔상이 남았던 것!)
-            Debug.Log("if 2번 거짓");
         }
     }
 
