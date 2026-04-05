@@ -69,7 +69,10 @@ public class InventoryManager : MonoBehaviour
     // 기존 함수명 유지 (버튼 이벤트 연결용)
     public void addItem_Button(ItemData newData)
     {
-        if(inventoryPanel == null || !inventoryPanel.activeSelf)
+        Debug.Log($"inventoryPanel: {inventoryPanel}");
+        Debug.Log($"activeSelf: {inventoryPanel?.activeSelf}");
+
+        if (inventoryPanel == null || !inventoryPanel.activeSelf)
         {
             Debug.Log("인벤토리 창이 닫혀 있어 아이템을 추가할 수 없습니다.");
             return;
