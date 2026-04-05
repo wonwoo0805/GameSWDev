@@ -768,6 +768,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1821076418360858005, guid: 89266a7fa500d11499c5354b2416c071, type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3961692026842966036, guid: 89266a7fa500d11499c5354b2416c071, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.24371
@@ -811,6 +815,10 @@ PrefabInstance:
     - target: {fileID: 4257700919034631458, guid: 89266a7fa500d11499c5354b2416c071, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695061826638335394, guid: 89266a7fa500d11499c5354b2416c071, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

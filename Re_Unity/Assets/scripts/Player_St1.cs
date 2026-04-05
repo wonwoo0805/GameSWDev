@@ -5,8 +5,8 @@ public class Player_St1 : MonoBehaviour
     private CharacterController controller;
     
 
-
-    protected int hp;
+    public float playerMaxHealth = 150f;
+    private float currentHP;
     //이동관련 변수들 모음
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
@@ -30,6 +30,7 @@ public class Player_St1 : MonoBehaviour
     {
         walkSpeed = 5f;
         runSpeed = 10f;
+        currentHP = playerMaxHealth;
 
         controller = GetComponent<CharacterController>();
 
@@ -78,9 +79,19 @@ public class Player_St1 : MonoBehaviour
             jumpVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);    
         }
     }
-    void SetHp(int health)
+
+    public void Die()
     {
-        hp = health;
+        Debug.Log("죽음!");    
+    }
+
+    public void TakeDamage(float health)
+    {
+        currentHP -= health;
+        if(currentHP <= 0f)
+        {
+            Die();
+        }
     }
     
     //MovingCheck
