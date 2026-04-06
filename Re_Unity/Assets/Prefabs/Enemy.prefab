@@ -158,9 +158,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e897bbe2435dc4d9994b22fcff33bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_St1
+  currentState: 0
   enemyMaxHealth: 100
   moveSpeed: 3
   detectionRadius: 15
+  attackRange: 2
+  attackRadius: 1
+  attackDamage: 10
+  attackCooldown: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  patrolRadius: 10
+  patrolWaitTime: 2
 --- !u!195 &4695061826638335394
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -175,7 +185,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 1.8
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
