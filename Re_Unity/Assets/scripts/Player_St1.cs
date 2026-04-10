@@ -20,6 +20,7 @@ public class Player_St1 : MonoBehaviour
     public float mouseSensitivity = 0.1f;
     public Transform playerView;
     public FireSystem currentWeapon;
+    
 
     private Vector2 lookInput;
     private float xRotation = 0f;
@@ -57,6 +58,11 @@ public class Player_St1 : MonoBehaviour
 
             Debug.Log("커서 잠금 해제");
         }
+    }
+
+    public void OnInteraction(InputValue value)
+    {
+        currentWeapon.Interaction();
     }
 
     public void OnFire(InputValue value)

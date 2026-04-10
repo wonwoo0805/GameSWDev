@@ -7,9 +7,14 @@ public class FireSystem : MonoBehaviour
     public float range = 100f;
     public float damage = 10f;
     private float nextFireTime = 0f;
+    private float interactionRange = 4f;
+
+    public Inventory inventory;
     //레이캐스트땜에 넣은거
     public Camera playerCamera;
     public LayerMask targetLayer;
+    public LayerMask boxLayer;
+    
 
     public void TryShoot()
     {
@@ -44,6 +49,36 @@ public class FireSystem : MonoBehaviour
         //TODO:적이 맞았는지 판정하기(적 만든 이후)
         
         
+    }
+
+    public void Interaction()
+    {
+        RaycastHit hit;
+        Debug.Log($"[{Time.time:F2}]상호작용");
+        if(Physics.Raycast(playerCamera.transform.position,playerCamera.transform.forward,out hit, interactionRange, boxLayer))
+        {
+            if(hit.collider.TryGetComponent(out Box targetBox))
+            {
+                Debug.Log("상자");
+                targetBox.Drop();
+            }
+            else if(hit.collider.TryGetComponent(out ItemObject droppedItem))
+            {
+                Debug.Log($"{droppedItem.itemData.name} 획득");
+                int resultIndex = inventory.addItem(droppedItem.itemData);
+                if(resultIndex != -1)
+                {
+                    Destroy(hit.collider.gameObject);
+                }
+                else
+                {
+                    Debug.Log("가방 가득 참");
+                }
+            }
+        }
+        
+
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

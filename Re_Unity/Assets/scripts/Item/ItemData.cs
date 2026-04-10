@@ -26,4 +26,5 @@ public class ItemData : ScriptableObject
     public GameObject itemPrefab => prefab;
     public ItemRarity itemDataRarity => itemRarity;
     public int itemDataNum => num;
+
 }

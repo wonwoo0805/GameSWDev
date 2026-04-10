@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
+  m_Name: testChip
+  m_EditorClassIdentifier: Assembly-CSharp::Chips
+  itemName: chip1
+  money: 0
+  weight: 0
+  num: 0
+  inventoryImage: {fileID: 7482667652216324306, guid: b999d3e5f69d4e648b1198d32b5fb184, type: 3}
+  prefab: {fileID: 2699434959838560625, guid: 239a8ac4d80a16c42bf068087138c5e2, type: 3}
+  itemType: 2
+  itemRarity: 0
+  Hpbonus: 50
+  StaminaBonus: 0
+  DamageBonus: 10
+  MaxammoBonus: 0
+  FirerateBonus: 2
+  ReloadBonus: 0

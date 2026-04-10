@@ -38,6 +38,9 @@ public class Chest : Box
             }
         }
 
+        Destroy(gameObject);
+        
+
         
 
     }
