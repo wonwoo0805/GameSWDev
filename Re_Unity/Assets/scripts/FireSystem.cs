@@ -9,7 +9,7 @@ public class FireSystem : MonoBehaviour
     private float nextFireTime = 0f;
     private float interactionRange = 4f;
 
-    public Inventory inventory;
+    public InventoryManager inventoryManager;
     //레이캐스트땜에 넣은거
     public Camera playerCamera;
     public LayerMask targetLayer;
@@ -65,8 +65,8 @@ public class FireSystem : MonoBehaviour
             else if(hit.collider.TryGetComponent(out ItemObject droppedItem))
             {
                 Debug.Log($"{droppedItem.itemData.name} 획득");
-                int resultIndex = inventory.addItem(droppedItem.itemData);
-                if(resultIndex != -1)
+                int resultIndex = inventoryManager.addItem_Button(droppedItem.itemData); 
+                if (resultIndex != -1)
                 {
                     Destroy(hit.collider.gameObject);
                 }

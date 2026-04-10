@@ -67,18 +67,19 @@ public class InventoryManager : MonoBehaviour
     }
 
     // 기존 함수명 유지 (버튼 이벤트 연결용)
-    public void addItem_Button(ItemData newData)
+    public int addItem_Button(ItemData newData)
     {
         Debug.Log($"inventoryPanel: {inventoryPanel}");
         Debug.Log($"activeSelf: {inventoryPanel?.activeSelf}");
-
+        /*
         if (inventoryPanel == null || !inventoryPanel.activeSelf)
         {
             Debug.Log("인벤토리 창이 닫혀 있어 아이템을 추가할 수 없습니다.");
-            return;
+            return -1;
         }
+        */
 
-        if (newData == null) return;
+        if (newData == null) return -1;
         
         int index = invData.addItem(newData);
 
@@ -86,10 +87,12 @@ public class InventoryManager : MonoBehaviour
         {
             invUI.UpdateSlotUI(index, invData.inventory[index]);
             Debug.Log("추가 성공!");
+            return 1;
         }
         else
         {
             Debug.Log("인벤토리가 가득 찼습니다.");
+            return -1;
         }
     }
 }

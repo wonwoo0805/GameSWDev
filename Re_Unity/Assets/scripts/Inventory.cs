@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,23 +52,23 @@ public class Inventory : MonoBehaviour
     }
 
     public void exchangeItemData(SlotUI startSlot, SlotUI endSlot)
-{
-    List<ItemSlot> startList = inventory.Contains(startSlot.slotData) ? inventory : equipment;
-    List<ItemSlot> endList = inventory.Contains(endSlot.slotData) ? inventory : equipment;
+    {
+        List<ItemSlot> startList = inventory.Contains(startSlot.slotData) ? inventory : equipment;
+        List<ItemSlot> endList = inventory.Contains(endSlot.slotData) ? inventory : equipment;
 
-    int startIdx = startList.IndexOf(startSlot.slotData);
-    int endIdx = endList.IndexOf(endSlot.slotData);
+        int startIdx = startList.IndexOf(startSlot.slotData);
+        int endIdx = endList.IndexOf(endSlot.slotData);
 
-    if (startIdx < 0 || endIdx < 0) return;
+        if (startIdx < 0 || endIdx < 0) return;
 
-    ItemData tempItem = startList[startIdx].itemInSlot;
+        ItemData tempItem = startList[startIdx].itemInSlot;
 
-    startList[startIdx].itemInSlot = endList[endIdx].itemInSlot;
+        startList[startIdx].itemInSlot = endList[endIdx].itemInSlot;
 
-    endList[endIdx].itemInSlot = tempItem;
+        endList[endIdx].itemInSlot = tempItem;
 
-    // ��ȯ �� ���� Ȯ��
-    Debug.Log($"��ȯ �� startList[{startIdx}]: {startList[startIdx].itemInSlot?.name}");
-    Debug.Log($"��ȯ �� endList[{endIdx}]: {endList[endIdx].itemInSlot?.name}");
-}
+        // ��ȯ �� ���� Ȯ��
+        Debug.Log($"��ȯ �� startList[{startIdx}]: {startList[startIdx].itemInSlot?.name}");
+        Debug.Log($"��ȯ �� endList[{endIdx}]: {endList[endIdx].itemInSlot?.name}");
+    }
 }
