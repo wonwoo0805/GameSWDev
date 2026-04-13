@@ -48,10 +48,10 @@ public class Player_St1 : MonoBehaviour
     }
 
 
-    public void OnESC(InputValue value)
+    public void OnESC(InputAction.CallbackContext context)
     {
         //만약 esc 누르면
-        if (value.isPressed)
+        if (context.ReadValueAsButton())
         {
             Cursor.lockState = CursorLockMode.None; // 고정해제
             Cursor.visible = true; // 다시 보이게
@@ -60,14 +60,19 @@ public class Player_St1 : MonoBehaviour
         }
     }
 
-    public void OnInteraction(InputValue value)
+    public void OnInteraction(InputAction.CallbackContext context)
     {
-        currentWeapon.Interaction();
+        if (context.performed)
+        {
+            currentWeapon.Interaction();
+        }
+        
     }
 
-    public void OnFire(InputValue value)
+    public void OnFire(InputAction.CallbackContext context)
     {
-        isFiring = value.isPressed;
+        isFiring = context.ReadValueAsButton();
+        
     }
 
     private void FireCheck()
@@ -78,11 +83,12 @@ public class Player_St1 : MonoBehaviour
         }
     }
 
-    public void OnJump(InputValue value)
+    public void OnJump(InputAction.CallbackContext context)
     {
-        if (value.isPressed && controller.isGrounded)
+        if (context.ReadValueAsButton() && controller.isGrounded)
         {
-            jumpVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);    
+            jumpVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                
         }
     }
 
@@ -101,21 +107,23 @@ public class Player_St1 : MonoBehaviour
     }
     
     //MovingCheck
-    public void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext context)
     {
-        movement = value.Get<Vector2>();
+        movement = context.ReadValue<Vector2>();
+        
     }
 
     //RunningCheck
-    public void OnSprint(InputValue value)
+    public void OnSprint(InputAction.CallbackContext context)
     {
-        isSprint = value.isPressed;
+
+        isSprint = context.ReadValueAsButton();
     }
     //Actual Moving
 
-    public void OnLook(InputValue value)
+    public void OnLook(InputAction.CallbackContext context)
     {
-        lookInput = value.Get<Vector2>();
+        lookInput = context.ReadValue<Vector2>();
     }
     private void ProcessMoving()
     {

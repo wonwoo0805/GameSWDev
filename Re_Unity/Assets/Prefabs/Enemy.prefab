@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e897bbe2435dc4d9994b22fcff33bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_St1
+  itemTable: {fileID: 11400000, guid: 3453cf90e6c84754cb73aa3d5db0010b, type: 2}
   currentState: 0
   enemyMaxHealth: 100
   moveSpeed: 3

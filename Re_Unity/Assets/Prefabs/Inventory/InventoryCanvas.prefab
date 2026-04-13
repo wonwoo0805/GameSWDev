@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 5956448026988891260}
   - component: {fileID: 8172125650641567815}
   - component: {fileID: 6629689034507585757}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: InventoryManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
   inventoryPanel: {fileID: 4847491645134542996}
   equipmentPanel: {fileID: 5784000730461481461}
+  playerInput: {fileID: 0}
   invData: {fileID: 8172125650641567815}
   invUI: {fileID: 6629689034507585757}
   eqptData: {fileID: 8172125650641567815}

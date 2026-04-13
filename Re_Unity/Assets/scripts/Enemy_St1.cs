@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
-public class Enemy_St1 : MonoBehaviour
+public class Enemy_St1 : Box
 {
 
     public enum EnemyState {Patrol, Chase, Search, Attack}
@@ -204,7 +204,22 @@ public class Enemy_St1 : MonoBehaviour
     private void Die()
     {
         Debug.Log("좀비 사망!");
+        Drop();
         Destroy(gameObject);
+    }
+     public override void Drop()
+    {
+        if(itemTable != null)
+        {
+            ItemData droppedItem = itemTable.GetRandomItem();
+            if(droppedItem.itemPrefab != null)
+            {
+                Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
+                Instantiate(droppedItem.itemPrefab,spawnPos,Quaternion.identity);
+                    
+            }
+            Debug.Log($"{droppedItem.name} 드랍");
+        }
     }
 
     private void OnDrawGizmosSelected()
