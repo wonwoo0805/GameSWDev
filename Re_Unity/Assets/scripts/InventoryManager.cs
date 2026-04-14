@@ -90,8 +90,8 @@ public class InventoryManager : MonoBehaviour
     // ���� �Լ��� ���� (��ư �̺�Ʈ �����)
     public int addItem_Button(ItemData newData)
     {
-        Debug.Log($"inventoryPanel: {inventoryPanel}");
-        Debug.Log($"activeSelf: {inventoryPanel?.activeSelf}");
+        //Debug.Log($"inventoryPanel: {inventoryPanel}");
+        //Debug.Log($"activeSelf: {inventoryPanel?.activeSelf}");
         /*
         if (inventoryPanel == null || !inventoryPanel.activeSelf)
         {

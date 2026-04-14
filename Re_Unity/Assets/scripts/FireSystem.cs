@@ -11,6 +11,8 @@ public class FireSystem : MonoBehaviour
 
     public InventoryManager inventoryManager;
     //레이캐스트땜에 넣은거
+    //public Player_St1 player;
+    //플레이어의 여러 스텟정보를 가져오기 위함
     public Camera playerCamera;
     public LayerMask targetLayer;
     public LayerMask boxLayer;
@@ -51,6 +53,8 @@ public class FireSystem : MonoBehaviour
         
     }
 
+    
+
     public void Interaction()
     {
         RaycastHit hit;
@@ -64,6 +68,8 @@ public class FireSystem : MonoBehaviour
             }
             else if(hit.collider.TryGetComponent(out ItemObject droppedItem))
             {
+                
+
                 Debug.Log($"{droppedItem.itemData.name} 획득");
                 int resultIndex = inventoryManager.addItem_Button(droppedItem.itemData); 
                 if (resultIndex != -1)

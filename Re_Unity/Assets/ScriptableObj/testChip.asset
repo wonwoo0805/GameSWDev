@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chips
   itemName: chip1
   money: 0
-  weight: 0
-  num: 0
+  weight: 10
+  num: 1
   inventoryImage: {fileID: 7482667652216324306, guid: b999d3e5f69d4e648b1198d32b5fb184, type: 3}
   prefab: {fileID: 2699434959838560625, guid: 239a8ac4d80a16c42bf068087138c5e2, type: 3}
   itemType: 2

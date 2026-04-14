@@ -1,12 +1,20 @@
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Audio.GeneratorInstance;
 public class Player_St1 : MonoBehaviour
 {
     private CharacterController controller;
-    
 
+    //스텟관련 변수들 모음
     public float playerMaxHealth = 150f;
     private float currentHP;
+    public int limitWeight = 100;
+
+    //스텟 보너스 변수들 모음
+    public int weightBonus = 0;
+
+
     //이동관련 변수들 모음
     public float walkSpeed = 5f;
     public float runSpeed = 10f;
@@ -156,5 +164,8 @@ public class Player_St1 : MonoBehaviour
 
         playerView.localRotation = Quaternion.Euler(xRotation,0f,0f);
     }
+
     
 }
+
+

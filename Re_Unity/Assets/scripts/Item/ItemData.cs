@@ -27,4 +27,6 @@ public class ItemData : ScriptableObject
     public ItemRarity itemDataRarity => itemRarity;
     public int itemDataNum => num;
 
+    public int itemDataWeight => weight;
+
 }
