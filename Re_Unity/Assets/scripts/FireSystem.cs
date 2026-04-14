@@ -11,7 +11,7 @@ public class FireSystem : MonoBehaviour
 
     public InventoryManager inventoryManager;
     //레이캐스트땜에 넣은거
-    //public Player_St1 player;
+    public Player_St1 player;
     //플레이어의 여러 스텟정보를 가져오기 위함
     public Camera playerCamera;
     public LayerMask targetLayer;
@@ -23,7 +23,7 @@ public class FireSystem : MonoBehaviour
         if(Time.time >= nextFireTime)
         {
             Shoot();
-            nextFireTime = Time.time + (1f / fireRate);
+            nextFireTime = Time.time + (1f / (fireRate + fireRate * player.fireRateBonus / 100 ));
         }
 
     }
@@ -39,7 +39,7 @@ public class FireSystem : MonoBehaviour
             Enemy_St1 enemy = hit.collider.GetComponentInParent<Enemy_St1>();//맞는 콜라이더는 에너미 하위객체임 그래서 부모한테 붙어있는 스크립트 가져오기
             if(enemy != null)
             {
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(damage + damage * player.damageBonus / 100);
             }
         }
         else

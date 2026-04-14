@@ -9,10 +9,15 @@ public class Player_St1 : MonoBehaviour
     //스텟관련 변수들 모음
     public float playerMaxHealth = 150f;
     private float currentHP;
-    public int limitWeight = 100;
+    public float limitWeight = 100;
 
     //스텟 보너스 변수들 모음
-    public int weightBonus = 0;
+    public float weightBonus = 0;
+    public float hpBonus = 0;
+    public float staminaBonus = 0;
+    public float maxAmmoBonus = 0;
+    public float damageBonus = 0;
+    public float fireRateBonus = 0;
 
 
     //이동관련 변수들 모음
@@ -39,6 +44,7 @@ public class Player_St1 : MonoBehaviour
     {
         walkSpeed = 5f;
         runSpeed = 10f;
+        playerMaxHealth = playerMaxHealth + playerMaxHealth * hpBonus / 100;
         currentHP = playerMaxHealth;
 
         controller = GetComponent<CharacterController>();
