@@ -302,6 +302,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerMaxHealth: 150
+  limitWeight: 30
+  weightBonus: 0
+  hpBonus: 0
+  staminaBonus: 0
+  maxAmmoBonus: 0
+  damageBonus: 0
+  fireRateBonus: 0
   walkSpeed: 5
   runSpeed: 10
   finalSpeed: 0
@@ -616,6 +623,7 @@ MonoBehaviour:
   range: 100
   damage: 10
   inventoryManager: {fileID: 0}
+  player: {fileID: 4839726967606110270}
   playerCamera: {fileID: 7874907829930358072}
   targetLayer:
     serializedVersion: 2

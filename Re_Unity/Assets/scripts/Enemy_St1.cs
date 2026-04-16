@@ -205,7 +205,9 @@ public class Enemy_St1 : Box
     {
         Debug.Log("좀비 사망!");
         Drop();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        currentHealth = enemyMaxHealth;
+        SetState(EnemyState.Patrol);
     }
      public override void Drop()
     {
