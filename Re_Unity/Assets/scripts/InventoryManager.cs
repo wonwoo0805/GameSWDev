@@ -18,6 +18,8 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(transform.root.gameObject); // Canvas 최상위 오브젝트가 씬 전환 후에도 유지
+
         // 1. UI ��ũ��Ʈ���� �������� ����� ����
         invUI.InitSlots();
         

@@ -19,7 +19,21 @@ public class Inventory : MonoBehaviour
         //limitWeight = limitWeight * weightBonus;
     }
     //���ĭ�� �迭�� ���� ����
-    
+
+    private void OnEnable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        player = FindAnyObjectByType<Player_St1>();
+    }
 
     public int addItem(ItemData newItem)
     {
