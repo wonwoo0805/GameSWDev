@@ -37,6 +37,8 @@ public class Player_St1 : MonoBehaviour
 
     private Vector2 lookInput;
     private float xRotation = 0f;
+
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

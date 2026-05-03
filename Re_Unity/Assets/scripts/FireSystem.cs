@@ -16,6 +16,8 @@ public class FireSystem : MonoBehaviour
     public Camera playerCamera;
     public LayerMask targetLayer;
     public LayerMask boxLayer;
+
+    public Animator gunUIAnimator;
     
 
     public void TryShoot()
@@ -48,6 +50,9 @@ public class FireSystem : MonoBehaviour
         }
 
         //TODO:UI에서 발사 애니메이션 재생하게 하기(UI 최초 설정 이후)
+        if(gunUIAnimator != null){
+            gunUIAnimator.SetTrigger("Shooting");
+        }
         //TODO:적이 맞았는지 판정하기(적 만든 이후)
         
         
