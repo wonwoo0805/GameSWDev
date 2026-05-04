@@ -15,7 +15,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     private Inventory inventory;
     private void Awake()
     {
-        // À¯´ÏÆ¼ ½Ã½ºÅÛÀÌ ¿ÏÀüÈ÷ ÁØºñµÈ Awake ½ÃÁ¡¿¡ »ý¼ºÀÚ¸¦ È£ÃâÇÕ´Ï´Ù.
+        // ï¿½ï¿½ï¿½ï¿½Æ¼ ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Øºï¿½ï¿½ Awake ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ È£ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
         if (slotData == null)
         {
             slotData = new ItemSlot();
@@ -28,40 +28,40 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     {
         if (slotData.itemInSlot == null || slotData.itemInSlot == null) return;
 
-        // µå·¡±×¿ë °¡Â¥ ¾ÆÀÌÄÜ »ý¼º
+        // ï¿½å·¡ï¿½×¿ï¿½ ï¿½ï¿½Â¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         dragIcon = new GameObject("DragIcon");
         dragIcon.transform.SetParent(GetComponentInParent<Canvas>().transform);
         var img = dragIcon.AddComponent<Image>();
         img.sprite = itemImage.sprite;
-        img.raycastTarget = false; // ¡ÚÁß¿ä: ¸¶¿ì½º Å¬¸¯ÀÌ ÀÌ°É Åë°úÇØ¼­ ¾Æ·¡ ½½·Ô¿¡ ´ê¾Æ¾ß ÇÔ
+        img.raycastTarget = false; // ï¿½ï¿½ï¿½ß¿ï¿½: ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½Æ·ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½Æ¾ï¿½ ï¿½ï¿½
     }
 
-    // 2. µå·¡±× Áß
+    // 2. ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½
     public void OnDrag(PointerEventData eventData)
     {
         if (dragIcon != null) dragIcon.transform.position = eventData.position;
     }
 
-    // 3. µå·¡±× ³¡
+    // 3. ï¿½å·¡ï¿½ï¿½ ï¿½ï¿½
     public void OnEndDrag(PointerEventData eventData)
     {
         Destroy(dragIcon);
     }
 
-    // 4. ¾ÆÀÌÅÛÀÌ ÀÌ ½½·Ô¿¡ ³õ¿´À» ¶§ (ÇÙ½É ·ÎÁ÷)
+    // 4. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ (ï¿½Ù½ï¿½ ï¿½ï¿½ï¿½ï¿½)
     public void OnDrop(PointerEventData eventData)
     {
-        // µå·¡±×ÇØ¿Â ½ÃÀÛÁ¡ ½½·ÔÀ» °¡Á®¿È
+        // ï¿½å·¡ï¿½ï¿½ï¿½Ø¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         SlotUI startSlot = eventData.pointerDrag.GetComponent<SlotUI>();
 
         if (startSlot != null)
         {
-            // [Á¶°Ç Ã¼Å©] ÀÌ ½½·ÔÀÌ ¿ä±¸ÇÏ´Â Å¸ÀÔ°ú ¾ÆÀÌÅÛ Å¸ÀÔÀÌ ¸Â´ÂÁö È®ÀÎ
+            // [ï¿½ï¿½ï¿½ï¿½ Ã¼Å©] ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ä±¸ï¿½Ï´ï¿½ Å¸ï¿½Ô°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Â´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
             if ((startSlot.slotData.itemInSlot != null) &&
                 (this.slotType == ItemType.Any || startSlot.slotData.itemInSlot.itemDataType == this.slotType) &&
                 (this.slotData.itemInSlot == null || startSlot.slotType == ItemType.Any || this.slotData.itemInSlot.itemDataType == startSlot.slotType))
             {
-                // µ¥ÀÌÅÍ ±³È¯(Swap) ·ÎÁ÷ ½ÇÇà
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯(Swap) ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                 SwapItems(startSlot);
             }
         }
@@ -71,13 +71,13 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     {
         
 
-        // 1. µ¥ÀÌÅÍ ±³È¯ (°ª º¹»ç ¶Ç´Â ÂüÁ¶ ±³È¯)
+        // 1. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ (ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯)
         ItemSlot temp = new ItemSlot(this.slotData.itemInSlot, this.slotData.quantity);
 
-        // ³» ½½·ÔÀ» »ó´ë¹æ µ¥ÀÌÅÍ·Î ¾÷µ¥ÀÌÆ®
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         this.UpdateSlot(new ItemSlot(other.slotData.itemInSlot, other.slotData.quantity));
         inventory.exchangeItemData(this, other);
-        // »ó´ë¹æ ½½·ÔÀ» ³» µ¥ÀÌÅÍ(temp)·Î ¾÷µ¥ÀÌÆ®
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(temp)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         other.UpdateSlot(temp);
 
         
@@ -86,8 +86,8 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void UpdateSlot(ItemSlot newItem)
     {
-        // 1. Àü´Þ¹ÞÀº »õ·Î¿î µ¥ÀÌÅÍ·Î ³» ÁÖ¸Ó´Ï(slotData)¸¦ ±³Ã¼ÇÕ´Ï´Ù.
-        // newItem ÀÚÃ¼°¡ nullÀÏ °æ¿ì¸¦ ´ëºñÇØ ¾ÈÀüÀåÄ¡¸¦ µÓ´Ï´Ù.
+        // 1. ï¿½ï¿½ï¿½Þ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í·ï¿½ ï¿½ï¿½ ï¿½Ö¸Ó´ï¿½(slotData)ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½Õ´Ï´ï¿½.
+        // newItem ï¿½ï¿½Ã¼ï¿½ï¿½ nullï¿½ï¿½ ï¿½ï¿½ì¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½Ó´Ï´ï¿½.
         if (newItem == null)
         {
             slotData.itemInSlot = null;
@@ -99,19 +99,19 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
             slotData.quantity = newItem.quantity;
         }
 
-        // 2. ÀÌÁ¦ º°µµÀÇ º¯¼ö ¾øÀÌ '³» µ¥ÀÌÅÍ'¸¸ º¸°í UI¸¦ °áÁ¤ÇÕ´Ï´Ù.
-        // ½½·Ô¿¡ ¾ÆÀÌÅÛ µ¥ÀÌÅÍ°¡ µé¾îÀÖ´Ù¸é?
+        // 2. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UIï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+        // ï¿½ï¿½ï¿½Ô¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´Ù¸ï¿½?
         if (slotData.itemInSlot != null)
         {
-            // ³» µ¥ÀÌÅÍ¿¡ ÀúÀåµÈ ÀÌ¹ÌÁö¸¦ ³» ÀÌ¹ÌÁö ÄÄÆ÷³ÍÆ®¿¡ ¹Ù·Î ³Ö½À´Ï´Ù.
+            // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.
             itemImage.sprite = slotData.itemInSlot.itemDataImage;
-            itemImage.enabled = true; // ¾ÆÀÌÄÜ º¸ÀÌ±â
+            itemImage.enabled = true; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½
         }
-        // ½½·ÔÀÌ ºñ¾îÀÖ´Ù¸é?
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´Ù¸ï¿½?
         else
         {
             itemImage.sprite = null;
-            itemImage.enabled = false; // ¾ÆÀÌÄÜ ¼û±â±â (ÀÌ°Ô ¾ø¾î¼­ ÀÜ»óÀÌ ³²¾Ò´ø °Í!)
+            itemImage.enabled = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½î¼­ ï¿½Ü»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò´ï¿½ ï¿½ï¿½!)
         }
     }
 
