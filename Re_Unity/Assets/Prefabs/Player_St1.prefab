@@ -282,7 +282,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.93, y: 0.40336, z: -32.87}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2656949491216945599}
@@ -518,6 +518,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b2bea869-2bfb-44f2-bf25-ada35cb5d735
     m_ActionName: UI/Point
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0a70af44-dc9e-41ff-b2f1-49ea3a6b7dc2
+    m_ActionName: 'Player/ToggleMenu[/Keyboard/backquote]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce9c0695-e2c2-4dc4-9cfa-290072e7c1ff
+    m_ActionName: 'UI/CloseMenu[/Keyboard/backquote]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
