@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StoreSlotUI
   slotType: 3
   slotImage: {fileID: 0}
-  itemImage: {fileID: 0}
+  itemImage: {fileID: 6054963243737003191}
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0

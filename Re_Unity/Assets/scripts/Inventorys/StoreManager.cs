@@ -135,6 +135,7 @@ public class StoreManager : MonoBehaviour
         int result = inventoryManager.addItem_Button(item);
         if (result != -1)
             Debug.Log($"{item.name} 구매 성공!");
+        //상점에 있던 아이템을 없애는 기능
         else
             Debug.Log("구매 실패! 인벤토리가 가득 찼거나 무게 초과!");
     }
