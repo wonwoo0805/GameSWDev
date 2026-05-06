@@ -65,7 +65,7 @@ public class Inventory : MonoBehaviour
 
             //���� �κ��丮�� ����ִ� �������� ���Դٸ� ������ ��ø
             if (inventory[i].itemInSlot != null &&
-                (int)inventory[i].itemInSlot.itemDataType >= 4 &&
+                (int)inventory[i].itemInSlot.itemDataType >= (int)ItemType.Any &&
                 inventory[i].itemInSlot.itemDataImage == newItem.itemDataImage)
             {
                 inventory[i].itemInSlot = newItem;

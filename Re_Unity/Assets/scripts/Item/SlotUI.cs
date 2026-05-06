@@ -13,7 +13,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     private static GameObject dragIcon;
 
     private Inventory inventory;
-    private void Awake()
+    protected void Awake()
     {
         // ����Ƽ �ý����� ������ �غ�� Awake ������ �����ڸ� ȣ���մϴ�.
         if (slotData == null)
@@ -24,7 +24,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         inventory = FindAnyObjectByType<Inventory>();
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public virtual void OnBeginDrag(PointerEventData eventData)
     {
         if (slotData.itemInSlot == null || slotData.itemInSlot == null) return;
 
@@ -37,19 +37,19 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     }
 
     // 2. �巡�� ��
-    public void OnDrag(PointerEventData eventData)
+    public virtual void OnDrag(PointerEventData eventData)
     {
         if (dragIcon != null) dragIcon.transform.position = eventData.position;
     }
 
     // 3. �巡�� ��
-    public void OnEndDrag(PointerEventData eventData)
+    public virtual void OnEndDrag(PointerEventData eventData)
     {
         Destroy(dragIcon);
     }
 
     // 4. �������� �� ���Կ� ������ �� (�ٽ� ����)
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
         // �巡���ؿ� ������ ������ ������
         SlotUI startSlot = eventData.pointerDrag.GetComponent<SlotUI>();

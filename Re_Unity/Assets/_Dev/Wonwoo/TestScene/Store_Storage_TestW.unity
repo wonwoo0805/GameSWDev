@@ -838,9 +838,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1456520158}
-  - component: {fileID: 1456520161}
   - component: {fileID: 1456520160}
   - component: {fileID: 1456520159}
+  - component: {fileID: 1456520161}
   m_Layer: 0
   m_Name: StoreManager
   m_TagString: Untagged
@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f03883ece747c6489a6cfc4e82903bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryUI
-  slotPrefab: {fileID: 1071685942753130910, guid: 9195c5d86c42dfc4facd087095b1228c, type: 3}
+  slotPrefab: {fileID: 1071685942753130910, guid: 04bffc371e82b4d4b9a066c22a64fd76, type: 3}
   slotParent: {fileID: 1614216997}
   slotCount: 8
   inventoryUI: []
@@ -904,12 +904,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456520157}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 015763f721aa7844b9194207e953851f, type: 3}
+  m_Script: {fileID: 11500000, guid: ddc42a8c505bee544b82217ebed9d179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoreManager
   storePanel: {fileID: 1219097999}
   storeData: {fileID: 1456520160}
   storeUI: {fileID: 1456520159}
+  itemPool: []
+  totalItemCount: 0
 --- !u!1 &1614216996
 GameObject:
   m_ObjectHideFlags: 0
