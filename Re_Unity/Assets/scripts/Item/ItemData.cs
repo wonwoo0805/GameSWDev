@@ -1,7 +1,8 @@
+using Mono.Cecil.Cil;
 using UnityEngine;
 
-public enum ItemType { Weapon, Armor, Chip, Any, Use }
-public enum ItemRarity {  Common, Rare, Epic, Unique, Legendary}
+public enum ItemType { Weapon, Armor, Chip, Any, Use, Refund }
+public enum ItemRarity {  Normal, Rare, Epic, Unique, Legendary }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Items/ItemData")]
 public class ItemData : ScriptableObject
@@ -10,7 +11,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private string itemName;
 
     //define int type
-    [SerializeField] private int money, weight, num;
+    [SerializeField] private int money, weight, num, Code;
 
     //define image(sprite, etc...) type
     [SerializeField] private Sprite inventoryImage;
@@ -25,8 +26,8 @@ public class ItemData : ScriptableObject
     public ItemType itemDataType => itemType;
     public GameObject itemPrefab => prefab;
     public ItemRarity itemDataRarity => itemRarity;
+    public int itemDataCode => Code;
     public int itemDataNum => num;
-
     public int itemDataWeight => weight;
 
 }

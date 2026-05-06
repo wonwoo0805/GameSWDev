@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519bec3419fa8b247992aa5121e4e25f, type: 3}
+  m_Name: Heals
+  m_EditorClassIdentifier: Assembly-CSharp::Uses
+  itemName: Heads
+  money: 50
+  weight: 1
+  num: 1
+  Code: 1
+  inventoryImage: {fileID: 7482667652216324306, guid: fd153f4432ae34444a036de15ab47d0a, type: 3}
+  prefab: {fileID: 0}
+  itemType: 4
+  itemRarity: 0
+  Heal: 30

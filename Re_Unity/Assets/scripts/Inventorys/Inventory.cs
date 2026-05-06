@@ -19,27 +19,45 @@ public class Inventory : MonoBehaviour
         //limitWeight = limitWeight * weightBonus;
     }
     //���ĭ�� �迭�� ���� ����
-    
+
+    private void OnEnable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        player = FindAnyObjectByType<Player_St1>();
+    }
 
     public int addItem(ItemData newItem)
     {
-        Debug.Log("아이템 추가 함수 호출됨");
-        if (totalWeight >= player.limitWeight)
+        if(player)
         {
-            Debug.Log("무게 초과로 아이템 획득 실패");
-            return -1;
+            Debug.Log("아이템 추가 함수 호출됨");
+            if (totalWeight >= player.limitWeight)
+            {
+                Debug.Log("무게 초과로 아이템 획득 실패");
+                return -1;
+            }
+            else if (totalWeight > player.limitWeight * 0.9)
+            {
+                Debug.Log("과중량!");
+                //이동속도 감소
+            }
+            else if (totalWeight > player.limitWeight * 0.7)
+            {
+                Debug.Log("무거움!");
+                //이동속도 소폭 감소
+            }
+            Debug.Log($"{totalWeight}");
         }
-        else if (totalWeight > player.limitWeight * 0.9)
-        {
-            Debug.Log("과중량!");
-            //이동속도 감소
-        }
-        else if (totalWeight > player.limitWeight * 0.7)
-        {
-            Debug.Log("무거움!");
-            //이동속도 소폭 감소
-        }
-        Debug.Log($"{totalWeight}");
+        
 
         for (int i = 0; i < inventory.Count; i++)
         {
@@ -47,7 +65,7 @@ public class Inventory : MonoBehaviour
 
             //���� �κ��丮�� ����ִ� �������� ���Դٸ� ������ ��ø
             if (inventory[i].itemInSlot != null &&
-                (int)inventory[i].itemInSlot.itemDataType >= 4 &&
+                (int)inventory[i].itemInSlot.itemDataType >= (int)ItemType.Any &&
                 inventory[i].itemInSlot.itemDataImage == newItem.itemDataImage)
             {
                 inventory[i].itemInSlot = newItem;
