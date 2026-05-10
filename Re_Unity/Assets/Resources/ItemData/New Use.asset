@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519bec3419fa8b247992aa5121e4e25f, type: 3}
   m_Name: New Use
   m_EditorClassIdentifier: Assembly-CSharp::Uses
-  itemName: 
-  money: 0
-  weight: 0
-  num: 0
-  Code: 0
-  inventoryImage: {fileID: 0}
+  itemName: heal_MAX
+  itemDescription: 1234664556234
+  money: 20
+  weight: 1
+  num: 1
+  Code: 5
+  inventoryImage: {fileID: -2413806693520163455, guid: 0aa9ffb823fc2fc45aa34baaf4006113, type: 3}
   prefab: {fileID: 0}
-  itemType: 0
-  itemRarity: 0
-  Heal: 0
+  itemType: 4
+  itemRarity: 4
+  Heal: 100

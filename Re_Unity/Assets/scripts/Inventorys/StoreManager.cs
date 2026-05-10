@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoreManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class StoreManager : MonoBehaviour
     public Inventory storeData;
     public InventoryUI storeUI;
     private InventoryManager inventoryManager;
+    private ItemExplainPanel itemExplainPanel;
 
     [Header("아이템 풀")]
     public List<ItemData> itemPool;
@@ -23,6 +25,11 @@ public class StoreManager : MonoBehaviour
     private int epic = 15;
     private int unique = 4;
     private int legendary = 1;
+
+    public Button buyButton;
+    public Button rerollButton;
+    private ItemData selectedItem;
+    private int selectedSlotIndex;
 
     private void Awake()
     {
@@ -45,7 +52,11 @@ public class StoreManager : MonoBehaviour
 
     private void Start()
     {
+        buyButton.gameObject.SetActive(false);
+        buyButton.onClick.AddListener(OnBuyButtonClick);
+        rerollButton.onClick.AddListener(OnRerollButtonClick);
         inventoryManager = FindAnyObjectByType<InventoryManager>();
+        itemExplainPanel = FindAnyObjectByType<ItemExplainPanel>();
         //storePanel.SetActive(false);
         for (int i = 0; i < storeData.inventory.Count; i++)
             RegisterItemToSlot(i);
@@ -82,7 +93,7 @@ public class StoreManager : MonoBehaviour
         for (int attempt = 0; attempt < maxAttempts; attempt++)
         {
             var (rarity, code) = DrawRarityAndCode();
-            Debug.Log($"추첨 결과 - rarity: {rarity}, code: {code}");
+            //Debug.Log($"추첨 결과 - rarity: {rarity}, code: {code}");
 
             // 이미 상점에 등록된 아이템인지 확인
             bool isDuplicate = storeData.inventory.Exists(
@@ -92,7 +103,7 @@ public class StoreManager : MonoBehaviour
             );
             if (isDuplicate)
             {
-                Debug.Log("중복! 다시 추첨");
+                //Debug.Log("중복! 다시 추첨");
                 continue;
             }
 
@@ -128,14 +139,35 @@ public class StoreManager : MonoBehaviour
         storePanel.SetActive(isActive);
         Cursor.visible = isActive;
     }
+    public void SelectItem(ItemData item, int slotIndex)
+    {
+        selectedItem = item;
+        selectedSlotIndex = slotIndex;
+        itemExplainPanel.ShowDescription(item);
+        Debug.Log($"buyButton: {buyButton}");
+        Debug.Log($"buyButton active: {buyButton.gameObject.activeSelf}");
+        buyButton.gameObject.SetActive(true);
+        Debug.Log($"buyButton active after: {buyButton.gameObject.activeSelf}");
+    }
+    private void OnBuyButtonClick()
+    {
+        if (selectedItem == null) return;
+        BuyItem(selectedItem, selectedSlotIndex);
+        buyButton.gameObject.SetActive(false);
+        selectedItem = null;
+    }
 
     // 아이템 구매 (상점 → 인벤토리)
-    public void BuyItem(ItemData item)
+    public void BuyItem(ItemData item, int slotIndex)
     {
         int result = inventoryManager.addItem_Button(item);
         if (result != -1)
+        {
             Debug.Log($"{item.name} 구매 성공!");
-        //상점에 있던 아이템을 없애는 기능
+            storeData.inventory[slotIndex].itemInSlot = null;
+            storeUI.UpdateSlotUI(slotIndex, storeData.inventory[slotIndex]);
+            //상점에 있던 아이템을 없애는 기능
+        }
         else
             Debug.Log("구매 실패! 인벤토리가 가득 찼거나 무게 초과!");
     }
@@ -144,5 +176,23 @@ public class StoreManager : MonoBehaviour
     public void SellItem(ItemData item)
     {
         // 추후 구현
+    }
+    public void OnRerollButtonClick()
+    {
+        // 기존 상점 품목 전부 제거
+        for (int i = 0; i < storeData.inventory.Count; i++)
+        {
+            storeData.inventory[i].itemInSlot = null;
+            storeUI.UpdateSlotUI(i, storeData.inventory[i]);
+        }
+
+        // 선택된 아이템 초기화
+        selectedItem = null;
+        buyButton.gameObject.SetActive(false);
+        itemExplainPanel.ShowDescription(null);
+
+        // 다시 품목 채우기
+        for (int i = 0; i < storeData.inventory.Count; i++)
+            RegisterItemToSlot(i);
     }
 }

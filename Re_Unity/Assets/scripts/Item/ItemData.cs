@@ -9,6 +9,7 @@ public class ItemData : ScriptableObject
 {
     //define string type
     [SerializeField] private string itemName;
+    [SerializeField] private string itemDescription;
 
     //define int type
     [SerializeField] private int money, weight, num, Code;
@@ -29,5 +30,5 @@ public class ItemData : ScriptableObject
     public int itemDataCode => Code;
     public int itemDataNum => num;
     public int itemDataWeight => weight;
-
+    public string itemDataDescription => itemDescription;
 }

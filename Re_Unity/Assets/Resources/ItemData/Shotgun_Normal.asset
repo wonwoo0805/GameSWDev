@@ -9,22 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
-  m_Name: Damage_Normal
-  m_EditorClassIdentifier: Assembly-CSharp::Chips
-  itemName: Damage_Normal
-  itemDescription: ewr;olifj[ipoeadffjnvi012o[34jr9-0frjg0jq324=9-df
-  money: 100
-  weight: 3
+  m_Script: {fileID: 11500000, guid: fc8af9bd9504a4145bcfbede5f4fe124, type: 3}
+  m_Name: Shotgun_Normal
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons
+  itemName: Shotgun_Normal
+  itemDescription: asdfqwerzxcv
+  money: 200
+  weight: 30
   num: 1
-  Code: 0
+  Code: 4
   inventoryImage: {fileID: -2413806693520163455, guid: 0aa9ffb823fc2fc45aa34baaf4006113, type: 3}
   prefab: {fileID: 0}
-  itemType: 2
+  itemType: 0
   itemRarity: 0
-  Hpbonus: 0
-  StaminaBonus: 0
-  DamageBonus: 3
-  MaxammoBonus: 0
-  FirerateBonus: 0
-  ReloadBonus: 0
+  damage: 30
+  maxAmmo: 5
+  fireRate: 1
+  reloadSpeed: 10

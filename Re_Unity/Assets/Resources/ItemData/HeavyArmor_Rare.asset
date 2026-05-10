@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HeavyArmor_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Armors
   itemName: HeavyArmors_Rare
+  itemDescription: 23erfdfg3445terger
   money: 200
   weight: 15
   num: 1

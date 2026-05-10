@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc8af9bd9504a4145bcfbede5f4fe124, type: 3}
-  m_Name: TestGun
+  m_Name: SMG_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Weapons
-  itemName: testing
-  money: 500
-  weight: 10
+  itemName: SMG_Epic
+  itemDescription: SMG
+  money: 350
+  weight: 20
   num: 1
-  Code: 4
-  inventoryImage: {fileID: -2413806693520163455, guid: 0aa9ffb823fc2fc45aa34baaf4006113, type: 3}
+  Code: 8
+  inventoryImage: {fileID: 7482667652216324306, guid: b999d3e5f69d4e648b1198d32b5fb184, type: 3}
   prefab: {fileID: 0}
   itemType: 0
   itemRarity: 2
-  damage: 10
-  maxAmmo: 30
-  fireRate: 300
-  reloadSpeed: 3
+  damage: 5
+  maxAmmo: 26
+  fireRate: 4
+  reloadSpeed: 6
