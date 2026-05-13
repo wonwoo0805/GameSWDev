@@ -43,7 +43,7 @@ public class FireSystem : MonoBehaviour
             Enemy_St1 enemy = hit.collider.GetComponentInParent<Enemy_St1>();//맞는 콜라이더는 에너미 하위객체임 그래서 부모한테 붙어있는 스크립트 가져오기
             if(enemy != null)
             {
-                enemy.TakeDamage(damage + damage * player.damageBonus / 100);
+                enemy.TakeDamage(((damage + player.attackBonus) * (1 + player.attackPercentBonus / 100)) * (1 + player.damageBonus / 100));
             }
         }
         else
@@ -95,7 +95,7 @@ public class FireSystem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        wpm.ChangeWeaponPreview(testWeapon);
+        wpm.ChangeWeaponPreview(inventoryManager.GetEquippedItem(ItemType.Weapon));
     }
 
     // Update is called once per frame

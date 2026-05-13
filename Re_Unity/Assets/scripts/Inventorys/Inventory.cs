@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    public GameObject equipmentPanel; 
+
     public List<ItemSlot> inventory = new List<ItemSlot>();
     public List<ItemSlot> equipment = new List<ItemSlot>();
 
@@ -111,8 +113,55 @@ public class Inventory : MonoBehaviour
 
         endList[endIdx].itemInSlot = tempItem;
 
+        if (startSlot.slotType == ItemType.Armor || startSlot.slotType == ItemType.Chip ||
+        endSlot.slotType == ItemType.Armor || endSlot.slotType == ItemType.Chip)
+            UpdateStat();
+
         // ��ȯ �� ���� Ȯ��
         Debug.Log($"��ȯ �� startList[{startIdx}]: {startList[startIdx].itemInSlot?.name}");
         Debug.Log($"��ȯ �� endList[{endIdx}]: {endList[endIdx].itemInSlot?.name}");
     }
+
+    private void UpdateStat()
+    {
+        // 먼저 모든 보너스 초기화
+        player.hpBonus = 0;
+        player.staminaBonus = 0;
+        player.damageBonus = 0;
+        player.maxAmmoBonus = 0;
+        player.fireRateBonus = 0;
+        player.reloadBonus = 0;
+        player.weightBonus = 0;
+        player.attackBonus = 0;
+        player.attackPercentBonus = 0;
+
+        // 장착된 장비 스탯 반영
+        SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
+        foreach (SlotUI slot in eqptSlots)
+        {
+            if (slot.slotData.isEmpty) continue;
+            ItemData item = slot.slotData.itemInSlot;
+
+            if (item.itemDataType == ItemType.Armor)
+            {
+                Armors armor = (Armors)item;
+                player.hpBonus += armor.HPBonus;
+            }
+            else if (item.itemDataType == ItemType.Chip)
+            {
+                Chips chip = (Chips)item;
+                player.hpBonus += chip.Hpbonus;
+                player.staminaBonus += chip.StaminaBonus;
+                player.damageBonus += chip.DamageBonus;
+                player.maxAmmoBonus += chip.MaxammoBonus;
+                player.fireRateBonus += chip.FirerateBonus;
+                player.reloadBonus += chip.ReloadBonus;
+                player.weightBonus += chip.WeightBonus;
+                player.attackBonus += chip.AttackBonus;
+                player.attackPercentBonus += chip.AttackPercentBonus;
+            }
+        }
+    }
+
+
 }
