@@ -17,7 +17,9 @@ public class FireSystem : MonoBehaviour
     public LayerMask targetLayer;
     public LayerMask boxLayer;
 
-    public Animator gunUIAnimator;
+    public WeaponPreviewManager wpm;
+
+    public ItemData testWeapon;
     
 
     public void TryShoot()
@@ -50,10 +52,9 @@ public class FireSystem : MonoBehaviour
         }
 
         //TODO:UI에서 발사 애니메이션 재생하게 하기(UI 최초 설정 이후)
-        if(gunUIAnimator != null){
-            gunUIAnimator.SetTrigger("Shooting");
-        }
-        //TODO:적이 맞았는지 판정하기(적 만든 이후)
+        wpm.PlayFireAnimation();
+        
+        
         
         
     }
@@ -94,7 +95,7 @@ public class FireSystem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        wpm.ChangeWeaponPreview(testWeapon);
     }
 
     // Update is called once per frame
