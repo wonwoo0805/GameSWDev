@@ -102,8 +102,8 @@ ModelImporter:
       name: shotgun_idle
       takeName: CINEMA_4D_Main
       internalID: -5908480083500196452
-      firstFrame: 127
-      lastFrame: 157
+      firstFrame: 128
+      lastFrame: 159
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

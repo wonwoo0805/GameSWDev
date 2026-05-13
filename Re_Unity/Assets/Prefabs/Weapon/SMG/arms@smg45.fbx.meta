@@ -128,11 +128,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: SMG_idael
+      name: SMG_idle
       takeName: CINEMA_4D_Main
       internalID: -5592515801666444725
-      firstFrame: 180
-      lastFrame: 210
+      firstFrame: 179
+      lastFrame: 214
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
