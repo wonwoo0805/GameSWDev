@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8af9bd9504a4145bcfbede5f4fe124, type: 3}
+  m_Name: 20_AR_Legendary
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons
+  itemName: "\uC704\uB300\uD55C \uC790\uB3D9\uC18C\uCD1D"
+  itemDescription: "\uC804\uC7C1\uC774 \uB05D\uB09C \uD6C4\uC5D0\uB3C4 \uC774 \uCD1D\uC740
+    \uC544\uC9C1 \uC5EC\uAE30 \uC788\uB2E4."
+  money: 1500
+  weight: 3
+  num: 1
+  Code: 20
+  inventoryImage: {fileID: 21300000, guid: 4019e32e03c7b724fb1c4c80e23a0fe3, type: 3}
+  prefab: {fileID: 0}
+  itemType: 0
+  itemRarity: 4
+  damage: 42
+  maxAmmo: 30
+  fireRate: 3
+  reloadSpeed: 3
