@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
+  m_Name: "73_Chip_\u2166_Epic"
+  m_EditorClassIdentifier: Assembly-CSharp::Chips
+  itemName: 
+  itemDescription: 
+  money: 0
+  weight: 1
+  num: 1
+  Code: 66
+  inventoryImage: {fileID: 0}
+  prefab: {fileID: 0}
+  itemType: 2
+  itemRarity: 2
+  Hpbonus: 0
+  StaminaBonus: 0
+  DamageBonus: 0
+  MaxammoBonus: 0
+  WeightBonus: 0
+  AttackBonus: 0
+  AttackPercentBonus: 0
+  FirerateBonus: 0
+  ReloadBonus: 0

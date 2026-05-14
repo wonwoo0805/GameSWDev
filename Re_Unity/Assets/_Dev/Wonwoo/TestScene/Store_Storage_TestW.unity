@@ -1028,6 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef0e450e9cbf44dbfcb3f1d19ccf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  equipmentPanel: {fileID: 0}
   inventory: []
   equipment: []
   player: {fileID: 0}
@@ -1296,6 +1297,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 858905030774121886, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 858905030774121886, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 858905030774121886, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 2811867356610686335, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
