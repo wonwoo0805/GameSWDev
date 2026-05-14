@@ -639,3 +639,5 @@ MonoBehaviour:
   boxLayer:
     serializedVersion: 2
     m_Bits: 768
+  wpm: {fileID: 0}
+  testWeapon: {fileID: 11400000, guid: 4f312d52ee47e5f489c53866a00ea0b2, type: 2}

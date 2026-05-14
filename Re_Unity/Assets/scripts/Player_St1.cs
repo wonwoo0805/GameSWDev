@@ -18,6 +18,9 @@ public class Player_St1 : MonoBehaviour
     public float maxAmmoBonus = 0;
     public float damageBonus = 0;
     public float fireRateBonus = 0;
+    public float attackBonus = 0;
+    public float attackPercentBonus = 0;
+    public float reloadBonus = 0;
 
 
     //이동관련 변수들 모음
@@ -37,6 +40,8 @@ public class Player_St1 : MonoBehaviour
 
     private Vector2 lookInput;
     private float xRotation = 0f;
+
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

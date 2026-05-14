@@ -190,6 +190,7 @@ MonoBehaviour:
   invUI: {fileID: 6629689034507585757}
   eqptData: {fileID: 8172125650641567815}
   eqptUI: {fileID: 6629689034507585757}
+  defaultWeapon: {fileID: 11400000, guid: 4f312d52ee47e5f489c53866a00ea0b2, type: 2}
 --- !u!114 &8172125650641567815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,8 +203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cef0e450e9cbf44dbfcb3f1d19ccf8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  equipmentPanel: {fileID: 5784000730461481461}
   inventory: []
   equipment: []
+  player: {fileID: 0}
+  totalWeight: 0
 --- !u!114 &6629689034507585757
 MonoBehaviour:
   m_ObjectHideFlags: 0
