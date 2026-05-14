@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
   m_Name: "65_Chip_\u03A3_Legendary"
   m_EditorClassIdentifier: Assembly-CSharp::Chips
-  itemName: 
-  itemDescription: 
+  itemName: "Type-\u03A3"
+  itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uCD1D\uD569\uC758 \uD798. Logos\uC758
+    \uBAA8\uB4E0 \uC5F0\uAD6C\uAC00 \uC9D1\uC57D\uB410\uB2E4."
   money: 0
   weight: 1
   num: 1
   Code: 65
-  inventoryImage: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: d63ee934fc6418d46a62f9d48e187ce4, type: 3}
   prefab: {fileID: 0}
   itemType: 2
   itemRarity: 4

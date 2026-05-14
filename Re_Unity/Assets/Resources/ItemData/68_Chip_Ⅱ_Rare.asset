@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
   m_Name: "68_Chip_\u2161_Rare"
   m_EditorClassIdentifier: Assembly-CSharp::Chips
-  itemName: 
-  itemDescription: 
+  itemName: "Type-\u2161"
+  itemDescription: "Virtus\uC758 \uCE69\uC774\uB2E4. \uADE0\uD615\uC774 \uC2DC\uC791\uB41C\uB2E4."
   money: 0
   weight: 1
   num: 1
-  Code: 66
-  inventoryImage: {fileID: 0}
+  Code: 68
+  inventoryImage: {fileID: 21300000, guid: 7900517140e11564ba114a37a0eaab66, type: 3}
   prefab: {fileID: 0}
   itemType: 2
   itemRarity: 1
