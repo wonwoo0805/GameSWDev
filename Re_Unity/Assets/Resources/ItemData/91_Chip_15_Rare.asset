@@ -27,7 +27,7 @@ MonoBehaviour:
   StaminaBonus: 0
   DamageBonus: 0
   MaxammoBonus: 0
-  WeightBonus: 0
+  WeightBonus: 8
   AttackBonus: 0
   AttackPercentBonus: 0
   FirerateBonus: 0

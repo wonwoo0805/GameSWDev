@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "43_Chip_\u03B3_Normal"
   m_EditorClassIdentifier: Assembly-CSharp::Chips
   itemName: "Type-\u03B3"
-  itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4\uC138 \uBC88\uC9F8 \uC6D0\uB9AC.
+  itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uC138 \uBC88\uC9F8 \uC6D0\uB9AC.
     \uADE0\uD615\uC744 \uCC3E\uC544\uAC00\uB294 \uACFC\uC815\uC774\uB2E4."
   money: 0
   weight: 1
@@ -25,7 +25,7 @@ MonoBehaviour:
   itemRarity: 0
   Hpbonus: 0
   StaminaBonus: 0
-  DamageBonus: 0
+  DamageBonus: 3
   MaxammoBonus: 0
   WeightBonus: 0
   AttackBonus: 0

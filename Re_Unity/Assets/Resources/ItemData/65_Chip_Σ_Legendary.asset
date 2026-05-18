@@ -26,9 +26,9 @@ MonoBehaviour:
   Hpbonus: 0
   StaminaBonus: 0
   DamageBonus: 0
-  MaxammoBonus: 0
+  MaxammoBonus: 3
   WeightBonus: 0
-  AttackBonus: 0
+  AttackBonus: 3
   AttackPercentBonus: 0
   FirerateBonus: 0
-  ReloadBonus: 0
+  ReloadBonus: 3

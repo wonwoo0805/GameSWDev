@@ -29,5 +29,5 @@ MonoBehaviour:
   WeightBonus: 0
   AttackBonus: 0
   AttackPercentBonus: 0
-  FirerateBonus: 0
+  FirerateBonus: 13
   ReloadBonus: 0

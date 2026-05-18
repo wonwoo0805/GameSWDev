@@ -30,6 +30,6 @@ MonoBehaviour:
   MaxammoBonus: 0
   WeightBonus: 0
   AttackBonus: 0
-  AttackPercentBonus: 0
+  AttackPercentBonus: 5
   FirerateBonus: 0
   ReloadBonus: 0

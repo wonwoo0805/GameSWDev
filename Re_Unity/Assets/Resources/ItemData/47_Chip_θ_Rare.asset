@@ -23,7 +23,7 @@ MonoBehaviour:
   prefab: {fileID: 0}
   itemType: 2
   itemRarity: 1
-  Hpbonus: 0
+  Hpbonus: 10
   StaminaBonus: 0
   DamageBonus: 0
   MaxammoBonus: 0

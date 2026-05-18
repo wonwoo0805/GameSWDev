@@ -31,4 +31,4 @@ MonoBehaviour:
   AttackBonus: 0
   AttackPercentBonus: 0
   FirerateBonus: 0
-  ReloadBonus: 0
+  ReloadBonus: 7

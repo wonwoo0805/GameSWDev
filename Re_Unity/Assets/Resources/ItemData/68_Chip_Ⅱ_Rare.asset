@@ -24,10 +24,10 @@ MonoBehaviour:
   itemRarity: 1
   Hpbonus: 0
   StaminaBonus: 0
-  DamageBonus: 0
+  DamageBonus: 4
   MaxammoBonus: 0
   WeightBonus: 0
   AttackBonus: 0
-  AttackPercentBonus: 0
+  AttackPercentBonus: 4
   FirerateBonus: 0
   ReloadBonus: 0
