@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Type-MK05
   itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uD3EC\uC7A5\uC774 \uCC0C\uADF8\uB7EC\uC838
     \uC788\uB2E4. \uB0B4\uC6A9\uBB3C\uC740 \uBA40\uCA61\uD558\uB2E4."
-  money: 0
+  money: 50
   weight: 1
   num: 1
   Code: 81

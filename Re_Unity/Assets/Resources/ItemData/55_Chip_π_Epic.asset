@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: "Type-\u03C0"
   itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uBB34\uD55C\uC744 \uD488\uACE0
     \uC788\uB2E4."
-  money: 0
+  money: 220
   weight: 1
   num: 1
   Code: 55
@@ -31,4 +31,4 @@ MonoBehaviour:
   AttackBonus: 0
   AttackPercentBonus: 0
   FirerateBonus: 0
-  ReloadBonus: 8
+  ReloadBonus: 0.08

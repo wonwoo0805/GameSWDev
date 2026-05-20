@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Type-MK21
   itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uC5B4\uB290 \uAE30\uAD00\uC778\uC9C0\uB294
     \uACF5\uAC1C\uD558\uC9C0 \uC54A\uB294\uB2E4."
-  money: 0
+  money: 200
   weight: 1
   num: 1
   Code: 97
@@ -30,5 +30,5 @@ MonoBehaviour:
   WeightBonus: 0
   AttackBonus: 0
   AttackPercentBonus: 0
-  FirerateBonus: 7
-  ReloadBonus: 7
+  FirerateBonus: 0.07
+  ReloadBonus: 0.07

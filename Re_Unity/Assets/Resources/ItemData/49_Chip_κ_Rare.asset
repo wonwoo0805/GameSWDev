@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chips
   itemName: "Type-\u03BA"
   itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uC9C0\uC2DD\uC758 \uCCAB \uAC78\uC74C."
-  money: 0
+  money: 105
   weight: 1
   num: 1
   Code: 49

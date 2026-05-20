@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Type-MK22
   itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uD504\uB9AC\uBBF8\uC5C4.
     \uB2E8\uC5B4\uAC00 \uC5B4\uC0C9\uD558\uAC8C \uB290\uAEF4\uC9C4\uB2E4."
-  money: 0
+  money: 200
   weight: 1
   num: 1
   Code: 98

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chips
   itemName: "Type-\u2166"
   itemDescription: "Virtus\uC758 \uCE69\uC774\uB2E4. \uD0C1\uC6D4\uD568\uC5D0 \uAC00\uAE4C\uC6CC\uC9C4\uB2E4."
-  money: 0
+  money: 250
   weight: 1
   num: 1
   Code: 73
@@ -29,5 +29,5 @@ MonoBehaviour:
   WeightBonus: 7
   AttackBonus: 0
   AttackPercentBonus: 7
-  FirerateBonus: 7
-  ReloadBonus: 7
+  FirerateBonus: 0.07
+  ReloadBonus: 0.07

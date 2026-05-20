@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: "Type-\u2168"
   itemDescription: "Virtus\uC758 \uCE69\uC774\uB2E4. \uC644\uC131\uC744 \uB208\uC55E\uC5D0
     \uB450\uACE0 \uC788\uB2E4."
-  money: 0
+  money: 530
   weight: 1
   num: 1
   Code: 75
@@ -30,5 +30,5 @@ MonoBehaviour:
   WeightBonus: 5
   AttackBonus: 1
   AttackPercentBonus: 5
-  FirerateBonus: 5
-  ReloadBonus: 5
+  FirerateBonus: 0.05
+  ReloadBonus: 0.05
