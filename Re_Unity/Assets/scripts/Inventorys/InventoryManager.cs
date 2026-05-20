@@ -84,7 +84,7 @@ public class InventoryManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    private void CloseInventory()
+    public void CloseInventory()
     {
         inventoryPanel.SetActive(false);
         playerInput.SwitchCurrentActionMap("Player");
