@@ -22,9 +22,13 @@ public class Enemy_St1 : Box
     public float patrolWaitTime = 2f;
     private float patrolTimer;
 
+    private bool isMoving;
+
     [Header("Search Settings")]
     private Vector3 lastKnownPosition; // 플레이어 마지막 위치
     private bool hasLastKnownPos = false;
+
+    private Animator enemyAnimator;
 
 
 
@@ -33,7 +37,12 @@ public class Enemy_St1 : Box
     //이걸로 플레이어 위치 가져옴
     private Transform playerTransform;
     private float lastAttackTime;
+    
 
+    void Awake()
+    {
+        enemyAnimator = GetComponentInChildren<Animator>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,6 +58,7 @@ public class Enemy_St1 : Box
         }
 
         SetState(EnemyState.Patrol);
+        
     }
 
     // Update is called once per frame
@@ -130,6 +140,8 @@ public class Enemy_St1 : Box
 
     void RunPatrol()
     {
+        isMoving = agent.velocity.magnitude > 0.1f;
+        enemyAnimator.SetBool("IsRunning",isMoving);
         if(agent.remainingDistance <= agent.stoppingDistance)
         {
             patrolTimer += Time.deltaTime;
@@ -144,6 +156,8 @@ public class Enemy_St1 : Box
 
     void RunChase()
     {
+        isMoving = agent.velocity.magnitude > 0.1f;
+        enemyAnimator.SetBool("IsRunning",isMoving);
         lastKnownPosition = playerTransform.position;
         hasLastKnownPos = true;
         agent.SetDestination(lastKnownPosition);
@@ -151,6 +165,8 @@ public class Enemy_St1 : Box
 
     void RunSearch()
     {
+        isMoving = agent.velocity.magnitude > 0.1f;
+        enemyAnimator.SetBool("IsRunning",isMoving);
         agent.SetDestination(lastKnownPosition);
 
         if(agent.remainingDistance <= agent.stoppingDistance + 0.1f)
@@ -161,6 +177,7 @@ public class Enemy_St1 : Box
 
     void RunAttack()
     {
+        enemyAnimator.Play("Zombie Punching",0,0f);
         agent.isStopped = true;
         transform.LookAt(playerTransform.position);
 
@@ -203,6 +220,7 @@ public class Enemy_St1 : Box
 
     private void Die()
     {
+        enemyAnimator.Play("enemy_dying",0,0f);
         Debug.Log("좀비 사망!");
         Drop();
         gameObject.SetActive(false);
