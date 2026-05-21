@@ -4,20 +4,31 @@ using static UnityEngine.Analytics.IAnalytic;
 
 public class StorageManager : MonoBehaviour
 {
+    [Header("StorageScript")]
     public Inventory storageData;
     public InventoryUI storageUI;
+
+    [Header("UI Panel")]
     public GameObject storageMasterPanel;
     public GameObject storagePanel;
-    public Transform inventoryOriginalParent;
     public GameObject inventoryPanel;
+    public ItemExplainPanel storageExplainPanel;
+
+    [Header("Inventory Tab")]
+    public Transform inventoryOriginalParent;
     public GridLayoutGroup inventoryGrid;
     private InventoryManager inventoryManager;
 
+    [Header("Button")]
     public Button openButton;
     public Button closeButton;
 
+    [Header("Inventory Size")]
     public Vector2 normalCellsize;
     public Vector2 storageCellSize;
+
+    private ItemData selectedItem;
+    private int selectedSlotIndex;
 
     private void Awake()
     {
@@ -70,4 +81,10 @@ public class StorageManager : MonoBehaviour
         storageMasterPanel.SetActive(false);
     }
 
+    public void SelectItem(ItemData item, int slotIndex)
+    {
+        selectedItem = item;
+        selectedSlotIndex = slotIndex;
+        storageExplainPanel.ShowDescription(item);
+    }
 }
