@@ -16,6 +16,9 @@ public class InventoryManager : MonoBehaviour
     public Inventory eqptData;
     public InventoryUI eqptUI;
 
+    [Header("defaultWeapon")]
+    public ItemData defaultWeapon;
+
     private void Awake()
     {
         DontDestroyOnLoad(transform.root.gameObject); // Canvas 최상위 오브젝트가 씬 전환 후에도 유지
@@ -117,5 +120,18 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("�κ��丮�� ���� á���ϴ�.");
             return -1;
         }
+    }
+
+    public ItemData GetEquippedItem(ItemType type)
+    {
+        SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
+        foreach (SlotUI slot in eqptSlots)
+        {
+            if (slot.slotType == type && !slot.slotData.isEmpty)
+                return slot.slotData.itemInSlot;
+        }
+
+        Debug.Log("없어");
+        return defaultWeapon;
     }
 }
