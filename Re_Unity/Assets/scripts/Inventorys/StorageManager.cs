@@ -77,6 +77,14 @@ public class StorageManager : MonoBehaviour
     public void CloseStorage()
     {
         inventoryPanel.transform.SetParent(inventoryOriginalParent);
+
+        RectTransform invRect = inventoryPanel.GetComponent<RectTransform>();
+        invRect.anchorMin = new Vector2(0, 0);
+        invRect.anchorMax = new Vector2(1f, 1f);
+        invRect.offsetMin = Vector2.zero;
+        invRect.offsetMax = new Vector2(-380f, 0f);
+
+        
         inventoryGrid.cellSize = normalCellsize;
         storageMasterPanel.SetActive(false);
     }

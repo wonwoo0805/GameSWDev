@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1648060886249497373}
   - component: {fileID: 8250693752047705921}
   - component: {fileID: 1104191121570250757}
+  - component: {fileID: 2293730655034095669}
   m_Layer: 5
   m_Name: StorageExplainPanel
   m_TagString: Untagged
@@ -76,6 +77,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2293730655034095669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031235960237422303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f7543760d2c464180d93e153080edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemExplainPanel
+  descriptionText: {fileID: 7909067697008414803}
 --- !u!1 &6186558248028860014
 GameObject:
   m_ObjectHideFlags: 0
@@ -625,6 +639,7 @@ MonoBehaviour:
   storageMasterPanel: {fileID: 8437042820130932676}
   storagePanel: {fileID: 6467089443245919815}
   inventoryPanel: {fileID: 0}
+  storageExplainPanel: {fileID: 2293730655034095669}
   inventoryOriginalParent: {fileID: 0}
   inventoryGrid: {fileID: 0}
   openButton: {fileID: 0}

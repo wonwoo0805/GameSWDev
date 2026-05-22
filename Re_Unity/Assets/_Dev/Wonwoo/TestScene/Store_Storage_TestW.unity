@@ -1253,17 +1253,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415336856}
   m_CullTransparentMesh: 1
---- !u!114 &1681665956 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7909067697008414803, guid: 131ad6b50837a5a4d8bcdb6ebb3baabe, type: 3}
-  m_PrefabInstance: {fileID: 2821763648465947967}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1682561547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1508,24 +1497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
---- !u!1 &1999763469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2031235960237422303, guid: 131ad6b50837a5a4d8bcdb6ebb3baabe, type: 3}
-  m_PrefabInstance: {fileID: 2821763648465947967}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1999763473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999763469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3f7543760d2c464180d93e153080edd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemExplainPanel
-  descriptionText: {fileID: 1681665956}
 --- !u!1 &2029149664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,17 +1738,10 @@ PrefabInstance:
       propertyPath: inventoryPanel
       value: 
       objectReference: {fileID: 1907084216}
-    - target: {fileID: 7486295430815420594, guid: 131ad6b50837a5a4d8bcdb6ebb3baabe, type: 3}
-      propertyPath: storageExplainPanel
-      value: 
-      objectReference: {fileID: 1999763473}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2031235960237422303, guid: 131ad6b50837a5a4d8bcdb6ebb3baabe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1999763473}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 131ad6b50837a5a4d8bcdb6ebb3baabe, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
