@@ -19,7 +19,7 @@ MonoBehaviour:
   num: 1
   Code: 8
   inventoryImage: {fileID: 7482667652216324306, guid: b999d3e5f69d4e648b1198d32b5fb184, type: 3}
-  prefab: {fileID: 3779845787750491432, guid: 8a2ec681c0b14284c87f8f763971c030, type: 3}
+  prefab: {fileID: 8126806106451507091, guid: 92358b0852dd0c2488bc59e7e20131ce, type: 3}
   itemType: 0
   itemRarity: 2
   damage: 5
