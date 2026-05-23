@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8af9bd9504a4145bcfbede5f4fe124, type: 3}
+  m_Name: 15_Shotgun_Legendary
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons
+  itemName: "\uC704\uB300\uD55C \uC0F7\uAC74"
+  itemDescription: "\uD55C \uBC1C\uB85C \uB05D\uB0C8\uB2E4\uB294 \uC804\uC124\uC774
+    \uC788\uB2E4. \uC544\uB2D8\uB9D0\uACE0."
+  money: 1550
+  weight: 4
+  num: 1
+  Code: 15
+  inventoryImage: {fileID: 21300000, guid: d8e01b62897014240af705c39fd76d06, type: 3}
+  prefab: {fileID: 0}
+  itemType: 0
+  itemRarity: 4
+  damage: 220
+  maxAmmo: 6
+  fireRate: 1
+  reloadSpeed: 5

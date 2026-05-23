@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
+  m_Name: 167_Refund_Rare
+  m_EditorClassIdentifier: Assembly-CSharp::Refunds
+  itemName: 구형 기계식 저장 장치
+  itemDescription: 물리적으로 회전하는 방식의 저장 장치. 소리가 나면 살아있다는 신호다.
+  money: 120
+  weight: 1
+  num: 1
+  Code: 167
+  inventoryImage: {fileID: 0}
+  prefab: {fileID: 0}
+  itemType: 5
+  itemRarity: 1
