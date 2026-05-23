@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 155_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 군용 식량 팩
+  itemDescription: 유통기한은 10년. 아직 3년 남았다.
+  money: 120
+  weight: 2
   num: 1
   Code: 155
   inventoryImage: {fileID: 0}

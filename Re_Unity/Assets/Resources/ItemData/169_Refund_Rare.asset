@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 169_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 구형 디스플레이 패널
+  itemDescription: 15.6인치. 전원을 넣으면 아직 켜진다. 무엇을 보여줄지는 모르지만.
+  money: 170
+  weight: 1
   num: 1
   Code: 169
   inventoryImage: {fileID: 0}

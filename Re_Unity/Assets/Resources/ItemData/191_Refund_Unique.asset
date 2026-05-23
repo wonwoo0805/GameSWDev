@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 191_Refund_Unique
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: NSA 규격 데이터 스토리지
+  itemDescription: 물리 암호화 적용. 분해 시 자동 삭제. 누군가 찾고 있을 것이다.
+  money: 600
+  weight: 2
   num: 1
   Code: 191
   inventoryImage: {fileID: 0}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 193_Refund_Unique
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 위성 해킹 인터페이스
+  itemDescription: 특정 저궤도 위성에 접근 가능하다. 사용법은 알 수 없다.
+  money: 560
+  weight: 2
   num: 1
   Code: 193
   inventoryImage: {fileID: 0}

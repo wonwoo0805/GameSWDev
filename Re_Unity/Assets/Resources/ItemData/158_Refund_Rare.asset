@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 158_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 방호복 조각
+  itemDescription: 연구소 직원이 입던 방호복의 일부. 특수 소재다.
+  money: 170
+  weight: 2
   num: 1
   Code: 158
   inventoryImage: {fileID: 0}

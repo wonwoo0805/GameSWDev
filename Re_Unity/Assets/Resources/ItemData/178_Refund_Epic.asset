@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 178_Refund_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 군사 위성 통신 모듈
+  itemDescription: 아직 위성 신호를 잡을 수 있다. 누군가와 연결될지도.
+  money: 360
+  weight: 3
   num: 1
   Code: 178
   inventoryImage: {fileID: 0}

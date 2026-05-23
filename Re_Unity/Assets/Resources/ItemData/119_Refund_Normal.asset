@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 119_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 녹슨 철망 조각
+  itemDescription: 공장 창문을 막고 있던 철망의 일부.
+  money: 30
+  weight: 2
   num: 1
   Code: 119
   inventoryImage: {fileID: 0}

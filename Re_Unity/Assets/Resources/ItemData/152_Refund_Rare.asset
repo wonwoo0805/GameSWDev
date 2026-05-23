@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 152_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 방사능 측정기
+  itemDescription: 바늘이 가끔 튄다. 여기선 정상 수치가 뭔지 모르겠다.
+  money: 150
+  weight: 2
   num: 1
   Code: 152
   inventoryImage: {fileID: 0}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 136_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 빈 CD 케이스
+  itemDescription: 안에 뭐가 있었는지 알 수 없다. 케이스만 남아있다.
+  money: 15
+  weight: 1
   num: 1
   Code: 136
   inventoryImage: {fileID: 0}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 123_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 공장 로고 명판
+  itemDescription: 이름도 기억나지 않는 회사의 명판.
+  money: 60
+  weight: 2
   num: 1
   Code: 123
   inventoryImage: {fileID: 0}

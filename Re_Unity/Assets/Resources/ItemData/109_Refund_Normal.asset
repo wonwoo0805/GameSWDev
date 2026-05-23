@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 109_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 깨진 안전모
+  itemDescription: 공장 직원이 쓰던 것. 이미 제 역할은 못 한다.
+  money: 30
+  weight: 1
   num: 1
   Code: 109
   inventoryImage: {fileID: 0}

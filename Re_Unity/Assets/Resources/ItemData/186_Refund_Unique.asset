@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 186_Refund_Unique
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 최후의 백신 프로토타입
+  itemDescription: 연구소 수석 연구원의 마지막 작품. 완성됐는지는 아무도 모른다.
+  money: 560
+  weight: 3
   num: 1
   Code: 186
   inventoryImage: {fileID: 0}

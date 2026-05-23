@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 170_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 구형 통신 모뎀
+  itemDescription: 위성 신호를 잡던 장치. 위성이 아직 궤도에 있는지는 알 수 없다.
+  money: 185
+  weight: 2
   num: 1
   Code: 170
   inventoryImage: {fileID: 0}

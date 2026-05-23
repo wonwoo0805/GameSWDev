@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 138_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 낡은 전원 멀티탭
+  itemDescription: 6구. 누전 차단기가 올라오지 않는다. 조심해서 써야 한다.
+  money: 40
+  weight: 2
   num: 1
   Code: 138
   inventoryImage: {fileID: 0}

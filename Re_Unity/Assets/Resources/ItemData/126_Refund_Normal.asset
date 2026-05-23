@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 126_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: USB 허브
+  itemDescription: 포트 4개 중 2개는 인식이 안 된다. 나머지 2개는 살아있다.
+  money: 30
+  weight: 1
   num: 1
   Code: 126
   inventoryImage: {fileID: 0}

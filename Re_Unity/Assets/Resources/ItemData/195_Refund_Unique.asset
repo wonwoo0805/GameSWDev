@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 195_Refund_Unique
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 바이오스 레벨 루트킷 칩
+  itemDescription: 시스템에 물리적으로 삽입하는 방식. 탐지 불가. 제작자 불명.
+  money: 720
+  weight: 1
   num: 1
   Code: 195
   inventoryImage: {fileID: 0}

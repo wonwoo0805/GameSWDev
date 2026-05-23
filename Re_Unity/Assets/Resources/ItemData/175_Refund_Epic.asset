@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 175_Refund_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 생체 인식 잠금장치
+  itemDescription: 원래 주인의 손목이 없으면 열리지 않는다.
+  money: 265
+  weight: 2
   num: 1
   Code: 175
   inventoryImage: {fileID: 0}

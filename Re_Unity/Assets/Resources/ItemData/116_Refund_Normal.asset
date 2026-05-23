@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 116_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 공장 출입 카드
+  itemDescription: 이미 시스템이 꺼진 공장의 출입증. 기념품으로나 팔린다.
+  money: 45
+  weight: 1
   num: 1
   Code: 116
   inventoryImage: {fileID: 0}

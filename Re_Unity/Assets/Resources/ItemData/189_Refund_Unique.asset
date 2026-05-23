@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 189_Refund_Unique
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 연구소장의 개인 일지
+  itemDescription: 마지막 페이지는 찢겨있다. 누가, 왜 찢어갔을까.
+  money: 640
+  weight: 1
   num: 1
   Code: 189
   inventoryImage: {fileID: 0}

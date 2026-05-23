@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 154_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 고압 퓨즈 박스
+  itemDescription: 올바르게 연결하면 아직 사용 가능하다.
+  money: 130
+  weight: 3
   num: 1
   Code: 154
   inventoryImage: {fileID: 0}

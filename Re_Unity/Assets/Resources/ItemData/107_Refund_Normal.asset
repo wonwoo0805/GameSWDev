@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 107_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 낡은 공구 세트
+  itemDescription: 절반은 이미 부러져 있다. 그래도 공구는 공구다.
+  money: 55
+  weight: 2
   num: 1
   Code: 107
   inventoryImage: {fileID: 0}

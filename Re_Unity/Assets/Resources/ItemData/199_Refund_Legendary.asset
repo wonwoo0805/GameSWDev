@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 199_Refund_Legendary
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 제로데이 익스플로잇 드라이브
+  itemDescription: 패치되지 않은 취약점 코드가 담겨있다. 세상에 몇 개 없다.
+  money: 1005
+  weight: 1
   num: 1
   Code: 199
   inventoryImage: {fileID: 0}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 145_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 찌그러진 알루미늄 케이스
+  itemDescription: 미들타워. 나사 구멍이 맞지 않는다.
+  money: 50
+  weight: 3
   num: 1
   Code: 145
   inventoryImage: {fileID: 0}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 192_Refund_Unique
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 양자 암호화 통신 모듈
+  itemDescription: 아직 상용화되지 않은 기술. 어떻게 여기 있는지 모르겠다.
+  money: 640
+  weight: 2
   num: 1
   Code: 192
   inventoryImage: {fileID: 0}

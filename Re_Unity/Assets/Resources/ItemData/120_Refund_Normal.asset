@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 120_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 빈 기름통
+  itemDescription: 바닥까지 긁어도 한 방울 나오지 않는다.
+  money: 25
+  weight: 2
   num: 1
   Code: 120
   inventoryImage: {fileID: 0}

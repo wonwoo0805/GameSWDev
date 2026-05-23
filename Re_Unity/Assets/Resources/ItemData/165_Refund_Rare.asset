@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 165_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 구형 전원 공급 장치
+  itemDescription: 전기가 흐르던 시절의 물건이다. 아직 작동은 된다.
+  money: 135
+  weight: 2
   num: 1
   Code: 165
   inventoryImage: {fileID: 0}

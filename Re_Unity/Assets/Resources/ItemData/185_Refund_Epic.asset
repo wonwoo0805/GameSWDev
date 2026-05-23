@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 185_Refund_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 위성 신호 수신 안테나
+  itemDescription: 특정 주파수 대역 전용. 접이식. 아직 신호를 잡는다.
+  money: 290
+  weight: 2
   num: 1
   Code: 185
   inventoryImage: {fileID: 0}

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 159_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 
-  itemDescription: 
-  money: 0
-  weight: 0
+  itemName: 암호화 통신 장비
+  itemDescription: 주파수는 맞춰져 있지만 아무도 응답하지 않는다.
+  money: 190
+  weight: 3
   num: 1
   Code: 159
   inventoryImage: {fileID: 0}
