@@ -16,18 +16,23 @@ public class StoreManager : MonoBehaviour
     private InventoryManager inventoryManager;
     private ItemExplainPanel itemExplainPanel;
 
-    [Header("아이템 풀")]
+    [Header("Item Pool")]
     public List<ItemData> itemPool;
     public int totalItemCount;
 
+    [Header("Rarity Percentage")]
     private int normal = 50;
     private int rare = 30;
     private int epic = 15;
     private int unique = 4;
     private int legendary = 1;
 
+    [Header("Button")]
     public Button buyButton;
     public Button rerollButton;
+    public Button closeStoreButton;
+    public Button openStoreButton;
+
     private ItemData selectedItem;
     private int selectedSlotIndex;
 
@@ -52,11 +57,16 @@ public class StoreManager : MonoBehaviour
 
     private void Start()
     {
-        buyButton.gameObject.SetActive(false);
-        buyButton.onClick.AddListener(OnBuyButtonClick);
-        rerollButton.onClick.AddListener(OnRerollButtonClick);
         inventoryManager = FindAnyObjectByType<InventoryManager>();
         itemExplainPanel = FindAnyObjectByType<ItemExplainPanel>();
+
+        storePanel.gameObject.SetActive(false);
+
+        buyButton.onClick.AddListener(OnBuyButtonClick);
+        rerollButton.onClick.AddListener(OnRerollButtonClick);
+        closeStoreButton.onClick.AddListener(OnCloseButtonClick);
+        openStoreButton.onClick.AddListener(OnOpenButtonClick);
+        
         //storePanel.SetActive(false);
         for (int i = 0; i < storeData.inventory.Count; i++)
             RegisterItemToSlot(i);
@@ -194,5 +204,15 @@ public class StoreManager : MonoBehaviour
         // 다시 품목 채우기
         for (int i = 0; i < storeData.inventory.Count; i++)
             RegisterItemToSlot(i);
+    }
+
+    public void OnOpenButtonClick()
+    {
+        storePanel.SetActive(true);
+        buyButton.gameObject.SetActive(false);
+    }
+    public void OnCloseButtonClick()
+    {
+        storePanel.SetActive(false);
     }
 }

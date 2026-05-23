@@ -2,13 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems; 
 
-public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler
+public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerClickHandler
 {
     
     public ItemType slotType = ItemType.Any;
     public Image slotImage;    //slot background
     public Image itemImage;
     public ItemSlot slotData;
+
+    private StorageManager storageManager;
 
     private static GameObject dragIcon;
 
@@ -22,6 +24,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
             
         }
         inventory = FindAnyObjectByType<Inventory>();
+        storageManager = FindAnyObjectByType<StorageManager>();
     }
 
     public virtual void OnBeginDrag(PointerEventData eventData)
@@ -115,4 +118,10 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         }
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (storageManager == null) return;
+        if (slotData.isEmpty) return;
+        storageManager.SelectItem(slotData.itemInSlot, transform.GetSiblingIndex());
+    }
 }

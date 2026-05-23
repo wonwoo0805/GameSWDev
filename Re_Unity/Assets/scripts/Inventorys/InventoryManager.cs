@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class InventoryManager : MonoBehaviour
@@ -18,6 +19,10 @@ public class InventoryManager : MonoBehaviour
 
     [Header("defaultWeapon")]
     public ItemData defaultWeapon;
+
+    [Header("Button")]
+    public Button closeInventoryButton;
+    public Button openInventoryButton;
 
     private void Awake()
     {
@@ -41,6 +46,8 @@ public class InventoryManager : MonoBehaviour
         foreach (SlotUI slot in eqptSlots)
             invData.equipment.Add(slot.slotData);
         inventoryPanel.SetActive(false);
+        closeInventoryButton.onClick.AddListener(OnCloseButtonClick);
+        openInventoryButton.onClick.AddListener(OnOpenButtonClick);
     }
 
     private void Update()
@@ -74,6 +81,15 @@ public class InventoryManager : MonoBehaviour
         
         //Debug.Log("Check");
     }
+    public void OnCloseButtonClick()
+    {
+        inventoryPanel.SetActive(false);
+    }
+
+    public void OnOpenButtonClick()
+    {
+        inventoryPanel.SetActive(true);
+    }
 
     private void ToggleInventory()
     {
@@ -84,7 +100,7 @@ public class InventoryManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    private void CloseInventory()
+    public void CloseInventory()
     {
         inventoryPanel.SetActive(false);
         playerInput.SwitchCurrentActionMap("Player");
