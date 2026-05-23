@@ -14,7 +14,7 @@ public class Enemy_St1 : Box
     public float attackRange = 2f;//공격거리
     public float attackRadius = 1f;//공격범위
     public float attackDamage = 10f;//공격데미지
-    public float attackCooldown = 2f;//공속
+    public float attackCooldown = 5f;//공속
     public LayerMask playerLayer;
 
     [Header("Patrol Settings")]
@@ -147,6 +147,7 @@ public class Enemy_St1 : Box
             patrolTimer += Time.deltaTime;
             if(patrolTimer >= patrolWaitTime)
             {
+                
                 Vector3 newPos = GetRandomPatrolPos();
                 agent.SetDestination(newPos);
                 patrolTimer = 0f;
@@ -156,11 +157,16 @@ public class Enemy_St1 : Box
 
     void RunChase()
     {
-        isMoving = agent.velocity.magnitude > 0.1f;
-        enemyAnimator.SetBool("IsRunning",isMoving);
-        lastKnownPosition = playerTransform.position;
-        hasLastKnownPos = true;
-        agent.SetDestination(lastKnownPosition);
+
+        if(Time.time >= lastAttackTime + attackCooldown)
+        {
+            isMoving = agent.velocity.magnitude > 0.1f;
+            enemyAnimator.SetBool("IsRunning",isMoving);
+            lastKnownPosition = playerTransform.position;
+            hasLastKnownPos = true;
+            agent.SetDestination(lastKnownPosition);
+        }
+        
     }
 
     void RunSearch()
@@ -177,18 +183,21 @@ public class Enemy_St1 : Box
 
     void RunAttack()
     {
-        enemyAnimator.Play("Zombie Punching",0,0f);
+        
         agent.isStopped = true;
+        agent.velocity = Vector3.zero;
         transform.LookAt(playerTransform.position);
-
+        isMoving = false;
+        enemyAnimator.SetBool("IsRunning",isMoving);
         if(Time.time >= lastAttackTime + attackCooldown)
         {
             lastAttackTime = Time.time;
-            Attack();
+            enemyAnimator.Play("Zombie Punching",0,0f);
+            //Attack();
         }
     }
 
-    private void Attack()
+    public void Attack()
     {
         lastAttackTime = Time.time;
         Debug.Log($"{gameObject.name}의 공격");
@@ -207,6 +216,9 @@ public class Enemy_St1 : Box
             }
         }
     }
+
+
+    
     public void TakeDamage(float damageAmout)
     {
         currentHealth -= damageAmout;

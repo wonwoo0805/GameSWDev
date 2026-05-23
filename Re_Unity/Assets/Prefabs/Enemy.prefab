@@ -52,8 +52,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 2.3, z: 0.4}
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Size: {x: 0.8, y: 3, z: 0.5}
+  m_Center: {x: 0, y: 1.9, z: 0}
 --- !u!1 &3859142383976118786
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ Transform:
   m_GameObject: {fileID: 3859142383976118786}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.314, z: 0.0111}
+  m_LocalPosition: {x: 0, y: 2.142, z: 0.0111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105,7 +105,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.2
+  m_Radius: 0.24
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4257700919034631458
 GameObject:
@@ -202,18 +202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: normal_enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 4001820060977598429, guid: 1b1e8e8a07e54e747a1b7f6fd2d40144, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001820060977598429, guid: 1b1e8e8a07e54e747a1b7f6fd2d40144, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4001820060977598429, guid: 1b1e8e8a07e54e747a1b7f6fd2d40144, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
+    - target: {fileID: 1890771148660764488, guid: 1b1e8e8a07e54e747a1b7f6fd2d40144, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1821076418360858005}
     - target: {fileID: 4001820060977598429, guid: 1b1e8e8a07e54e747a1b7f6fd2d40144, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -252,10 +244,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4001820060977598429, guid: 1b1e8e8a07e54e747a1b7f6fd2d40144, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5822159920951644873, guid: 1b1e8e8a07e54e747a1b7f6fd2d40144, type: 3}
-      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
