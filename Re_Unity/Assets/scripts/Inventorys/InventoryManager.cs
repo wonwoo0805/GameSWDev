@@ -26,15 +26,12 @@ public class InventoryManager : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(transform.root.gameObject); // Canvas 최상위 오브젝트가 씬 전환 후에도 유지
+        //maintain InventoryInfo while changing scene
+        DontDestroyOnLoad(transform.root.gameObject);
 
-        // 1. UI ��ũ��Ʈ���� �������� ����� ����
+        //inisiate Inventory Slots(seperate UI and Data)
         invUI.InitSlots();
-        
-
-        // 2. ������ UI ������ŭ ������ ��ũ��Ʈ���� ĭ�� ������ ����
         invData.InitializeData(invUI.inventoryUI.Count);
-
         invData.inventory.Clear();
         foreach (SlotUI slot in invUI.inventoryUI)
             invData.inventory.Add(slot.slotData);
@@ -42,24 +39,21 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        //for itemExchange with equipSlots
         SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
         foreach (SlotUI slot in eqptSlots)
             invData.equipment.Add(slot.slotData);
+
         inventoryPanel.SetActive(false);
+
+        //occur events when click these buttons
         closeInventoryButton.onClick.AddListener(OnCloseButtonClick);
         openInventoryButton.onClick.AddListener(OnOpenButtonClick);
     }
 
     private void Update()
     {
-        // 2. Keyboard.current�� ����Ͽ� 'I' Ű �Է��� ����
-        // wasPressedThisFrame�� Ű�� '�� ������ �� �� ��'�� ����ǰ� �մϴ�.
-        /*
-        if (Keyboard.current != null && Keyboard.current.iKey.wasPressedThisFrame)
-        {
-            ToggleInventory();
-        }
-        */
+
     }
 
     public void OnToggleInventory(InputAction.CallbackContext context)
@@ -68,8 +62,7 @@ public class InventoryManager : MonoBehaviour
         {
             ToggleInventory();
         }
-        
-        //Debug.Log("Check");
+
     }
 
     public void OnCloseInventory(InputAction.CallbackContext context)
@@ -78,8 +71,7 @@ public class InventoryManager : MonoBehaviour
         {
             CloseInventory();
         }
-        
-        //Debug.Log("Check");
+
     }
     public void OnCloseButtonClick()
     {
@@ -94,6 +86,7 @@ public class InventoryManager : MonoBehaviour
     private void ToggleInventory()
     {
         if (inventoryPanel == null) return;
+
         inventoryPanel.SetActive(true); // ui active
         playerInput.SwitchCurrentActionMap("UI"); // change action map to ui
         Cursor.lockState = CursorLockMode.None; // change cursor state
@@ -108,46 +101,37 @@ public class InventoryManager : MonoBehaviour
         Cursor.visible = false;
     }
 
-    // ���� �Լ��� ���� (��ư �̺�Ʈ �����)
     public int addItem_Button(ItemData newData)
     {
-        //Debug.Log($"inventoryPanel: {inventoryPanel}");
-        //Debug.Log($"activeSelf: {inventoryPanel?.activeSelf}");
-        /*
-        if (inventoryPanel == null || !inventoryPanel.activeSelf)
-        {
-            Debug.Log("�κ��丮 â�� ���� �־� �������� �߰��� �� �����ϴ�.");
-            return -1;
-        }
-        */
-
         if (newData == null) return -1;
         
         int index = invData.addItem(newData);
 
+        //judge addItem was successful
         if (index != -1)
         {
             invUI.UpdateSlotUI(index, invData.inventory[index]);
-            Debug.Log("�߰� ����!");
             return 1;
         }
         else
         {
-            Debug.Log("�κ��丮�� ���� á���ϴ�.");
             return -1;
         }
     }
 
+    //to give itemData to weaponPreviewManager
     public ItemData GetEquippedItem(ItemType type)
     {
+        //make temporary slots to check equipSlots
         SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
+        //circuit every equipSlots
         foreach (SlotUI slot in eqptSlots)
         {
             if (slot.slotType == type && !slot.slotData.isEmpty)
                 return slot.slotData.itemInSlot;
         }
 
-        Debug.Log("없어");
+        Debug.Log("have no weapon in weaponSlot");
         return defaultWeapon;
     }
 }

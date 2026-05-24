@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -480, y: -378}
-  m_SizeDelta: {x: -960, y: -756}
+  m_AnchoredPosition: {x: -480, y: -315}
+  m_SizeDelta: {x: -960, y: -630}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8250693752047705921
 CanvasRenderer:
@@ -284,10 +284,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
   m_Padding:
-    m_Left: 35
-    m_Right: 10
-    m_Top: 35
-    m_Bottom: 10
+    m_Left: 45
+    m_Right: 45
+    m_Top: 30
+    m_Bottom: 30
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
@@ -362,10 +362,10 @@ RectTransform:
   - {fileID: 4329347953469571523}
   m_Father: {fileID: 923643120406558927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 673, y: 497}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 940, y: 520}
+  m_SizeDelta: {x: -1890, y: -1050}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5294980766289394939
 CanvasRenderer:
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close
+  m_text: X
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -645,7 +645,7 @@ MonoBehaviour:
   openButton: {fileID: 0}
   closeButton: {fileID: 3119023074398936259}
   normalCellsize: {x: 70, y: 70}
-  storageCellSize: {x: 96, y: 96}
+  storageCellSize: {x: 120, y: 120}
 --- !u!1 &8437042820130932676
 GameObject:
   m_ObjectHideFlags: 0

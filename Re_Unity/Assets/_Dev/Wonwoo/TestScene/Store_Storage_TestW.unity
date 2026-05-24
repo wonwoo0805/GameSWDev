@@ -1330,26 +1330,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 396814966425383723, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -81.80005
-      objectReference: {fileID: 0}
-    - target: {fileID: 396814966425383723, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -31.400024
-      objectReference: {fileID: 0}
-    - target: {fileID: 858905030774121886, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 858905030774121886, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 858905030774121886, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
     - target: {fileID: 2811867356610686335, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
       propertyPath: m_Name
       value: InventoryCanvas
@@ -1435,17 +1415,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5956448026988891260, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
-      propertyPath: playerInput
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5956448026988891260, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
       propertyPath: openInventoryButton
       value: 
       objectReference: {fileID: 1318179848}
-    - target: {fileID: 8172125650641567815, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1674,10 +1646,6 @@ PrefabInstance:
       propertyPath: openStoreButton
       value: 
       objectReference: {fileID: 13417983}
-    - target: {fileID: 6584978694342197526, guid: 8ccbd3b9c6ae27144b0d9b325c2d0d1d, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

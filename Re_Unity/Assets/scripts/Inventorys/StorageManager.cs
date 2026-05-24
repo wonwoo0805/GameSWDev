@@ -30,6 +30,7 @@ public class StorageManager : MonoBehaviour
     private ItemData selectedItem;
     private int selectedSlotIndex;
 
+    //Inisiate slots in Store
     private void Awake()
     {
         storageUI.InitSlots();
@@ -56,41 +57,53 @@ public class StorageManager : MonoBehaviour
         
     }
 
+    //Open storageUI
     public void OpenStorage()
     {
+        //Need fix not to able other UI button while UI is able
         if (inventoryManager.inventoryPanel.activeSelf)
             inventoryManager.CloseInventory();
 
+        //Give inventorypanel to storage
         inventoryOriginalParent = inventoryPanel.transform.parent;
         inventoryPanel.transform.SetParent(storageMasterPanel.transform, false);
 
+        //Set inventorysize to storage
         RectTransform invRect = inventoryPanel.GetComponent<RectTransform>();
-        invRect.anchorMin = new Vector2(0, 0.3f);
+        invRect.anchorMin = new Vector2(0, 0.416f);
         invRect.anchorMax = new Vector2(0.5f, 1f);
         invRect.offsetMin = Vector2.zero;
         invRect.offsetMax = Vector2.zero;
 
+        //set inventorycellsize to storage
         inventoryGrid.cellSize = storageCellSize;
+
         storageMasterPanel.SetActive(true);
     }
 
+    //Close storageUI
     public void CloseStorage()
     {
-        inventoryPanel.transform.SetParent(inventoryOriginalParent);
+        //give inventoryPanel to inventoryUI
+        inventoryPanel.transform.SetParent(inventoryOriginalParent, false);
 
+        //set inventoryPanelSize to inventoryUI;
         RectTransform invRect = inventoryPanel.GetComponent<RectTransform>();
         invRect.anchorMin = new Vector2(0, 0);
-        invRect.anchorMax = new Vector2(1f, 1f);
+        invRect.anchorMax = new Vector2(0.6111f, 1f);
         invRect.offsetMin = Vector2.zero;
-        invRect.offsetMax = new Vector2(-380f, 0f);
+        invRect.offsetMax = Vector2.zero;
 
-        
+        //set inventorycellsize to inventoryUI
         inventoryGrid.cellSize = normalCellsize;
+
         storageMasterPanel.SetActive(false);
     }
 
+    //When Click storeItem
     public void SelectItem(ItemData item, int slotIndex)
     {
+        //set for buying item and show discription
         selectedItem = item;
         selectedSlotIndex = slotIndex;
         storageExplainPanel.ShowDescription(item);

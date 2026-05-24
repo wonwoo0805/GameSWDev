@@ -1,23 +1,25 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems; 
+using UnityEngine.UI;
 
 public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerClickHandler
 {
-    
+    [Header("How this slot can accomodate ItemType")]
     public ItemType slotType = ItemType.Any;
-    public Image slotImage;    //slot background
-    public Image itemImage;
-    public ItemSlot slotData;
 
+    [Header("UI Images")]
+    public Image slotImage;    //slot backgroundImage
+    public Image itemImage;    //itemImage in this slot
+
+    [Header("etc")]
+    public ItemSlot slotData;  //to get itemData which slot need
     private StorageManager storageManager;
 
     private static GameObject dragIcon;
-
     private Inventory inventory;
+
     protected void Awake()
     {
-        // ����Ƽ �ý����� ������ �غ�� Awake ������ �����ڸ� ȣ���մϴ�.
         if (slotData == null)
         {
             slotData = new ItemSlot();
@@ -31,66 +33,55 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     {
         if (slotData.itemInSlot == null || slotData.itemInSlot == null) return;
 
-        // �巡�׿� ��¥ ������ ����
+        //make DragIcon
         dragIcon = new GameObject("DragIcon");
         dragIcon.transform.SetParent(GetComponentInParent<Canvas>().transform);
+        //DragIcon = itemImage
         var img = dragIcon.AddComponent<Image>();
         img.sprite = itemImage.sprite;
-        img.raycastTarget = false; // ���߿�: ���콺 Ŭ���� �̰� ����ؼ� �Ʒ� ���Կ� ��ƾ� ��
+        img.raycastTarget = false;
     }
 
-    // 2. �巡�� ��
     public virtual void OnDrag(PointerEventData eventData)
     {
+        //move dargIcon when move mouse
         if (dragIcon != null) dragIcon.transform.position = eventData.position;
     }
 
-    // 3. �巡�� ��
     public virtual void OnEndDrag(PointerEventData eventData)
     {
         Destroy(dragIcon);
     }
 
-    // 4. �������� �� ���Կ� ������ �� (�ٽ� ����)
     public virtual void OnDrop(PointerEventData eventData)
     {
-        // �巡���ؿ� ������ ������ ������
         SlotUI startSlot = eventData.pointerDrag.GetComponent<SlotUI>();
-
+        //check this drag is formed at slot
         if (startSlot != null)
-        {
-            // [���� üũ] �� ������ �䱸�ϴ� Ÿ�԰� ������ Ÿ���� �´��� Ȯ��
+        {  
+            //check there is slot at first && (slot can accomodate any item || start slot and end slot's type is equal) && (end slot have no item || startslot can accmomodate any item || startslot can accmomodate endSlot's data)
             if ((startSlot.slotData.itemInSlot != null) &&
                 (this.slotType == ItemType.Any || startSlot.slotData.itemInSlot.itemDataType == this.slotType) &&
                 (this.slotData.itemInSlot == null || startSlot.slotType == ItemType.Any || this.slotData.itemInSlot.itemDataType == startSlot.slotType))
             {
-                // ������ ��ȯ(Swap) ���� ����
                 SwapItems(startSlot);
             }
         }
     }
-
+    //swap slot at the aspect of UI(swap Image)
     public void SwapItems(SlotUI other)
     {
-        
-
-        // 1. ������ ��ȯ (�� ���� �Ǵ� ���� ��ȯ)
         ItemSlot temp = new ItemSlot(this.slotData.itemInSlot, this.slotData.quantity);
 
-        // �� ������ ���� �����ͷ� ������Ʈ
         this.UpdateSlot(new ItemSlot(other.slotData.itemInSlot, other.slotData.quantity));
+        //swap substantial itemData)
         inventory.exchangeItemData(this, other);
-        // ���� ������ �� ������(temp)�� ������Ʈ
+        //update SlotImage
         other.UpdateSlot(temp);
-
-        
-        
     }
 
     public void UpdateSlot(ItemSlot newItem)
     {
-        // 1. ���޹��� ���ο� �����ͷ� �� �ָӴ�(slotData)�� ��ü�մϴ�.
-        // newItem ��ü�� null�� ��츦 ����� ������ġ�� �Ӵϴ�.
         if (newItem == null)
         {
             slotData.itemInSlot = null;
@@ -102,23 +93,19 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
             slotData.quantity = newItem.quantity;
         }
 
-        // 2. ���� ������ ���� ���� '�� ������'�� ���� UI�� �����մϴ�.
-        // ���Կ� ������ �����Ͱ� ����ִٸ�?
         if (slotData.itemInSlot != null)
         {
-            // �� �����Ϳ� ����� �̹����� �� �̹��� ������Ʈ�� �ٷ� �ֽ��ϴ�.
             itemImage.sprite = slotData.itemInSlot.itemDataImage;
-            itemImage.enabled = true; // ������ ���̱�
+            itemImage.enabled = true;
         }
-        // ������ ����ִٸ�?
         else
         {
             itemImage.sprite = null;
-            itemImage.enabled = false; // ������ ����� (�̰� ��� �ܻ��� ���Ҵ� ��!)
+            itemImage.enabled = false; 
         }
     }
 
-    public void OnPointerClick(PointerEventData eventData)
+    public virtual void OnPointerClick(PointerEventData eventData)
     {
         if (storageManager == null) return;
         if (slotData.isEmpty) return;
