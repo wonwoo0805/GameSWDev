@@ -38,6 +38,9 @@ public class StoreManager : MonoBehaviour
 
     private void Awake()
     {
+        //maintain StoreInfo while changing scene
+        DontDestroyOnLoad(transform.root.gameObject);
+
         //get itemPool for storeItemList
         ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData");
         itemPool.AddRange(loadedItems);

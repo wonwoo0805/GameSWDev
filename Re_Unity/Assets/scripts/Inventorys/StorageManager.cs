@@ -33,6 +33,9 @@ public class StorageManager : MonoBehaviour
     //Inisiate slots in Store
     private void Awake()
     {
+        //maintain StorageInfo while changing scene
+        DontDestroyOnLoad(transform.root.gameObject);
+
         storageUI.InitSlots();
 
         storageData.InitializeData(storageUI.inventoryUI.Count);

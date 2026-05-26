@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -37,8 +38,8 @@ public class Inventory : MonoBehaviour
 
     public int addItem(ItemData newItem)
     {
-        //check player character exist(can proceed without player character)
-        if(player)
+        //if player is in mainLobby, ignore weight
+        if(SceneManager.GetActiveScene().buildIndex == 2)
         {
             Debug.Log("아이템 추가 함수 호출됨");
             if (totalWeight >= player.limitWeight)
