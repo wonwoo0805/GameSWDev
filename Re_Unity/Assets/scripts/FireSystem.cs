@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FireSystem : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class FireSystem : MonoBehaviour
 
     public WeaponPreviewManager wpm;
 
-    public ItemData testWeapon;
+    public ItemData currentWeapon;
     
 
     public void TryShoot()
@@ -95,7 +96,24 @@ public class FireSystem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        wpm.ChangeWeaponPreview(inventoryManager.GetEquippedItem(ItemType.Weapon));
+        
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        Debug.Log("OnSceneLoaded 등록됨");
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        currentWeapon = inventoryManager.GetEquippedItem(ItemType.Weapon);
+        wpm.ChangeWeaponPreview(currentWeapon);
     }
 
     // Update is called once per frame

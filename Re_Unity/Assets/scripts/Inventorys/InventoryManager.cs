@@ -122,16 +122,30 @@ public class InventoryManager : MonoBehaviour
     //to give itemData to weaponPreviewManager
     public ItemData GetEquippedItem(ItemType type)
     {
+        SlotUI targetSlot = null;
         //make temporary slots to check equipSlots
         SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
         //circuit every equipSlots
         foreach (SlotUI slot in eqptSlots)
         {
-            if (slot.slotType == type && !slot.slotData.isEmpty)
-                return slot.slotData.itemInSlot;
+            if (slot.slotType == type)
+            {
+                targetSlot = slot;
+                if(!slot.slotData.isEmpty)
+                {
+                    return slot.slotData.itemInSlot;
+                }
+            }
         }
 
-        Debug.Log("have no weapon in weaponSlot");
-        return defaultWeapon;
+        if(type == ItemType.Weapon)
+        {
+            Debug.Log("have no weapon in weaponSlot");
+            targetSlot.slotData.itemInSlot = defaultWeapon;
+            targetSlot.UpdateSlot(targetSlot.slotData);
+            return defaultWeapon;
+        }
+
+        return null;
     }
 }

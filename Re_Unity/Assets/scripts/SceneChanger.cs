@@ -1,13 +1,15 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class SceneChanger : MonoBehaviour
 {
     public static SceneChanger Instance;
+    private Player_St1 player;
 
     [Header("Settings")]
-    public string sceneToLoad;
+    //public string sceneToLoad;
     public Vector3 nextSpawnPosition; // 다음 씬에서 플레이어가 위치할 좌표
 
     private void Awake()
@@ -17,54 +19,122 @@ public class SceneChanger : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log("SceneChanger 생성됨");
         }
         else
         {
+            Debug.Log("SceneChanger 중복 생성 - 파괴됨");
             Destroy(gameObject);
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        Debug.Log("OnSceneLoaded 등록됨");
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        HandleAudioListeners();
+
+        Player_St1 player = FindAnyObjectByType<Player_St1>();
+        if (player == null) return;
+
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+
+        }
+        else
+        {
+            StartCoroutine(MovePlayerToSpawnPoint());
+        }
+    }
+
+
+    private void HandleAudioListeners()
+    {
+        AudioListener[] listeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+
+        if (listeners.Length <= 1) return;
+
+        // 메인 카메라의 AudioListener 하나만 남기고 나머지 비활성화
+        bool kept = false;
+        foreach (AudioListener listener in listeners)
+        {
+            if (!kept && listener.gameObject.CompareTag("MainCamera"))
+            {
+                kept = true; // 메인 카메라 것은 유지
+            }
+            else
+            {
+                listener.enabled = false; // 나머지는 비활성화
+                Debug.Log($"AudioListener 비활성화: {listener.gameObject.name}");
+            }
         }
     }
 
     // 버튼에서 호출할 함수
     public void ChangeScene(string targetScene)
     {
-        sceneToLoad = targetScene;
+        //sceneToLoad = targetScene;
         // 예: 특정 좌표를 미리 지정하거나 함수 인자로 받을 수 있습니다.
-        StartCoroutine(LoadSceneAsync());
+        StartCoroutine(LoadSceneAsync(targetScene));
     }
 
-    // 특정 위치 정보를 함께 전달하며 이동할 때 사용하는 오버로딩
-    public void ChangeSceneWithSpawn(string targetScene, Vector3 spawnPos)
-    {
-        sceneToLoad = targetScene;
-        nextSpawnPosition = spawnPos;
-        StartCoroutine(LoadSceneAsync());
-    }
-
-    private IEnumerator LoadSceneAsync()
+    private IEnumerator LoadSceneAsync(string targetScene)
     {
         // 비동기 로딩 시작 (전환 속도 최적화)
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneToLoad);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(targetScene);
 
         // 로딩이 완료될 때까지 대기
         while (!operation.isDone)
         {
             yield return null;
         }
-
+        Debug.Log("ewqrwdfweqfdasvfd");
         // 씬 로딩이 완료된 직후 플레이어 위치 설정
-        MovePlayerToSpawnPoint();
+        
     }
 
-    private void MovePlayerToSpawnPoint()
+    private IEnumerator MovePlayerToSpawnPoint()
     {
-        // "Player" 태그를 가진 객체를 찾습니다.
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log($"현재 씬: {SceneManager.GetActiveScene().name}");
+        // find player, spawnpoint and set spawnPosition
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
+        GameObject spawnPoint = GameObject.Find("SpawnPoint");
+
+        if (spawnPoint)
+        {
+            nextSpawnPosition = spawnPoint.transform.position;
+            Debug.Log("success");
+        }
+        else
+        {
+            Debug.Log("asdfasdfasdsf");
+        }
 
         if (player != null)
         {
             // 캐릭터 컨트롤러가 있다면 잠시 끄고 이동시켜야 에러가 나지 않습니다.
+            var controller = player.GetComponent<CharacterController>();
+            if (controller != null)
+                controller.enabled = false;
+
             player.transform.position = nextSpawnPosition;
-            Debug.Log($"{sceneToLoad}로 이동 완료. 스폰 위치: {nextSpawnPosition}");
+            Debug.Log(nextSpawnPosition);
+
+            if (controller != null)
+                controller.enabled = true;
         }
+        //Debug.Log($"{sceneToLoad}로 이동 완료. 스폰 위치: {nextSpawnPosition}");
     }
+    
 }

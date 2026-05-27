@@ -3,15 +3,35 @@ using System.Collections.Generic;
 
 public class WeaponPreviewManager : MonoBehaviour
 {
+    public static WeaponPreviewManager Instance;
     public Transform spawnPoint;
     public Camera previewCamera;
 
     private GameObject currentPreview;
     private Animator currentAnimator;
 
+    private void Awake()
+    {
+        // ½Ì±ÛÅæ ÆÐÅÏ: ¾ÀÀÌ ³Ñ¾î°¡µµ ÀÌ °´Ã¼°¡ À¯ÁöµÇµµ·Ï ÇÕ´Ï´Ù.
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            Debug.Log("SceneChanger »ý¼ºµÊ");
+        }
+        else
+        {
+            Debug.Log("SceneChanger Áßº¹ »ý¼º - ÆÄ±«µÊ");
+            Destroy(gameObject);
+        }
+    }
     public void ChangeWeaponPreview(ItemData data)
     {
-        if(data == null || data.itemPrefab == null) return;
+        if (data == null || data.itemPrefab == null)
+        {
+            Debug.Log("cancel");
+            return;
+        }
 
         if(currentPreview != null) Destroy(currentPreview);
         

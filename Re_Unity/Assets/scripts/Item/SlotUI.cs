@@ -58,11 +58,12 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         SlotUI startSlot = eventData.pointerDrag.GetComponent<SlotUI>();
         //check this drag is formed at slot
         if (startSlot != null)
-        {  
+        {
             //check there is slot at first && (slot can accomodate any item || start slot and end slot's type is equal) && (end slot have no item || startslot can accmomodate any item || startslot can accmomodate endSlot's data)
-            if ((startSlot.slotData.itemInSlot != null) &&
-                (this.slotType == ItemType.Any || startSlot.slotData.itemInSlot.itemDataType == this.slotType) &&
-                (this.slotData.itemInSlot == null || startSlot.slotType == ItemType.Any || this.slotData.itemInSlot.itemDataType == startSlot.slotType))
+            if (startSlot.slotData.itemInSlot != null &&
+                (slotType == ItemType.Any || startSlot.slotData.itemInSlot.itemDataType == slotType) &&
+                (slotData.isEmpty || startSlot.slotType == ItemType.Any || slotData.itemInSlot.itemDataType == startSlot.slotType) &&
+                !((startSlot.slotType == ItemType.Weapon && slotData.isEmpty) || (slotType == ItemType.Weapon && startSlot.slotData.isEmpty)))
             {
                 SwapItems(startSlot);
             }

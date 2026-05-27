@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UMAKeepChain
   - UMAIgnore
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
