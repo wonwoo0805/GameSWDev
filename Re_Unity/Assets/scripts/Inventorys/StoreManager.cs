@@ -1,9 +1,11 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class StoreManager : MonoBehaviour
 {
@@ -42,7 +44,7 @@ public class StoreManager : MonoBehaviour
         DontDestroyOnLoad(transform.root.gameObject);
 
         //get itemPool for storeItemList
-        ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData");
+        ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData").Where(item => item.itemDataType != ItemType.Refund).ToArray();
         itemPool.AddRange(loadedItems);
         totalItemCount = loadedItems.Length;
 

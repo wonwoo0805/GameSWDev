@@ -48,11 +48,14 @@ public class SceneChanger : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-
+            UnityEngine.Cursor.lockState = CursorLockMode.None; // 고정해제
+            UnityEngine.Cursor.visible = true; // 다시 보이게
         }
         else
         {
             StartCoroutine(MovePlayerToSpawnPoint());
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked; // 커서 중앙 고정
+            UnityEngine.Cursor.visible = false; // 커서 안보이게함
         }
     }
 
