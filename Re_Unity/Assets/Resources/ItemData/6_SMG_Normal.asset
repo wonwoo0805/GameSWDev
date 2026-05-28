@@ -27,3 +27,4 @@ MonoBehaviour:
   maxAmmo: 30
   fireRate: 4
   reloadSpeed: 3
+  WeaponPrefab: {fileID: 8126806106451507091, guid: 92358b0852dd0c2488bc59e7e20131ce, type: 3}

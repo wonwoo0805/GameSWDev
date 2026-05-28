@@ -1379,6 +1379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3587300686265208910, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5004268756368909492, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1471,6 +1475,10 @@ PrefabInstance:
       propertyPath: openInventoryButton
       value: 
       objectReference: {fileID: 1129593162}
+    - target: {fileID: 7025290252681020068, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6.6816406
+      objectReference: {fileID: 0}
     - target: {fileID: 8172125650641567815, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
       propertyPath: player
       value: 
@@ -1576,6 +1584,14 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1063957396}
+    - target: {fileID: 3082692560467235265, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3082692560467235265, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3082692560467235265, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnToggleInventory

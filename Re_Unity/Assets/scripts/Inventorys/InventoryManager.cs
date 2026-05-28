@@ -1,6 +1,9 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -47,8 +50,8 @@ public class InventoryManager : MonoBehaviour
         inventoryPanel.SetActive(false);
 
         //occur events when click these buttons
-        closeInventoryButton.onClick.AddListener(OnCloseButtonClick);
-        openInventoryButton.onClick.AddListener(OnOpenButtonClick);
+        closeInventoryButton.onClick.AddListener(CloseInventory);
+        openInventoryButton.onClick.AddListener(ToggleInventory);
     }
 
     private void Update()
@@ -62,7 +65,6 @@ public class InventoryManager : MonoBehaviour
         {
             ToggleInventory();
         }
-
     }
 
     public void OnCloseInventory(InputAction.CallbackContext context)
@@ -86,19 +88,32 @@ public class InventoryManager : MonoBehaviour
     private void ToggleInventory()
     {
         if (inventoryPanel == null) return;
-
         inventoryPanel.SetActive(true); // ui active
-        playerInput.SwitchCurrentActionMap("UI"); // change action map to ui
+        
         Cursor.lockState = CursorLockMode.None; // change cursor state
         Cursor.visible = true;
+
+        playerInput.SwitchCurrentActionMap("UI");
+        //StartCoroutine(SafeSwitchActionMap("UI"));
     }
 
     public void CloseInventory()
     {
+        if (inventoryPanel == null) return;
+
+        Debug.Log("asdfahsdfjkh");
         inventoryPanel.SetActive(false);
-        playerInput.SwitchCurrentActionMap("Player");
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
+        
+
+        if (SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            playerInput.SwitchCurrentActionMap("Player");
+            //StartCoroutine(SafeSwitchActionMap("Player"));
+        }
+            
     }
 
     public int addItem_Button(ItemData newData)

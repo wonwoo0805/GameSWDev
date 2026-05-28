@@ -113,7 +113,7 @@ public class FireSystem : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         currentWeapon = inventoryManager.GetEquippedItem(ItemType.Weapon);
-        wpm.ChangeWeaponPreview(currentWeapon);
+        wpm.ChangeItemPreview(currentWeapon);
     }
 
     // Update is called once per frame

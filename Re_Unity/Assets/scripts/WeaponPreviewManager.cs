@@ -25,17 +25,41 @@ public class WeaponPreviewManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void ChangeWeaponPreview(ItemData data)
+
+    public void ChangeItemPreview(ItemData data)
     {
         if (data == null || data.itemPrefab == null)
         {
             Debug.Log("cancel");
             return;
         }
+        if (currentPreview != null) Destroy(currentPreview);
 
+        if(data is Weapons currentWeapon)
+        {
+            ChangeWeaponPreview(currentWeapon);
+        }
+        else if (data is Uses currentUse)
+        {
+            ChangeUsePreview(currentUse);
+        }
+
+    }
+    public void ChangeUsePreview(Uses currentUse)
+    {
+        currentPreview = Instantiate(currentUse.itemPrefab, spawnPoint.position, spawnPoint.rotation);
+        currentAnimator = currentPreview.GetComponent<Animator>();
+
+        PrefareForUI(currentPreview);
+
+        SetLayerRecursively(currentPreview, LayerMask.NameToLayer("UI_3D"));
+
+    }
+    public void ChangeWeaponPreview(Weapons currentWeapon)
+    {
         if(currentPreview != null) Destroy(currentPreview);
         
-        currentPreview = Instantiate(data.itemPrefab, spawnPoint.position,spawnPoint.rotation);
+        currentPreview = Instantiate(currentWeapon.itemPrefab, spawnPoint.position,spawnPoint.rotation);
         currentAnimator = currentPreview.GetComponent<Animator>();
 
         PrefareForUI(currentPreview);

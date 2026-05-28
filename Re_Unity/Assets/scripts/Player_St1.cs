@@ -60,8 +60,8 @@ public class Player_St1 : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
 
-        Cursor.lockState = CursorLockMode.Locked; // 커서 중앙 고정
-        Cursor.visible = false; // 커서 안보이게함
+        //Cursor.lockState = CursorLockMode.Locked; // 커서 중앙 고정
+        //Cursor.visible = false; // 커서 안보이게함
     }
 
     // Update is called once per frame
