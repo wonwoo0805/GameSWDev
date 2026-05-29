@@ -7,6 +7,7 @@ public class SceneChanger : MonoBehaviour
 {
     public static SceneChanger Instance;
     private Player_St1 player;
+    private InventoryManager inventoryManager;
 
     [Header("Settings")]
     //public string sceneToLoad;
@@ -26,6 +27,8 @@ public class SceneChanger : MonoBehaviour
             Debug.Log("SceneChanger 중복 생성 - 파괴됨");
             Destroy(gameObject);
         }
+        player = FindAnyObjectByType<Player_St1>();
+        inventoryManager = FindAnyObjectByType<InventoryManager>();
     }
 
     private void OnEnable()
@@ -37,19 +40,20 @@ public class SceneChanger : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        inventoryManager.sellRefunds();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         HandleAudioListeners();
 
-        Player_St1 player = FindAnyObjectByType<Player_St1>();
         if (player == null) return;
 
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             UnityEngine.Cursor.lockState = CursorLockMode.None; // 고정해제
             UnityEngine.Cursor.visible = true; // 다시 보이게
+            
         }
         else
         {
@@ -112,7 +116,7 @@ public class SceneChanger : MonoBehaviour
         // find player, spawnpoint and set spawnPosition
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         //GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
-        GameObject spawnPoint = GameObject.Find("SpawnPoint");
+        GameObject spawnPoint = GameObject.Find("PlayerSpawnPoint");
 
         if (spawnPoint)
         {

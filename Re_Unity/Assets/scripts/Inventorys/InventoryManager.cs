@@ -163,4 +163,18 @@ public class InventoryManager : MonoBehaviour
 
         return null;
     }
+    public void sellRefunds()
+    {
+        foreach (SlotUI slot in invUI.inventoryUI)
+        {
+            if (slot.slotData.isEmpty) continue;
+            ItemData item = slot.slotData.itemInSlot;
+
+            if (item.itemDataType == ItemType.Refund)
+            {
+                invData.totalMoney += item.ItemDataMoney;
+                slot.UpdateSlot(null);
+            }
+        }
+    }
 }

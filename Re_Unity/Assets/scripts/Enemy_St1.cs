@@ -240,10 +240,16 @@ public class Enemy_St1 : Box
         SetState(EnemyState.Patrol);
     }
      public override void Drop()
-    {
+     {
         if(itemTable != null)
         {
             ItemData droppedItem = itemTable.GetRandomItem();
+            if(droppedItem == null)
+            {
+                Debug.Log("drop cancel");
+                return;
+            }
+
             if(droppedItem.itemPrefab != null)
             {
                 Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
@@ -252,7 +258,7 @@ public class Enemy_St1 : Box
             }
             Debug.Log($"{droppedItem.name} 드랍");
         }
-    }
+     }
 
     private void OnDrawGizmosSelected()
     {

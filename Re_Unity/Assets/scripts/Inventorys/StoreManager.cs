@@ -21,6 +21,7 @@ public class StoreManager : MonoBehaviour
     [Header("Item Pool")]
     public List<ItemData> itemPool;
     public int totalItemCount;
+    public ItemTable storeItemTable;
 
     [Header("Rarity Percentage")]
     private int normal = 50;
@@ -44,9 +45,10 @@ public class StoreManager : MonoBehaviour
         DontDestroyOnLoad(transform.root.gameObject);
 
         //get itemPool for storeItemList
-        ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData").Where(item => item.itemDataType != ItemType.Refund).ToArray();
-        itemPool.AddRange(loadedItems);
-        totalItemCount = loadedItems.Length;
+        //ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData").Where(item => item.itemDataType != ItemType.Refund).ToArray();
+        //itemPool.AddRange(loadedItems);
+        //totalItemCount = loadedItems.Length;
+        storeItemTable.Initialize(ItemType.Refund);
 
         storeUI.InitSlots();
         storeData.InitializeData(storeUI.inventoryUI.Count);
@@ -103,13 +105,12 @@ public class StoreManager : MonoBehaviour
         
         for (int attempt = 0; attempt < maxAttempts; attempt++)
         {
-            var (rarity, code) = DrawRarityAndCode();
+            ItemData foundItem = storeItemTable.GetRandomItem();
 
             //check this item is exist in any storeSlots
             bool isDuplicate = storeData.inventory.Exists(
                 slot => slot.itemInSlot != null &&
-                        slot.itemInSlot.itemDataRarity == rarity &&
-                        slot.itemInSlot.itemDataCode == code
+                        slot.itemInSlot.itemDataCode == foundItem.itemDataCode
             );
             if (isDuplicate)
             {
@@ -117,10 +118,12 @@ public class StoreManager : MonoBehaviour
             }
 
             //find item with code and rarity
+            /*
             ItemData foundItem = itemPool.Find(
                 item => item.itemDataRarity == rarity &&
                         item.itemDataCode == code
             );
+            */
 
             //if can't find item , 
             if (foundItem == null) continue;

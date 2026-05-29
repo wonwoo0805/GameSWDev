@@ -16,7 +16,9 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public float spawnInterval = 2f;
 
-    private Dictionary<string,Queue<GameObject>> poolDictionary;
+    private Dictionary<string, Queue<GameObject>> poolDictionary;
+
+    public ItemTable itemTable;
 
 
     void Awake()
@@ -36,6 +38,8 @@ public class EnemySpawner : MonoBehaviour
 
             poolDictionary.Add(pool.enemyName,objectPool);
         }
+
+        itemTable.Initialize();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

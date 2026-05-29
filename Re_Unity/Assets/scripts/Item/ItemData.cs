@@ -30,5 +30,7 @@ public class ItemData : ScriptableObject
     public int itemDataCode => Code;
     public int itemDataNum => num;
     public int itemDataWeight => weight;
+    public int ItemDataMoney => money;
     public string itemDataDescription => itemDescription;
+
 }
