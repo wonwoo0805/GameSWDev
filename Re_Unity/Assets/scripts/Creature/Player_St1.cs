@@ -41,13 +41,23 @@ public class Player_St1 : MonoBehaviour
     private Vector2 lookInput;
     private float xRotation = 0f;
 
-
+    public static Player_St1 Instance;
 
 
     private void Awake()
     {
         //maintain playerInfo while changing scene
-        DontDestroyOnLoad(transform.root.gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            Debug.Log("SceneChanger 생성됨");
+        }
+        else
+        {
+            Debug.Log("SceneChanger 중복 생성 - 파괴됨");
+            Destroy(gameObject);
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

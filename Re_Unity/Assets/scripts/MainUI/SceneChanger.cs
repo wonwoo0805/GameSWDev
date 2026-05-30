@@ -27,6 +27,7 @@ public class SceneChanger : MonoBehaviour
             Debug.Log("SceneChanger Áßº¹ »ý¼º - ÆÄ±«µÊ");
             Destroy(gameObject);
         }
+
         player = FindAnyObjectByType<Player_St1>();
         inventoryManager = FindAnyObjectByType<InventoryManager>();
     }

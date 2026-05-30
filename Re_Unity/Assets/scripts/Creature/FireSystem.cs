@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class FireSystem : MonoBehaviour
@@ -7,6 +9,8 @@ public class FireSystem : MonoBehaviour
     public float fireRate = 7.0f;
     public float range = 100f;
     public float damage = 10f;
+    public float reloadSpeed = 3f;
+    public int maxAmmo = 30;
     private float nextFireTime = 0f;
     private float interactionRange = 4f;
 
@@ -19,9 +23,11 @@ public class FireSystem : MonoBehaviour
     public LayerMask boxLayer;
 
     public WeaponPreviewManager wpm;
+    private AudioSource audioSource;
 
-    public ItemData currentWeapon;
-    
+    public ItemData currentItem;
+    public Weapons currentWeapon;
+    public Uses currentUse;
 
     public void TryShoot()
     {
@@ -30,10 +36,25 @@ public class FireSystem : MonoBehaviour
             Shoot();
             nextFireTime = Time.time + (1f / (fireRate + fireRate * player.fireRateBonus / 100 ));
         }
-
     }
     public void Shoot()
     {
+        if (currentWeapon != null)
+        {
+            // 발사음 재생 (AudioSource가 필요합니다)
+            if (currentWeapon.FireSound != null)
+            {
+                audioSource.PlayOneShot(currentWeapon.FireSound);
+            }
+
+            // 총구 화염(MuzzleFlash) 생성
+            if (currentWeapon.FlamePrefab != null)
+            {
+                // 총구 위치(muzzlePoint)가 있다면 거기서, 없다면 카메라 앞에서 생성
+                Instantiate(currentWeapon.FlamePrefab, currentWeapon.FirePoint.position, currentWeapon.FirePoint.rotation);
+            }
+        }
+
         RaycastHit hit;
         Debug.Log($"[{Time.time:F2}]발사");
         if(Physics.Raycast(playerCamera.transform.position,playerCamera.transform.forward,out hit, range, targetLayer))
@@ -45,19 +66,15 @@ public class FireSystem : MonoBehaviour
             if(enemy != null)
             {
                 enemy.TakeDamage(((damage + player.attackBonus) * (1 + player.attackPercentBonus / 100)) * (1 + player.damageBonus / 100));
+
             }
         }
         else
         {
             Debug.DrawRay(playerCamera.transform.position, playerCamera.transform.forward * range,Color.green,0.5f);
         }
-
         //TODO:UI에서 발사 애니메이션 재생하게 하기(UI 최초 설정 이후)
         wpm.PlayFireAnimation();
-        
-        
-        
-        
     }
 
     
@@ -89,9 +106,6 @@ public class FireSystem : MonoBehaviour
                 }
             }
         }
-        
-
-
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -112,8 +126,18 @@ public class FireSystem : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        currentWeapon = inventoryManager.GetEquippedItem(ItemType.Weapon);
-        wpm.ChangeItemPreview(currentWeapon);
+        currentItem = inventoryManager.GetEquippedItem(ItemType.Weapon);
+        currentWeapon = currentItem as Weapons;
+        UpdateWeaponStat(currentWeapon);
+        wpm.ChangeItemPreview(currentItem);
+    }
+
+    void UpdateWeaponStat(Weapons newWeapon)
+    {
+        damage = newWeapon.damage;
+        fireRate = newWeapon.fireRate;
+        maxAmmo = newWeapon.maxAmmo;
+        reloadSpeed = newWeapon.reloadSpeed;
     }
 
     // Update is called once per frame

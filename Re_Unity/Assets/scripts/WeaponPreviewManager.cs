@@ -59,7 +59,7 @@ public class WeaponPreviewManager : MonoBehaviour
     {
         if(currentPreview != null) Destroy(currentPreview);
         
-        currentPreview = Instantiate(currentWeapon.itemPrefab, spawnPoint.position,spawnPoint.rotation);
+        currentPreview = Instantiate(currentWeapon.WeaponPrefab, spawnPoint.position,spawnPoint.rotation);
         currentAnimator = currentPreview.GetComponent<Animator>();
 
         PrefareForUI(currentPreview);

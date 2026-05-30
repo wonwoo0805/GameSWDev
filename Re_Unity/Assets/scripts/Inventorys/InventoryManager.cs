@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -27,10 +28,21 @@ public class InventoryManager : MonoBehaviour
     public Button closeInventoryButton;
     public Button openInventoryButton;
 
+    public static InventoryManager Instance;
+    public event Action OnGoldChanged;
+
     private void Awake()
     {
         //maintain InventoryInfo while changing scene
-        DontDestroyOnLoad(transform.root.gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         //inisiate Inventory Slots(seperate UI and Data)
         invUI.InitSlots();
@@ -176,5 +188,6 @@ public class InventoryManager : MonoBehaviour
                 slot.UpdateSlot(null);
             }
         }
+        OnGoldChanged?.Invoke();
     }
 }
