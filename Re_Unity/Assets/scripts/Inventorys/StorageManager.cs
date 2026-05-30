@@ -43,7 +43,7 @@ public class StorageManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(transform.root.gameObject);
         }
 
         storageUI.InitSlots();

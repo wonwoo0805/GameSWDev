@@ -22,7 +22,7 @@ public class WeaponPreviewManager : MonoBehaviour
         else
         {
             Debug.Log("SceneChanger Áßº¹ »ý¼º - ÆÄ±«µÊ");
-            Destroy(gameObject);
+            Destroy(transform.root.gameObject);
         }
     }
 

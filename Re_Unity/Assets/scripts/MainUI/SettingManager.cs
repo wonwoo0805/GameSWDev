@@ -18,17 +18,32 @@ public class SettingManager : MonoBehaviour
     public UnityEngine.UI.Button applyButton;
     public UnityEngine.UI.Button backButton;
 
-    public GameObject mainPanel;
     public GameObject settingPanel;
     private Player_St1 player;
 
     private float PlayerVolume = 0;
     private float PlayerSensitivity = 0;
 
+    public static SettingManager Instance;
+
+    private void Awake()
+    {
+        //maintain SettingInfo while changing scene
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(transform.root.gameObject);
+        }
+    }
+
     private void Start()
     {
         player = FindAnyObjectByType<Player_St1>();
-        DontDestroyOnLoad(transform.root.gameObject);
+        
         settingPanel.SetActive(false);
 
         // 슬라이더 초기값 설정
@@ -68,9 +83,8 @@ public class SettingManager : MonoBehaviour
         player.mouseSensitivity = PlayerSensitivity;
     }
 
-    private void BackToMain()
+    public void BackToMain()
     {
-        mainPanel.SetActive(true);
         settingPanel.SetActive(false);
     }
 }

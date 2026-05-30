@@ -53,7 +53,7 @@ public class StoreManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(transform.root.gameObject);
         }
 
         //get itemPool for storeItemList

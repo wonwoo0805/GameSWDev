@@ -41,7 +41,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(transform.root.gameObject);
         }
 
         //inisiate Inventory Slots(seperate UI and Data)
@@ -97,7 +97,7 @@ public class InventoryManager : MonoBehaviour
         inventoryPanel.SetActive(true);
     }
 
-    private void ToggleInventory()
+    public void ToggleInventory()
     {
         if (inventoryPanel == null) return;
         inventoryPanel.SetActive(true); // ui active
