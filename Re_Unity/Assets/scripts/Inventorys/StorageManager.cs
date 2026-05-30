@@ -30,11 +30,21 @@ public class StorageManager : MonoBehaviour
     private ItemData selectedItem;
     private int selectedSlotIndex;
 
+    public static StorageManager Instance;
+
     //Inisiate slots in Store
     private void Awake()
     {
         //maintain StorageInfo while changing scene
-        DontDestroyOnLoad(transform.root.gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         storageUI.InitSlots();
 

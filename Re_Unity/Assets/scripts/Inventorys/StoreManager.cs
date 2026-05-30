@@ -6,6 +6,7 @@ using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 public class StoreManager : MonoBehaviour
 {
@@ -39,10 +40,21 @@ public class StoreManager : MonoBehaviour
     private ItemData selectedItem;
     private int selectedSlotIndex;
 
+    public static StoreManager Instance;
+    public event Action OnGoldChanged;
+
     private void Awake()
     {
         //maintain StoreInfo while changing scene
-        DontDestroyOnLoad(transform.root.gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
         //get itemPool for storeItemList
         //ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData").Where(item => item.itemDataType != ItemType.Refund).ToArray();
@@ -79,7 +91,7 @@ public class StoreManager : MonoBehaviour
     private (ItemRarity rarity, int code) DrawRarityAndCode()
     {
         //draw itemRarity
-        int rarityRoll = Random.Range(1, 101);
+        int rarityRoll = UnityEngine.Random.Range(1, 101);
         ItemRarity selectedRarity;
 
         if (rarityRoll <= normal)
@@ -94,7 +106,7 @@ public class StoreManager : MonoBehaviour
             selectedRarity = ItemRarity.Legendary;
 
         //draw itemCode
-        int code = Random.Range(0, totalItemCount);
+        int code = UnityEngine.Random.Range(0, totalItemCount);
 
         return (selectedRarity, code);
     }
@@ -172,12 +184,20 @@ public class StoreManager : MonoBehaviour
     // 아이템 구매 (상점 → 인벤토리)
     public void BuyItem(ItemData item, int slotIndex)
     {
+        if(item.ItemDataMoney > inventoryManager.invData.totalMoney) 
+        {
+            Debug.Log("not enough gold");
+            return;
+        }
+
         int result = inventoryManager.addItem_Button(item);
         //check additem is successful
         if (result != -1)
         {
             storeData.inventory[slotIndex].itemInSlot = null;
             storeUI.UpdateSlotUI(slotIndex, storeData.inventory[slotIndex]);
+            inventoryManager.invData.totalMoney -= item.ItemDataMoney;
+            OnGoldChanged?.Invoke();
         }
         else
             //if this player exist

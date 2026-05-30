@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
     public List<ItemSlot> equipment = new List<ItemSlot>();
 
     public Player_St1 player;
-    public int totalMoney = 0;
+    public int totalMoney = 100;
     public int totalWeight = 0;
 
     public void InitializeData(int size)
