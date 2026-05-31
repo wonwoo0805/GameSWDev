@@ -311,6 +311,7 @@ MonoBehaviour:
   inventory: []
   equipment: []
   player: {fileID: 0}
+  totalMoney: 0
   totalWeight: 0
 --- !u!114 &7327184753135238716
 MonoBehaviour:
@@ -789,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: ItemExplain
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

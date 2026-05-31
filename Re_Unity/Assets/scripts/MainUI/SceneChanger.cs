@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
@@ -7,6 +8,7 @@ public class SceneChanger : MonoBehaviour
 {
     public static SceneChanger Instance;
     private Player_St1 player;
+    private PlayerInput playerInput;
     private InventoryManager inventoryManager;
 
     [Header("Settings")]
@@ -29,6 +31,7 @@ public class SceneChanger : MonoBehaviour
         }
 
         player = FindAnyObjectByType<Player_St1>();
+        playerInput = FindAnyObjectByType<PlayerInput>();
         inventoryManager = FindAnyObjectByType<InventoryManager>();
     }
 
@@ -59,6 +62,7 @@ public class SceneChanger : MonoBehaviour
         else
         {
             StartCoroutine(MovePlayerToSpawnPoint());
+            playerInput.SwitchCurrentActionMap("Player");
             UnityEngine.Cursor.lockState = CursorLockMode.Locked; // 커서 중앙 고정
             UnityEngine.Cursor.visible = false; // 커서 안보이게함
         }
