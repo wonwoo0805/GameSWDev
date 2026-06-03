@@ -30,6 +30,6 @@ MonoBehaviour:
   weaponPrefab: {fileID: 8126806106451507091, guid: 92358b0852dd0c2488bc59e7e20131ce, type: 3}
   flamePreFab: {fileID: 5485217128109573645, guid: d034899da75909f43b851602ddd60823, type: 3}
   hitPrefab: {fileID: 5973450783547160408, guid: e4d65386ce6a7d54799c2aab5990af91, type: 3}
-  firePoint: {fileID: 0}
+  firePoint: {fileID: 8126806106451507091, guid: 92358b0852dd0c2488bc59e7e20131ce, type: 3}
   fireSound: {fileID: 8300000, guid: 53fe7e2b21622a545b70f0bc026673e9, type: 3}
   reloadSound: {fileID: 8300000, guid: bcc9d20ef24f4b04e956ff9e6f04706b, type: 3}

@@ -23,11 +23,17 @@ public class FireSystem : MonoBehaviour
     public LayerMask boxLayer;
 
     public WeaponPreviewManager wpm;
-    private AudioSource audioSource;
+    public AudioSource audioSource;
+    private Transform currentFirePoint;
 
     public ItemData currentItem;
     public Weapons currentWeapon;
     public Uses currentUse;
+
+    private void Awake()
+    {
+        audioSource = GetComponentInParent<AudioSource>();
+    }
 
     public void TryShoot()
     {
@@ -41,6 +47,7 @@ public class FireSystem : MonoBehaviour
     {
         if (currentWeapon != null)
         {
+            currentFirePoint = wpm.CurrentPreview.transform.Find("FirePoint");
             // 발사음 재생 (AudioSource가 필요합니다)
             if (currentWeapon.FireSound != null)
             {
@@ -50,8 +57,10 @@ public class FireSystem : MonoBehaviour
             // 총구 화염(MuzzleFlash) 생성
             if (currentWeapon.FlamePrefab != null)
             {
+
                 // 총구 위치(muzzlePoint)가 있다면 거기서, 없다면 카메라 앞에서 생성
-                Instantiate(currentWeapon.FlamePrefab, currentWeapon.FirePoint.position, currentWeapon.FirePoint.rotation);
+                // 생성함과 동시에 0.5초 뒤 삭제 예약
+                Destroy(Instantiate(currentWeapon.FlamePrefab, currentFirePoint.position, currentFirePoint.rotation), 0.2f);
             }
         }
 
