@@ -19,7 +19,7 @@ MonoBehaviour:
   weight: 14
   num: 1
   Code: 37
-  inventoryImage: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: a35af0b846663bb4b85f3ce984f8a9b6, type: 3}
   prefab: {fileID: 0}
   itemType: 1
   itemRarity: 1

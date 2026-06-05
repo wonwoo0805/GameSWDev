@@ -19,7 +19,7 @@ MonoBehaviour:
   weight: 3
   num: 1
   Code: 20
-  inventoryImage: {fileID: 21300000, guid: 4019e32e03c7b724fb1c4c80e23a0fe3, type: 3}
+  inventoryImage: {fileID: 21300000, guid: 28fd903d41ab47746926841a1f73867f, type: 3}
   prefab: {fileID: 6346877274259657152, guid: dac49344e677d7c40bd16e849b24dbbe, type: 3}
   itemType: 0
   itemRarity: 4

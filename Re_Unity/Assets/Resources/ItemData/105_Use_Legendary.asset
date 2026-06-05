@@ -20,7 +20,7 @@ MonoBehaviour:
   weight: 1
   num: 1
   Code: 105
-  inventoryImage: {fileID: 0}
+  inventoryImage: {fileID: 7482667652216324306, guid: b999d3e5f69d4e648b1198d32b5fb184, type: 3}
   prefab: {fileID: 0}
   itemType: 4
   itemRarity: 0

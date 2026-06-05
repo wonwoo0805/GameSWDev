@@ -20,8 +20,8 @@ MonoBehaviour:
   weight: 2
   num: 1
   Code: 10
-  inventoryImage: {fileID: 21300000, guid: b5e258a675864e345a7df064b5bc61c0, type: 3}
-  prefab: {fileID: 8126806106451507091, guid: 92358b0852dd0c2488bc59e7e20131ce, type: 3}
+  inventoryImage: {fileID: 21300000, guid: 16455ccea0d83a941ad3e634187fba09, type: 3}
+  prefab: {fileID: 8024522114550165285, guid: 46290a32d8357174fa298f89f74781ab, type: 3}
   itemType: 0
   itemRarity: 4
   damage: 35
