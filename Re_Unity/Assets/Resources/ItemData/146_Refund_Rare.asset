@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 146_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 손상된 PCB 기판
-  itemDescription: 부분적으로 타버렸지만 일부 회로는 살아있다.
+  itemName: "\uC190\uC0C1\uB41C PCB \uAE30\uD310"
+  itemDescription: "\uBD80\uBD84\uC801\uC73C\uB85C \uD0C0\uBC84\uB838\uC9C0\uB9CC
+    \uC77C\uBD80 \uD68C\uB85C\uB294 \uC0B4\uC544\uC788\uB2E4."
   money: 120
   weight: 2
   num: 1
   Code: 146
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

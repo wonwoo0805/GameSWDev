@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 194_Refund_Unique
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 군 네트워크 접속 키
-  itemDescription: 특정 군사 네트워크에 접속할 수 있다. 오래 들고 있으면 위험하다.
+  itemName: "\uAD70 \uB124\uD2B8\uC6CC\uD06C \uC811\uC18D \uD0A4"
+  itemDescription: "\uD2B9\uC815 \uAD70\uC0AC \uB124\uD2B8\uC6CC\uD06C\uC5D0 \uC811\uC18D\uD560
+    \uC218 \uC788\uB2E4. \uC624\uB798 \uB4E4\uACE0 \uC788\uC73C\uBA74 \uC704\uD5D8\uD558\uB2E4."
   money: 680
   weight: 1
   num: 1
   Code: 194
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 7a22c5390e4e8ca408836c62173846b8, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 3

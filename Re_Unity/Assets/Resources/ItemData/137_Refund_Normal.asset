@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 137_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 부서진 DVD-RW
-  itemDescription: 트레이가 안 열린다. 분해해서 레이저 모듈만 쓸 수도 있다.
+  itemName: "\uBD80\uC11C\uC9C4 DVD-RW"
+  itemDescription: "\uD2B8\uB808\uC774\uAC00 \uC548 \uC5F4\uB9B0\uB2E4. \uBD84\uD574\uD574\uC11C
+    \uB808\uC774\uC800 \uBAA8\uB4C8\uB9CC \uC4F8 \uC218\uB3C4 \uC788\uB2E4."
   money: 35
   weight: 1
   num: 1
   Code: 137
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 0

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 107_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 낡은 공구 세트
-  itemDescription: 절반은 이미 부러져 있다. 그래도 공구는 공구다.
+  itemName: "\uB0A1\uC740 \uACF5\uAD6C \uC138\uD2B8"
+  itemDescription: "\uC808\uBC18\uC740 \uC774\uBBF8 \uBD80\uB7EC\uC838 \uC788\uB2E4.
+    \uADF8\uB798\uB3C4 \uACF5\uAD6C\uB294 \uACF5\uAD6C\uB2E4."
   money: 55
   weight: 2
   num: 1
   Code: 107
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 0

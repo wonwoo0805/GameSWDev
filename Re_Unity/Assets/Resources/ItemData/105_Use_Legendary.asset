@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 519bec3419fa8b247992aa5121e4e25f, type: 3}
   m_Name: 105_Use_Legendary
   m_EditorClassIdentifier: Assembly-CSharp::Uses
-  itemName: "\uC5D8\uB9AD\uC11C"
-  itemDescription: "\uC5B4\uB5BB\uAC8C \uB9CC\uB4E4\uC5C8\uB294\uC9C0 \uC544\uBB34\uB3C4
-    \uBAA8\uB978\uB2E4. \uB9C8\uC2DC\uBA74 \uC8FD\uC9C0 \uC54A\uB294\uB2E4\uACE0
-    \uD55C\uB2E4."
+  itemName: "\uBC31\uC2E0"
+  itemDescription: "\uC5B4\uB5A4 \uC131\uBD84\uC758 \uBC31\uC2E0\uC778\uC9C0\uB294
+    \uC54C \uC218 \uC5C6\uB2E4. \uD558\uC9C0\uB9CC \uC774\uAC83\uC774 \uC0AC\uB78C\uC744
+    \uC0B4\uB9B0\uB2E4\uB294 \uAC83\uB9CC\uC740 \uBD84\uBA85\uD558\uB2E4."
   money: 850
   weight: 1
   num: 1
   Code: 105
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 948f9eab54652844cbc190561fa36975, type: 3}
+  prefab: {fileID: 7932986268153247636, guid: de6d1605bdbac564fa26adccd9cb402a, type: 3}
   itemType: 4
   itemRarity: 0
   Heal: 200

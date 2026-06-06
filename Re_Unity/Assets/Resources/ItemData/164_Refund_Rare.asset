@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 164_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 구형 메모리 모듈
-  itemDescription: 두 짝이 한 세트였는데 하나는 어디 갔는지 모른다. 짝이 맞아야 제대로 쓸 수 있다.
+  itemName: "\uAD6C\uD615 \uBA54\uBAA8\uB9AC \uBAA8\uB4C8"
+  itemDescription: "\uB450 \uC9DD\uC774 \uD55C \uC138\uD2B8\uC600\uB294\uB370 \uD558\uB098\uB294
+    \uC5B4\uB514 \uAC14\uB294\uC9C0 \uBAA8\uB978\uB2E4. \uC9DD\uC774 \uB9DE\uC544\uC57C
+    \uC81C\uB300\uB85C \uC4F8 \uC218 \uC788\uB2E4."
   money: 150
   weight: 1
   num: 1
   Code: 164
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

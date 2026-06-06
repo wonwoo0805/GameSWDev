@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 153_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 실험실 배양 접시 세트
-  itemDescription: 내용물은 비어있다. 사용된 흔적이 있다.
+  itemName: "\uC2E4\uD5D8\uC2E4 \uBC30\uC591 \uC811\uC2DC \uC138\uD2B8"
+  itemDescription: "\uB0B4\uC6A9\uBB3C\uC740 \uBE44\uC5B4\uC788\uB2E4. \uC0AC\uC6A9\uB41C
+    \uD754\uC801\uC774 \uC788\uB2E4."
   money: 135
   weight: 2
   num: 1
   Code: 153
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

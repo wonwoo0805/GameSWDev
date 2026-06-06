@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 117_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 컨베이어 벨트 파편
-  itemDescription: 한때 물건을 실어 나르던 벨트의 파편.
+  itemName: "\uCEE8\uBCA0\uC774\uC5B4 \uBCA8\uD2B8 \uD30C\uD3B8"
+  itemDescription: "\uD55C\uB54C \uBB3C\uAC74\uC744 \uC2E4\uC5B4 \uB098\uB974\uB358
+    \uBCA8\uD2B8\uC758 \uD30C\uD3B8."
   money: 30
   weight: 3
   num: 1
   Code: 117
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 0
