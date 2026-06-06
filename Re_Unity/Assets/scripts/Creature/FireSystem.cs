@@ -41,7 +41,7 @@ public class FireSystem : MonoBehaviour
     {
         if (currentWeapon != null)
         {
-            // 발사음 재생 (AudioSource가 필요합니다)
+           /* 발사음 재생 (AudioSource가 필요합니다)
             if (currentWeapon.FireSound != null)
             {
                 audioSource.PlayOneShot(currentWeapon.FireSound);
@@ -52,7 +52,7 @@ public class FireSystem : MonoBehaviour
             {
                 // 총구 위치(muzzlePoint)가 있다면 거기서, 없다면 카메라 앞에서 생성
                 Instantiate(currentWeapon.FlamePrefab, currentWeapon.FirePoint.position, currentWeapon.FirePoint.rotation);
-            }
+            }*/
         }
 
         RaycastHit hit;

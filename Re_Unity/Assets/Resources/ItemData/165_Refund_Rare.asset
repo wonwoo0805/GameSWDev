@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 165_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 구형 전원 공급 장치
-  itemDescription: 전기가 흐르던 시절의 물건이다. 아직 작동은 된다.
+  itemName: "\uAD6C\uD615 \uC804\uC6D0 \uACF5\uAE09 \uC7A5\uCE58"
+  itemDescription: "\uC804\uAE30\uAC00 \uD750\uB974\uB358 \uC2DC\uC808\uC758 \uBB3C\uAC74\uC774\uB2E4.
+    \uC544\uC9C1 \uC791\uB3D9\uC740 \uB41C\uB2E4."
   money: 135
   weight: 2
   num: 1
   Code: 165
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

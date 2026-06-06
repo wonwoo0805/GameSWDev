@@ -19,8 +19,8 @@ MonoBehaviour:
   weight: 1
   num: 1
   Code: 103
-  inventoryImage: {fileID: 7482667652216324306, guid: b999d3e5f69d4e648b1198d32b5fb184, type: 3}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 0278b9caa83e09d4abed10d1ed41c62b, type: 3}
+  prefab: {fileID: 7925071981070591268, guid: e3f927efa14b6b04a917f5acfb9e234a, type: 3}
   itemType: 4
   itemRarity: 0
   Heal: 75

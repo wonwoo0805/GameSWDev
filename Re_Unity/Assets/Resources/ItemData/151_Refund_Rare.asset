@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 151_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 야간 투시 렌즈
-  itemDescription: 군용 장비에서 떼어낸 것. 긁혀있지만 작동한다.
+  itemName: "\uC57C\uAC04 \uD22C\uC2DC \uB80C\uC988"
+  itemDescription: "\uAD70\uC6A9 \uC7A5\uBE44\uC5D0\uC11C \uB5BC\uC5B4\uB0B8 \uAC83.
+    \uAE01\uD600\uC788\uC9C0\uB9CC \uC791\uB3D9\uD55C\uB2E4."
   money: 185
   weight: 2
   num: 1
   Code: 151
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

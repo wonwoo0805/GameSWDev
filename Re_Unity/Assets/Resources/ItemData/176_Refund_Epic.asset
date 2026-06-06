@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 176_Refund_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 실험용 혈청
-  itemDescription: 용도불명. 연구소 깊은 곳에 보관되어 있었다.
+  itemName: "\uC2E4\uD5D8\uC6A9 \uD608\uCCAD"
+  itemDescription: "\uC6A9\uB3C4\uBD88\uBA85. \uC5F0\uAD6C\uC18C \uAE4A\uC740 \uACF3\uC5D0
+    \uBCF4\uAD00\uB418\uC5B4 \uC788\uC5C8\uB2E4."
   money: 290
   weight: 2
   num: 1
   Code: 176
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: f01b2534a6f5bb344a6904cb57dbbe2b, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 2

@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 200_Refund_Legendary
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: CERN 연구 데이터 원본
-  itemDescription: 무슨 연구인지 알 수 없다. 파일 포맷도 알 수 없다. 가치는 알고 있다.
+  itemName: "CERN \uC5F0\uAD6C \uB370\uC774\uD130 \uC6D0\uBCF8"
+  itemDescription: "\uBB34\uC2A8 \uC5F0\uAD6C\uC778\uC9C0 \uC54C \uC218 \uC5C6\uB2E4.
+    \uD30C\uC77C \uD3EC\uB9F7\uB3C4 \uC54C \uC218 \uC5C6\uB2E4. \uAC00\uCE58\uB294
+    \uC54C\uACE0 \uC788\uB2E4."
   money: 940
   weight: 1
   num: 1
   Code: 200
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: a85ebc3ad8690634182bafa13fffd199, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 4

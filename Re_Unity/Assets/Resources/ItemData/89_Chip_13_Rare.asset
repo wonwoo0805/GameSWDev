@@ -20,7 +20,7 @@ MonoBehaviour:
   num: 1
   Code: 89
   inventoryImage: {fileID: 21300000, guid: 412fb3aa622f50a40af68dec06b82f34, type: 3}
-  prefab: {fileID: 919132149155446097, guid: c84ee3815f64c8c4b831089734e846a1, type: 3}
+  prefab: {fileID: 4710342862220470374, guid: d77efcd6d5d8dcd43a77c33cea428058, type: 3}
   itemType: 2
   itemRarity: 1
   Hpbonus: 0

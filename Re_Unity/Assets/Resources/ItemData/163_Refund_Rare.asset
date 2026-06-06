@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 163_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 구형 저장 장치
-  itemDescription: 플래시 메모리 기반. 수명은 거의 다 됐다. 그래도 데이터는 남아있을지 모른다.
+  itemName: "\uAD6C\uD615 \uC800\uC7A5 \uC7A5\uCE58"
+  itemDescription: "\uD50C\uB798\uC2DC \uBA54\uBAA8\uB9AC \uAE30\uBC18. \uC218\uBA85\uC740
+    \uAC70\uC758 \uB2E4 \uB410\uB2E4. \uADF8\uB798\uB3C4 \uB370\uC774\uD130\uB294
+    \uB0A8\uC544\uC788\uC744\uC9C0 \uBAA8\uB978\uB2E4."
   money: 130
   weight: 1
   num: 1
   Code: 163
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

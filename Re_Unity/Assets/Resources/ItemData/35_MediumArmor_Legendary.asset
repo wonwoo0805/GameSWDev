@@ -20,7 +20,7 @@ MonoBehaviour:
   num: 1
   Code: 35
   inventoryImage: {fileID: 21300000, guid: 82406829301e3764a8f25be2c121c876, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 1108732889937068137, guid: 4145a8415d8a8704a95456e4c3ac3821, type: 3}
   itemType: 1
   itemRarity: 4
   HPBonus: 125

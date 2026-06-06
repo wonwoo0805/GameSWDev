@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 158_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 방호복 조각
-  itemDescription: 연구소 직원이 입던 방호복의 일부. 특수 소재다.
+  itemName: "\uBC29\uD638\uBCF5 \uC870\uAC01"
+  itemDescription: "\uC5F0\uAD6C\uC18C \uC9C1\uC6D0\uC774 \uC785\uB358 \uBC29\uD638\uBCF5\uC758
+    \uC77C\uBD80. \uD2B9\uC218 \uC18C\uC7AC\uB2E4."
   money: 170
   weight: 2
   num: 1
   Code: 158
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

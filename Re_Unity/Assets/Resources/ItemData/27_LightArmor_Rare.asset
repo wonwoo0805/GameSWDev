@@ -20,7 +20,7 @@ MonoBehaviour:
   num: 1
   Code: 27
   inventoryImage: {fileID: 21300000, guid: de3bffcac1cf7a445b61de64470ae397, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 7415925611614600521, guid: d8d10555385b95e4e8b2206d8a9637c3, type: 3}
   itemType: 1
   itemRarity: 1
   HPBonus: 30

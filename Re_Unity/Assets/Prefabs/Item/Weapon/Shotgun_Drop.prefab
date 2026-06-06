@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223799388944941444}
-  m_Layer: 0
+  - component: {fileID: -3005753787626065402}
+  m_Layer: 9
   m_Name: Shotgun_Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,6 +37,27 @@ Transform:
   - {fileID: 6513631488005564813}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &-3005753787626065402
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549620132452655760}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15, y: 0.25, z: 0.9}
+  m_Center: {x: 0, y: 0, z: 0.4}
 --- !u!1 &1417799910110615551
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,7 +69,7 @@ GameObject:
   - component: {fileID: 306147731607778914}
   - component: {fileID: 2080410185045094593}
   - component: {fileID: 814293251051942536}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: pump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +159,7 @@ GameObject:
   - component: {fileID: 6513631488005564813}
   - component: {fileID: 3502169747298560883}
   - component: {fileID: 55384542130815206}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,7 +249,7 @@ GameObject:
   - component: {fileID: 350211557364262703}
   - component: {fileID: 4206527646227969465}
   - component: {fileID: 1072484655549276784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: slug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +339,7 @@ GameObject:
   - component: {fileID: 4769483027847799256}
   - component: {fileID: 4881830134108938228}
   - component: {fileID: 1438471373102630928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +429,7 @@ GameObject:
   - component: {fileID: 8406482060633977493}
   - component: {fileID: 4699986228041852703}
   - component: {fileID: 1814237570674635359}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: base
   m_TagString: Untagged
   m_Icon: {fileID: 0}

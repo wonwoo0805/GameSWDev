@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 159_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 암호화 통신 장비
-  itemDescription: 주파수는 맞춰져 있지만 아무도 응답하지 않는다.
+  itemName: "\uC554\uD638\uD654 \uD1B5\uC2E0 \uC7A5\uBE44"
+  itemDescription: "\uC8FC\uD30C\uC218\uB294 \uB9DE\uCDB0\uC838 \uC788\uC9C0\uB9CC
+    \uC544\uBB34\uB3C4 \uC751\uB2F5\uD558\uC9C0 \uC54A\uB294\uB2E4."
   money: 190
   weight: 3
   num: 1
   Code: 159
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1
