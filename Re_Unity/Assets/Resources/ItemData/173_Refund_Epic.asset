@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 173_Refund_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 실험용 나노 필터
-  itemDescription: 공기 중 바이러스를 걸러낸다. 연구소에서 탈취한 것이다.
+  itemName: "\uC2E4\uD5D8\uC6A9 \uB098\uB178 \uD544\uD130"
+  itemDescription: "\uACF5\uAE30 \uC911 \uBC14\uC774\uB7EC\uC2A4\uB97C \uAC78\uB7EC\uB0B8\uB2E4.
+    \uC5F0\uAD6C\uC18C\uC5D0\uC11C \uD0C8\uCDE8\uD55C \uAC83\uC774\uB2E4."
   money: 305
   weight: 2
   num: 1
   Code: 173
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: f01b2534a6f5bb344a6904cb57dbbe2b, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 2

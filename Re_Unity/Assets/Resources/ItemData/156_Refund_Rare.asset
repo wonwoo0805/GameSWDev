@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 156_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 연구소 샘플 용기
-  itemDescription: 내용물은 없지만 특수 재질로 만들어져 있다.
+  itemName: "\uC5F0\uAD6C\uC18C \uC0D8\uD50C \uC6A9\uAE30"
+  itemDescription: "\uB0B4\uC6A9\uBB3C\uC740 \uC5C6\uC9C0\uB9CC \uD2B9\uC218 \uC7AC\uC9C8\uB85C
+    \uB9CC\uB4E4\uC5B4\uC838 \uC788\uB2E4."
   money: 145
   weight: 2
   num: 1
   Code: 156
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

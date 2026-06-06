@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 133_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 방전된 노트북 배터리
-  itemDescription: 수명이 거의 다 됐다. 분해해서 셀을 팔 수 있다.
+  itemName: "\uBC29\uC804\uB41C \uB178\uD2B8\uBD81 \uBC30\uD130\uB9AC"
+  itemDescription: "\uC218\uBA85\uC774 \uAC70\uC758 \uB2E4 \uB410\uB2E4. \uBD84\uD574\uD574\uC11C
+    \uC140\uC744 \uD314 \uC218 \uC788\uB2E4."
   money: 40
   weight: 1
   num: 1
   Code: 133
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 0

@@ -19,8 +19,8 @@ MonoBehaviour:
   weight: 14
   num: 1
   Code: 38
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: df030e7e6c7c5094c8e3df4e13c81fce, type: 3}
+  prefab: {fileID: 8006163994318825779, guid: 4e0f60f83a632b940a75a51c7d3800ba, type: 3}
   itemType: 1
   itemRarity: 2
   HPBonus: 100

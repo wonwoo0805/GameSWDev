@@ -12,7 +12,7 @@ public class Weapons : ItemData
     [Header("Fire Effect")]
     [SerializeField] private GameObject flamePreFab;
     [SerializeField] private GameObject hitPrefab;
-    [SerializeField] private Transform firePoint;
+    [SerializeField] private GameObject firePoint;
 
     [Header("Audio Effects")]
     [SerializeField] private AudioClip fireSound;
@@ -23,5 +23,5 @@ public class Weapons : ItemData
     public GameObject HitPrefab => hitPrefab;
     public AudioClip FireSound => fireSound;
     public AudioClip ReloadSound => reloadSound;
-    public Transform FirePoint => firePoint;
+    public Transform FirePoint => firePoint.transform.Find("FirePoint");
 }

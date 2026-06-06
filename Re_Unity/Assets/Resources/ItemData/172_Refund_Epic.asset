@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 172_Refund_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 군사 등급 암호 해독기
-  itemDescription: 작동은 되지만 배터리가 얼마 남지 않았다.
+  itemName: "\uAD70\uC0AC \uB4F1\uAE09 \uC554\uD638 \uD574\uB3C5\uAE30"
+  itemDescription: "\uC791\uB3D9\uC740 \uB418\uC9C0\uB9CC \uBC30\uD130\uB9AC\uAC00
+    \uC5BC\uB9C8 \uB0A8\uC9C0 \uC54A\uC558\uB2E4."
   money: 280
   weight: 3
   num: 1
   Code: 172
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: f01b2534a6f5bb344a6904cb57dbbe2b, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 2

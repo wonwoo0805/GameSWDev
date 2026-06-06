@@ -19,11 +19,17 @@ MonoBehaviour:
   weight: 2
   num: 1
   Code: 9
-  inventoryImage: {fileID: 21300000, guid: b5e258a675864e345a7df064b5bc61c0, type: 3}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 5e375cbcd2713b045bcab5e0ed5d07fb, type: 3}
+  prefab: {fileID: 8024522114550165285, guid: 46290a32d8357174fa298f89f74781ab, type: 3}
   itemType: 0
   itemRarity: 3
   damage: 23
   maxAmmo: 30
   fireRate: 4
   reloadSpeed: 3
+  weaponPrefab: {fileID: 8126806106451507091, guid: 92358b0852dd0c2488bc59e7e20131ce, type: 3}
+  flamePreFab: {fileID: 5485217128109573645, guid: d034899da75909f43b851602ddd60823, type: 3}
+  hitPrefab: {fileID: 5973450783547160408, guid: e4d65386ce6a7d54799c2aab5990af91, type: 3}
+  firePoint: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 53fe7e2b21622a545b70f0bc026673e9, type: 3}
+  reloadSound: {fileID: 8300000, guid: bcc9d20ef24f4b04e956ff9e6f04706b, type: 3}

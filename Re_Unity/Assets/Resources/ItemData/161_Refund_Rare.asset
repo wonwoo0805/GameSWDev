@@ -12,13 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 161_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 구형 그래픽 처리 장치
-  itemDescription: 한때 게임용으로 쓰이던 그래픽 칩. 이 정도 성능으로 즐기던 게임들은 이제 아무도 기억하지 않는다.
+  itemName: "\uAD6C\uD615 \uADF8\uB798\uD53D \uCC98\uB9AC \uC7A5\uCE58"
+  itemDescription: "\uD55C\uB54C \uAC8C\uC784\uC6A9\uC73C\uB85C \uC4F0\uC774\uB358
+    \uADF8\uB798\uD53D \uCE69. \uC774 \uC815\uB3C4 \uC131\uB2A5\uC73C\uB85C \uC990\uAE30\uB358
+    \uAC8C\uC784\uB4E4\uC740 \uC774\uC81C \uC544\uBB34\uB3C4 \uAE30\uC5B5\uD558\uC9C0
+    \uC54A\uB294\uB2E4."
   money: 145
   weight: 1
   num: 1
   Code: 161
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

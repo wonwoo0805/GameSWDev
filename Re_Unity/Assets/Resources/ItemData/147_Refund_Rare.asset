@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 147_Refund_Rare
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 군용 무전기 배터리
-  itemDescription: 방전된 것처럼 보이지만 아직 충전 가능하다.
+  itemName: "\uAD70\uC6A9 \uBB34\uC804\uAE30 \uBC30\uD130\uB9AC"
+  itemDescription: "\uBC29\uC804\uB41C \uAC83\uCC98\uB7FC \uBCF4\uC774\uC9C0\uB9CC
+    \uC544\uC9C1 \uCDA9\uC804 \uAC00\uB2A5\uD558\uB2E4."
   money: 145
   weight: 2
   num: 1
   Code: 147
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 11c5852876467d7479c796ccf1eab5cb, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 1

@@ -10,6 +10,8 @@ public class WeaponPreviewManager : MonoBehaviour
     private GameObject currentPreview;
     private Animator currentAnimator;
 
+    public GameObject CurrentPreview => currentPreview;
+
     private void Awake()
     {
         // 싱글톤 패턴: 씬이 넘어가도 이 객체가 유지되도록 합니다.

@@ -53,7 +53,7 @@ MonoBehaviour:
   invUI: {fileID: 6629689034507585757}
   eqptData: {fileID: 8172125650641567815}
   eqptUI: {fileID: 6629689034507585757}
-  defaultWeapon: {fileID: 11400000, guid: 4f312d52ee47e5f489c53866a00ea0b2, type: 2}
+  defaultWeapon: {fileID: 11400000, guid: 27f3d2995213b4145b98932f6fb10ba6, type: 2}
   closeInventoryButton: {fileID: 3587300686265208910}
   openInventoryButton: {fileID: 0}
 --- !u!114 &8172125650641567815
@@ -72,6 +72,7 @@ MonoBehaviour:
   inventory: []
   equipment: []
   player: {fileID: 0}
+  totalMoney: 1000000
   totalWeight: 0
 --- !u!114 &6629689034507585757
 MonoBehaviour:
@@ -150,7 +151,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &858905030774121886
 MonoBehaviour:
@@ -366,7 +367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -6.6817017}
+  m_AnchoredPosition: {x: 0, y: -6.6816406}
   m_SizeDelta: {x: -840, y: -650}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &992396339602335138
@@ -497,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

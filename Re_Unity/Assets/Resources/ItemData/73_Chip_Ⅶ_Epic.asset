@@ -18,8 +18,8 @@ MonoBehaviour:
   weight: 1
   num: 1
   Code: 73
-  inventoryImage: {fileID: 21300000, guid: 7900517140e11564ba114a37a0eaab66, type: 3}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 4ea1b360b4c628748a1f45e037c278f0, type: 3}
+  prefab: {fileID: 4710342862220470374, guid: d77efcd6d5d8dcd43a77c33cea428058, type: 3}
   itemType: 2
   itemRarity: 2
   Hpbonus: 7
