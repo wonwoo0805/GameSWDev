@@ -29,6 +29,7 @@ public class FireSystem : MonoBehaviour
     public ItemData currentItem;
     public Weapons currentWeapon;
     public Uses currentUse;
+    public StoryPanel storyPanel;
 
     private void Awake()
     {
@@ -113,6 +114,12 @@ public class FireSystem : MonoBehaviour
                 {
                     Debug.Log("가방 가득 참");
                 }
+
+            }
+            else if (hit.collider.TryGetComponent(out StoryNote note))   //내가넣음
+            {
+                Debug.Log("쪽지");
+                storyPanel.ShowStory(note.storyText);
             }
         }
     }
