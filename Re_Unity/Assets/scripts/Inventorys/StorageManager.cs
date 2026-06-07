@@ -73,6 +73,7 @@ public class StorageManager : MonoBehaviour
     //Open storageUI
     public void OpenStorage()
     {
+        if (storageMasterPanel.activeSelf) return;
         //Need fix not to able other UI button while UI is able
         if (inventoryManager.inventoryPanel.activeSelf)
             inventoryManager.CloseInventory();
@@ -80,7 +81,7 @@ public class StorageManager : MonoBehaviour
         //Give inventorypanel to storage
         inventoryOriginalParent = inventoryPanel.transform.parent;
         inventoryPanel.transform.SetParent(storageMasterPanel.transform, false);
-
+        
         //Set inventorysize to storage
         RectTransform invRect = inventoryPanel.GetComponent<RectTransform>();
         invRect.anchorMin = new Vector2(0, 0.416f);
@@ -99,7 +100,7 @@ public class StorageManager : MonoBehaviour
     {
         //give inventoryPanel to inventoryUI
         inventoryPanel.transform.SetParent(inventoryOriginalParent, false);
-
+        
         //set inventoryPanelSize to inventoryUI;
         RectTransform invRect = inventoryPanel.GetComponent<RectTransform>();
         invRect.anchorMin = new Vector2(0, 0);
