@@ -116,10 +116,9 @@ public class FireSystem : MonoBehaviour
                 }
 
             }
-            else if (hit.collider.TryGetComponent(out StoryNote note))   //내가넣음
+            else if (hit.collider.TryGetComponent(out StoryNote note)) //내가넣음
             {
-                Debug.Log("쪽지");
-                storyPanel.ShowStory(note.storyText);
+                storyPanel.ShowStory(note.storyText, note.monologue);
             }
         }
     }

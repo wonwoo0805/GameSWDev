@@ -9,6 +9,8 @@ public class StoryPanel : MonoBehaviour
     public GameObject panel;
     public TextMeshProUGUI storyText;
     public Button closeButton;
+    public MonologuePanel monologuePanel;
+    private string[] pendingMonologue;
 
     void Start()
     {
@@ -17,11 +19,11 @@ public class StoryPanel : MonoBehaviour
             closeButton.onClick.AddListener(Hide);
     }
 
-    public void ShowStory(string text)
+    public void ShowStory(string text, string[] monologue)
     {
         storyText.text = text;
+        pendingMonologue = monologue;
         panel.SetActive(true);
-
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -29,11 +31,12 @@ public class StoryPanel : MonoBehaviour
     public void Hide()
     {
         panel.SetActive(false);
-
         if (SceneManager.GetActiveScene().buildIndex != 2)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+        if (monologuePanel != null && pendingMonologue != null)
+            monologuePanel.Play(pendingMonologue);
     }
 }
