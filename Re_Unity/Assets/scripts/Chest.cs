@@ -31,17 +31,17 @@ public class Chest : Box
                 if(droppedItems[i].itemPrefab != null)
                 {
                     Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
-                    Instantiate(droppedItems[i].itemPrefab,spawnPos,Quaternion.identity);
+                    GameObject SpawnedItem = (Instantiate(droppedItems[i].itemPrefab,spawnPos,Quaternion.identity));
 
+                    if(SpawnedItem.TryGetComponent(out ItemObject itemObj))
+                    {
+                        itemObj.itemData = droppedItems[i];
+                    } 
                 }
                 Debug.Log($"{droppedItems[i].name} 드랍");
             }
         }
 
         Destroy(gameObject);
-        
-
-        
-
     }
 }
