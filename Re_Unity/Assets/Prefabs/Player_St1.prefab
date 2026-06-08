@@ -309,6 +309,9 @@ MonoBehaviour:
   maxAmmoBonus: 0
   damageBonus: 0
   fireRateBonus: 0
+  attackBonus: 0
+  attackPercentBonus: 0
+  reloadBonus: 0
   walkSpeed: 5
   runSpeed: 10
   finalSpeed: 0
@@ -471,7 +474,7 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BattleCanvas, Assembly-CSharp
         m_MethodName: Deactivate
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -479,7 +482,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
     m_ActionId: 833b9d18-e098-4286-a92e-9f8ab8fb7e56
     m_ActionName: 'Player/ToggleInventory[/Keyboard/i]'
   - m_PersistentCalls:
@@ -499,7 +502,7 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BattleCanvas, Assembly-CSharp
         m_MethodName: Activate
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -507,7 +510,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
     m_ActionId: 82f8eac8-b993-41f3-bcd2-43d20b2efc26
     m_ActionName: 'UI/CloseInventory[/Keyboard/i]'
   - m_PersistentCalls:
@@ -630,6 +633,8 @@ MonoBehaviour:
   fireRate: 7
   range: 100
   damage: 10
+  reloadSpeed: 3
+  maxAmmo: 30
   inventoryManager: {fileID: 0}
   player: {fileID: 4839726967606110270}
   playerCamera: {fileID: 7874907829930358072}
@@ -640,4 +645,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   wpm: {fileID: 0}
-  testWeapon: {fileID: 11400000, guid: 4f312d52ee47e5f489c53866a00ea0b2, type: 2}
+  currentItem: {fileID: 0}
+  currentWeapon: {fileID: 0}
+  currentUse: {fileID: 0}

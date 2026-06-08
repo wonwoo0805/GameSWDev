@@ -1,9 +1,12 @@
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using System;
 
 public class StoreManager : MonoBehaviour
 {
@@ -16,33 +19,50 @@ public class StoreManager : MonoBehaviour
     private InventoryManager inventoryManager;
     private ItemExplainPanel itemExplainPanel;
 
-    [Header("아이템 풀")]
+    [Header("Item Pool")]
     public List<ItemData> itemPool;
     public int totalItemCount;
+    public ItemTable storeItemTable;
 
+    [Header("Rarity Percentage")]
     private int normal = 50;
     private int rare = 30;
     private int epic = 15;
     private int unique = 4;
     private int legendary = 1;
 
+    [Header("Button")]
     public Button buyButton;
     public Button rerollButton;
+    public Button closeStoreButton;
+    public Button openStoreButton;
+
     private ItemData selectedItem;
     private int selectedSlotIndex;
 
+    public static StoreManager Instance;
+    public event Action OnGoldChanged;
+
     private void Awake()
     {
-        ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData");
-        itemPool.AddRange(loadedItems);
-        totalItemCount = loadedItems.Length;
-        Debug.Log($"{totalItemCount}개");
+        //maintain StoreInfo while changing scene
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(transform.root.gameObject);
+        }
 
-        // 1. UI ��ũ��Ʈ���� �������� ����� ����
+        //get itemPool for storeItemList
+        //ItemData[] loadedItems = Resources.LoadAll<ItemData>("ItemData").Where(item => item.itemDataType != ItemType.Refund).ToArray();
+        //itemPool.AddRange(loadedItems);
+        //totalItemCount = loadedItems.Length;
+        storeItemTable.Initialize(ItemType.Refund);
+
         storeUI.InitSlots();
-
-
-        // 2. ������ UI ������ŭ ������ ��ũ��Ʈ���� ĭ�� ������ ����
         storeData.InitializeData(storeUI.inventoryUI.Count);
 
         storeData.inventory.Clear();
@@ -52,20 +72,26 @@ public class StoreManager : MonoBehaviour
 
     private void Start()
     {
-        buyButton.gameObject.SetActive(false);
-        buyButton.onClick.AddListener(OnBuyButtonClick);
-        rerollButton.onClick.AddListener(OnRerollButtonClick);
         inventoryManager = FindAnyObjectByType<InventoryManager>();
         itemExplainPanel = FindAnyObjectByType<ItemExplainPanel>();
-        //storePanel.SetActive(false);
+
+        storePanel.gameObject.SetActive(false);
+
+        //occur events when click these buttons 
+        buyButton.onClick.AddListener(OnBuyButtonClick);
+        rerollButton.onClick.AddListener(OnRerollButtonClick);
+        closeStoreButton.onClick.AddListener(OnCloseButtonClick);
+        openStoreButton.onClick.AddListener(OnOpenButtonClick);
+        
+        //register items on storeSlot at first
         for (int i = 0; i < storeData.inventory.Count; i++)
             RegisterItemToSlot(i);
     }
-
+    //draw item randomly
     private (ItemRarity rarity, int code) DrawRarityAndCode()
     {
-        // 등급 추첨
-        int rarityRoll = Random.Range(1, 101);
+        //draw itemRarity
+        int rarityRoll = UnityEngine.Random.Range(1, 101);
         ItemRarity selectedRarity;
 
         if (rarityRoll <= normal)
@@ -79,50 +105,48 @@ public class StoreManager : MonoBehaviour
         else
             selectedRarity = ItemRarity.Legendary;
 
-        // 아이템 코드 추첨
-        int code = Random.Range(0, totalItemCount);
+        //draw itemCode
+        int code = UnityEngine.Random.Range(0, totalItemCount);
 
         return (selectedRarity, code);
     }
 
-    // 아이템을 가져와 슬롯에 등록하는 함수
     private void RegisterItemToSlot(int slotIndex)
     {
-        int maxAttempts = 100; // 이거 다돌면 당신은 행운아
-
+        int maxAttempts = 100;
+        
         for (int attempt = 0; attempt < maxAttempts; attempt++)
         {
-            var (rarity, code) = DrawRarityAndCode();
-            //Debug.Log($"추첨 결과 - rarity: {rarity}, code: {code}");
+            ItemData foundItem = storeItemTable.GetRandomItem();
 
-            // 이미 상점에 등록된 아이템인지 확인
+            //check this item is exist in any storeSlots
             bool isDuplicate = storeData.inventory.Exists(
                 slot => slot.itemInSlot != null &&
-                        slot.itemInSlot.itemDataRarity == rarity &&
-                        slot.itemInSlot.itemDataCode == code
+                        slot.itemInSlot.itemDataCode == foundItem.itemDataCode
             );
             if (isDuplicate)
             {
-                //Debug.Log("중복! 다시 추첨");
                 continue;
             }
 
-            // 레어리티와 코드가 일치하는 아이템 탐색
+            //find item with code and rarity
+            /*
             ItemData foundItem = itemPool.Find(
                 item => item.itemDataRarity == rarity &&
                         item.itemDataCode == code
             );
-            Debug.Log($"찾은 아이템: {foundItem?.name}");
+            */
 
+            //if can't find item , 
             if (foundItem == null) continue;
 
-            // 슬롯에 등록
+            //reigister choosed item to slot
             storeData.inventory[slotIndex].itemInSlot = foundItem;
             storeUI.UpdateSlotUI(slotIndex, storeData.inventory[slotIndex]);
             return;
         }
-        Debug.Log($"슬롯 {slotIndex}에 등록할 아이템을 찾지 못했습니다!");
     }
+    //set item rarity percentage
     public void SetRarityChances(int newNormal, int newRare, int newEpic, int newUnique, int newLegendary)
     {
         normal = newNormal;
@@ -132,9 +156,10 @@ public class StoreManager : MonoBehaviour
         legendary = newLegendary;
     }
 
-    // 상점 열기/닫기
+    // store open/close
     public void ToggleStore()
     {
+        //get opposite condition with panel's activity
         bool isActive = !storePanel.activeSelf;
         storePanel.SetActive(isActive);
         Cursor.visible = isActive;
@@ -143,11 +168,10 @@ public class StoreManager : MonoBehaviour
     {
         selectedItem = item;
         selectedSlotIndex = slotIndex;
+        //show item's description
         itemExplainPanel.ShowDescription(item);
-        Debug.Log($"buyButton: {buyButton}");
-        Debug.Log($"buyButton active: {buyButton.gameObject.activeSelf}");
+        //activate "purchase" button
         buyButton.gameObject.SetActive(true);
-        Debug.Log($"buyButton active after: {buyButton.gameObject.activeSelf}");
     }
     private void OnBuyButtonClick()
     {
@@ -160,39 +184,56 @@ public class StoreManager : MonoBehaviour
     // 아이템 구매 (상점 → 인벤토리)
     public void BuyItem(ItemData item, int slotIndex)
     {
+        if(item.ItemDataMoney > inventoryManager.invData.totalMoney) 
+        {
+            Debug.Log("not enough gold");
+            return;
+        }
+
         int result = inventoryManager.addItem_Button(item);
+        //check additem is successful
         if (result != -1)
         {
-            Debug.Log($"{item.name} 구매 성공!");
             storeData.inventory[slotIndex].itemInSlot = null;
             storeUI.UpdateSlotUI(slotIndex, storeData.inventory[slotIndex]);
-            //상점에 있던 아이템을 없애는 기능
+            inventoryManager.invData.totalMoney -= item.ItemDataMoney;
+            OnGoldChanged?.Invoke();
         }
         else
+            //if this player exist
             Debug.Log("구매 실패! 인벤토리가 가득 찼거나 무게 초과!");
     }
 
-    // 아이템 판매 (인벤토리 → 상점)
     public void SellItem(ItemData item)
     {
-        // 추후 구현
+        
     }
     public void OnRerollButtonClick()
     {
-        // 기존 상점 품목 전부 제거
+        //clear all items in slot
         for (int i = 0; i < storeData.inventory.Count; i++)
         {
             storeData.inventory[i].itemInSlot = null;
             storeUI.UpdateSlotUI(i, storeData.inventory[i]);
         }
 
-        // 선택된 아이템 초기화
+        //clear selected item, buyButton, description
         selectedItem = null;
         buyButton.gameObject.SetActive(false);
         itemExplainPanel.ShowDescription(null);
 
-        // 다시 품목 채우기
+        //fill items to slots
         for (int i = 0; i < storeData.inventory.Count; i++)
             RegisterItemToSlot(i);
+    }
+
+    public void OnOpenButtonClick()
+    {
+        storePanel.SetActive(true);
+        buyButton.gameObject.SetActive(false);
+    }
+    public void OnCloseButtonClick()
+    {
+        storePanel.SetActive(false);
     }
 }

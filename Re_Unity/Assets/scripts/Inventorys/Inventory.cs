@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Inventory : MonoBehaviour
 {
@@ -10,17 +11,15 @@ public class Inventory : MonoBehaviour
     public List<ItemSlot> equipment = new List<ItemSlot>();
 
     public Player_St1 player;
+    public int totalMoney = 100;
     public int totalWeight = 0;
 
-    // ������ ������ŭ ������ �� ĭ �����
     public void InitializeData(int size)
     {
         inventory.Clear();
         for (int i = 0; i < size; i++)
             inventory.Add(new ItemSlot());
-        //limitWeight = limitWeight * weightBonus;
     }
-    //���ĭ�� �迭�� ���� ����
 
     private void OnEnable()
     {
@@ -32,6 +31,7 @@ public class Inventory : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    //to link to player character
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
     {
         player = FindAnyObjectByType<Player_St1>();
@@ -39,7 +39,8 @@ public class Inventory : MonoBehaviour
 
     public int addItem(ItemData newItem)
     {
-        if(player)
+        //if player is in mainLobby, ignore weight
+        if(SceneManager.GetActiveScene().buildIndex == 2)
         {
             Debug.Log("아이템 추가 함수 호출됨");
             if (totalWeight >= player.limitWeight)
@@ -57,74 +58,62 @@ public class Inventory : MonoBehaviour
                 Debug.Log("무거움!");
                 //이동속도 소폭 감소
             }
-            Debug.Log($"{totalWeight}");
         }
         
-
+        //check all inventorySlots
         for (int i = 0; i < inventory.Count; i++)
         {
-            
-
-            //���� �κ��丮�� ����ִ� �������� ���Դٸ� ������ ��ø
+            //if can overlap item
             if (inventory[i].itemInSlot != null &&
                 (int)inventory[i].itemInSlot.itemDataType >= (int)ItemType.Any &&
                 inventory[i].itemInSlot == newItem)
             {
                 inventory[i].itemInSlot = newItem;
-                
-                
-                //������ ������ ��ø��Ű�� �κ�(�̱���)
                 inventory[i].quantity += newItem.itemDataNum;
-                Debug.Log("중첩가능");
                 return i;
             }
         }
 
-        //��ø�� �������� �ʴٸ� ������ ��ĭ �� �� ��(���� �� ����)�� ������ �߰�
+        //check all inventorySlots
         for (int i = 0; i < inventory.Count; i++)
         {
-            Debug.Log($"inventory[{i}]: {inventory[i].itemInSlot?.name}, isEmpty: {inventory[i].isEmpty}, isNull: {inventory[i].itemInSlot == null}");
+            //if this slot is empty
             if (inventory[i].isEmpty)
             {
                 inventory[i].itemInSlot = newItem;
                 inventory[i].quantity += newItem.itemDataNum;
                 totalWeight += newItem.itemDataWeight * newItem.itemDataNum;     
-                Debug.Log("그냥됨");
                 return i;
             }
         }
-        Debug.Log("아이고난");
         return -1;
     }
 
     public void exchangeItemData(SlotUI startSlot, SlotUI endSlot)
     {
+        //get info about start/end itemData
         List<ItemSlot> startList = inventory.Contains(startSlot.slotData) ? inventory : equipment;
         List<ItemSlot> endList = inventory.Contains(endSlot.slotData) ? inventory : equipment;
-
         int startIdx = startList.IndexOf(startSlot.slotData);
         int endIdx = endList.IndexOf(endSlot.slotData);
 
         if (startIdx < 0 || endIdx < 0) return;
 
+        //swapping
         ItemData tempItem = startList[startIdx].itemInSlot;
-
         startList[startIdx].itemInSlot = endList[endIdx].itemInSlot;
-
         endList[endIdx].itemInSlot = tempItem;
 
+        //if changed slot have stat
         if (startSlot.slotType == ItemType.Armor || startSlot.slotType == ItemType.Chip ||
         endSlot.slotType == ItemType.Armor || endSlot.slotType == ItemType.Chip)
             UpdateStat();
+     }
 
-        // ��ȯ �� ���� Ȯ��
-        Debug.Log($"��ȯ �� startList[{startIdx}]: {startList[startIdx].itemInSlot?.name}");
-        Debug.Log($"��ȯ �� endList[{endIdx}]: {endList[endIdx].itemInSlot?.name}");
-    }
-
+    //update all statBonus
     private void UpdateStat()
     {
-        // 먼저 모든 보너스 초기화
+        //clear all bonus
         player.hpBonus = 0;
         player.staminaBonus = 0;
         player.damageBonus = 0;
@@ -135,10 +124,11 @@ public class Inventory : MonoBehaviour
         player.attackBonus = 0;
         player.attackPercentBonus = 0;
 
-        // 장착된 장비 스탯 반영
         SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
+        //circuit all equipItems
         foreach (SlotUI slot in eqptSlots)
         {
+            //check stats each itemType has
             if (slot.slotData.isEmpty) continue;
             ItemData item = slot.slotData.itemInSlot;
 
@@ -162,6 +152,4 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
-
 }

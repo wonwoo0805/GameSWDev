@@ -5,6 +5,7 @@ public class ItemExplainPanel : MonoBehaviour
 {
     public TextMeshProUGUI descriptionText;
 
+    //Show item's description
     public void ShowDescription(ItemData item)
     {
         if (item == null)
@@ -13,5 +14,7 @@ public class ItemExplainPanel : MonoBehaviour
             return;
         }
         descriptionText.text = item.itemDataDescription;
+
+        return;
     }
 }

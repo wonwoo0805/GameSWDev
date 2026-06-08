@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8af9bd9504a4145bcfbede5f4fe124, type: 3}
+  m_Name: 18_AR_Epic
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons
+  itemName: "\uAC1C\uC870\uD615 \uC790\uB3D9\uC18C\uCD1D"
+  itemDescription: "\uB204\uAD70\uAC00\uC758 \uC190\uAE38\uC774 \uB9CE\uC774 \uB2FF\uC544\uC788\uB2E4.
+    \uADF8 \uACB0\uACFC\uB294 \uB098\uC058\uC9C0 \uC54A\uB2E4."
+  money: 350
+  weight: 3
+  num: 1
+  Code: 18
+  inventoryImage: {fileID: 21300000, guid: 4019e32e03c7b724fb1c4c80e23a0fe3, type: 3}
+  prefab: {fileID: 6346877274259657152, guid: dac49344e677d7c40bd16e849b24dbbe, type: 3}
+  itemType: 0
+  itemRarity: 2
+  damage: 22
+  maxAmmo: 30
+  fireRate: 3
+  reloadSpeed: 3
+  weaponPrefab: {fileID: 6346877274259657152, guid: dac49344e677d7c40bd16e849b24dbbe, type: 3}
+  flamePreFab: {fileID: 5485217128109573645, guid: d034899da75909f43b851602ddd60823, type: 3}
+  hitPrefab: {fileID: 5973450783547160408, guid: e4d65386ce6a7d54799c2aab5990af91, type: 3}
+  firePoint: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: f926cba00817c4e43a311751682e33d0, type: 3}
+  reloadSound: {fileID: 8300000, guid: bcc9d20ef24f4b04e956ff9e6f04706b, type: 3}

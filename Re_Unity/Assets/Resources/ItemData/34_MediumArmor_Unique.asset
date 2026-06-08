@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aafe7a2513bec49987d6623f2b69cc, type: 3}
+  m_Name: 34_MediumArmor_Unique
+  m_EditorClassIdentifier: Assembly-CSharp::Armors
+  itemName: "\uD2B9\uC218\uD615 \uACBD\uC7A5\uAC11"
+  itemDescription: "\uBCF5\uD569 \uC18C\uC7AC\uB85C \uB9CC\uB4E4\uC5B4\uC84C\uB2E4.
+    \uC0DD\uC0B0\uB41C \uC218\uB7C9\uC774 \uADF9\uD788 \uC801\uB2E4."
+  money: 480
+  weight: 8
+  num: 1
+  Code: 34
+  inventoryImage: {fileID: 0}
+  prefab: {fileID: 0}
+  itemType: 1
+  itemRarity: 3
+  HPBonus: 95

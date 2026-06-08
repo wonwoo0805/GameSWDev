@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7aafe7a2513bec49987d6623f2b69cc, type: 3}
+  m_Name: 39_HeavyArmor_Unique
+  m_EditorClassIdentifier: Assembly-CSharp::Armors
+  itemName: "\uD2B9\uC218\uD615 \uC911\uAC11"
+  itemDescription: "EOD \uADDC\uACA9 \uAE30\uBC18. \uD3ED\uBC1C \uCDA9\uACA9\uB3C4
+    \uC77C\uBD80 \uD761\uC218\uD55C\uB2E4."
+  money: 500
+  weight: 13
+  num: 1
+  Code: 39
+  inventoryImage: {fileID: 0}
+  prefab: {fileID: 0}
+  itemType: 1
+  itemRarity: 3
+  HPBonus: 130

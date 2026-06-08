@@ -1,5 +1,10 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -19,17 +24,29 @@ public class InventoryManager : MonoBehaviour
     [Header("defaultWeapon")]
     public ItemData defaultWeapon;
 
+    [Header("Button")]
+    public Button closeInventoryButton;
+    public Button openInventoryButton;
+
+    public static InventoryManager Instance;
+    public event Action OnGoldChanged;
+
     private void Awake()
     {
-        DontDestroyOnLoad(transform.root.gameObject); // Canvas 최상위 오브젝트가 씬 전환 후에도 유지
+        //maintain InventoryInfo while changing scene
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(transform.root.gameObject);
+        }
 
-        // 1. UI ��ũ��Ʈ���� �������� ����� ����
+        //inisiate Inventory Slots(seperate UI and Data)
         invUI.InitSlots();
-        
-
-        // 2. ������ UI ������ŭ ������ ��ũ��Ʈ���� ĭ�� ������ ����
         invData.InitializeData(invUI.inventoryUI.Count);
-
         invData.inventory.Clear();
         foreach (SlotUI slot in invUI.inventoryUI)
             invData.inventory.Add(slot.slotData);
@@ -37,22 +54,21 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
+        //for itemExchange with equipSlots
         SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
         foreach (SlotUI slot in eqptSlots)
             invData.equipment.Add(slot.slotData);
+
         inventoryPanel.SetActive(false);
+
+        //occur events when click these buttons
+        closeInventoryButton.onClick.AddListener(CloseInventory);
+        openInventoryButton.onClick.AddListener(ToggleInventory);
     }
 
     private void Update()
     {
-        // 2. Keyboard.current�� ����Ͽ� 'I' Ű �Է��� ����
-        // wasPressedThisFrame�� Ű�� '�� ������ �� �� ��'�� ����ǰ� �մϴ�.
-        /*
-        if (Keyboard.current != null && Keyboard.current.iKey.wasPressedThisFrame)
-        {
-            ToggleInventory();
-        }
-        */
+
     }
 
     public void OnToggleInventory(InputAction.CallbackContext context)
@@ -61,8 +77,6 @@ public class InventoryManager : MonoBehaviour
         {
             ToggleInventory();
         }
-        
-        //Debug.Log("Check");
     }
 
     public void OnCloseInventory(InputAction.CallbackContext context)
@@ -71,67 +85,109 @@ public class InventoryManager : MonoBehaviour
         {
             CloseInventory();
         }
-        
-        //Debug.Log("Check");
+
+    }
+    public void OnCloseButtonClick()
+    {
+        inventoryPanel.SetActive(false);
     }
 
-    private void ToggleInventory()
+    public void OnOpenButtonClick()
+    {
+        inventoryPanel.SetActive(true);
+    }
+
+    public void ToggleInventory()
     {
         if (inventoryPanel == null) return;
         inventoryPanel.SetActive(true); // ui active
-        playerInput.SwitchCurrentActionMap("UI"); // change action map to ui
+        
         Cursor.lockState = CursorLockMode.None; // change cursor state
         Cursor.visible = true;
+
+        playerInput.SwitchCurrentActionMap("UI");
+        //StartCoroutine(SafeSwitchActionMap("UI"));
     }
 
-    private void CloseInventory()
+    public void CloseInventory()
     {
+        if (inventoryPanel == null) return;
+
+        Debug.Log("asdfahsdfjkh");
         inventoryPanel.SetActive(false);
-        playerInput.SwitchCurrentActionMap("Player");
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
+        
+
+        if (SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            playerInput.SwitchCurrentActionMap("Player");
+            //StartCoroutine(SafeSwitchActionMap("Player"));
+        }
+            
     }
 
-    // ���� �Լ��� ���� (��ư �̺�Ʈ �����)
     public int addItem_Button(ItemData newData)
     {
-        //Debug.Log($"inventoryPanel: {inventoryPanel}");
-        //Debug.Log($"activeSelf: {inventoryPanel?.activeSelf}");
-        /*
-        if (inventoryPanel == null || !inventoryPanel.activeSelf)
-        {
-            Debug.Log("�κ��丮 â�� ���� �־� �������� �߰��� �� �����ϴ�.");
-            return -1;
-        }
-        */
-
         if (newData == null) return -1;
         
         int index = invData.addItem(newData);
 
+        //judge addItem was successful
         if (index != -1)
         {
             invUI.UpdateSlotUI(index, invData.inventory[index]);
-            Debug.Log("�߰� ����!");
             return 1;
         }
         else
         {
-            Debug.Log("�κ��丮�� ���� á���ϴ�.");
             return -1;
         }
     }
 
+    //to give itemData to weaponPreviewManager
     public ItemData GetEquippedItem(ItemType type)
     {
+        SlotUI targetSlot = null;
+        //make temporary slots to check equipSlots
         SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
+        //circuit every equipSlots
         foreach (SlotUI slot in eqptSlots)
         {
-            if (slot.slotType == type && !slot.slotData.isEmpty)
-                return slot.slotData.itemInSlot;
+            if (slot.slotType == type)
+            {
+                targetSlot = slot;
+                if(!slot.slotData.isEmpty)
+                {
+                    return slot.slotData.itemInSlot;
+                }
+            }
         }
 
-        Debug.Log("없어");
-        return defaultWeapon;
+        if(type == ItemType.Weapon)
+        {
+            Debug.Log("have no weapon in weaponSlot");
+            targetSlot.slotData.itemInSlot = defaultWeapon;
+            targetSlot.UpdateSlot(targetSlot.slotData);
+            return defaultWeapon;
+        }
+
+        return null;
+    }
+    public void sellRefunds()
+    {
+        foreach (SlotUI slot in invUI.inventoryUI)
+        {
+            if (slot.slotData.isEmpty) continue;
+            ItemData item = slot.slotData.itemInSlot;
+
+            if (item.itemDataType == ItemType.Refund)
+            {
+                invData.totalMoney += item.ItemDataMoney;
+                slot.UpdateSlot(null);
+            }
+        }
+        OnGoldChanged?.Invoke();
     }
 }
