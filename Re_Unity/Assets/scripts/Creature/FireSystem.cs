@@ -29,7 +29,6 @@ public class FireSystem : MonoBehaviour
     public ItemData currentItem;
     public Weapons currentWeapon;
     public Uses currentUse;
-    public StoryPanel storyPanel;
 
     private void Awake()
     {
@@ -118,8 +117,9 @@ public class FireSystem : MonoBehaviour
             }
             else if (hit.collider.TryGetComponent(out StoryNote note)) //내가넣음
             {
-                storyPanel.ShowStory(note.storyText, note.monologue);
+                StoryPanel.Instance.ShowStory(note.storyText, note.monologue);
             }
+
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

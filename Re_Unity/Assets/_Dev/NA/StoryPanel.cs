@@ -10,6 +10,7 @@ public class StoryPanel : MonoBehaviour
     public TextMeshProUGUI storyText;
     public Button closeButton;
     public MonologuePanel monologuePanel;
+    public static StoryPanel Instance;
     private string[] pendingMonologue;
 
     void Start()
@@ -17,6 +18,10 @@ public class StoryPanel : MonoBehaviour
         panel.SetActive(false);
         if (closeButton != null)
             closeButton.onClick.AddListener(Hide);
+    }
+    private void Awake()
+    {
+        Instance = this;
     }
 
     public void ShowStory(string text, string[] monologue)

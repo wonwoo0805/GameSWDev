@@ -1,12 +1,13 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq;
 using System.Xml;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
-using System;
+using static UnityEditor.Progress;
 
 public class StoreManager : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class StoreManager : MonoBehaviour
 
     private ItemData selectedItem;
     private int selectedSlotIndex;
+    public int rerollPrice;
 
     public static StoreManager Instance;
     public event Action OnGoldChanged;
@@ -183,7 +185,7 @@ public class StoreManager : MonoBehaviour
     // 아이템 구매 (상점 → 인벤토리)
     public void BuyItem(ItemData item, int slotIndex)
     {
-        if(item.ItemDataMoney > inventoryManager.invData.totalMoney) 
+        if(item.ItemDataPurchaseMoney > inventoryManager.invData.totalMoney) 
         {
             Debug.Log("not enough gold");
             return;
@@ -195,7 +197,7 @@ public class StoreManager : MonoBehaviour
         {
             storeData.inventory[slotIndex].itemInSlot = null;
             storeUI.UpdateSlotUI(slotIndex, storeData.inventory[slotIndex]);
-            inventoryManager.invData.totalMoney -= item.ItemDataMoney;
+            inventoryManager.invData.totalMoney -= item.ItemDataPurchaseMoney;
             OnGoldChanged?.Invoke();
         }
         else
@@ -203,10 +205,6 @@ public class StoreManager : MonoBehaviour
             Debug.Log("구매 실패! 인벤토리가 가득 찼거나 무게 초과!");
     }
 
-    public void SellItem(ItemData item)
-    {
-        
-    }
     public void OnRerollButtonClick()
     {
         //clear all items in slot
@@ -220,6 +218,8 @@ public class StoreManager : MonoBehaviour
         selectedItem = null;
         buyButton.gameObject.SetActive(false);
         itemExplainPanel.ShowDescription(null);
+        inventoryManager.invData.totalMoney -= rerollPrice;
+        OnGoldChanged?.Invoke();
 
         //fill items to slots
         for (int i = 0; i < storeData.inventory.Count; i++)

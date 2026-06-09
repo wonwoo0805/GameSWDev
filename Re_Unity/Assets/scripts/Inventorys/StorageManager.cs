@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using static UnityEditor.Progress;
 using static UnityEngine.Analytics.IAnalytic;
 
 public class StorageManager : MonoBehaviour
@@ -22,6 +24,7 @@ public class StorageManager : MonoBehaviour
     [Header("Button")]
     public Button openButton;
     public Button closeButton;
+    public Button sellButton;
 
     [Header("Inventory Size")]
     public Vector2 normalCellsize;
@@ -30,6 +33,7 @@ public class StorageManager : MonoBehaviour
     private ItemData selectedItem;
     private int selectedSlotIndex;
 
+    public event Action OnGoldChanged;
     public static StorageManager Instance;
 
     //Inisiate slots in Store
@@ -61,6 +65,7 @@ public class StorageManager : MonoBehaviour
         inventoryManager = FindAnyObjectByType<InventoryManager>();
         openButton.onClick.AddListener(OpenStorage);
         closeButton.onClick.AddListener(CloseStorage);
+        sellButton.onClick.AddListener(SellItem);
         storageMasterPanel.SetActive(false);
     }
 
@@ -91,7 +96,7 @@ public class StorageManager : MonoBehaviour
 
         //set inventorycellsize to storage
         inventoryGrid.cellSize = storageCellSize;
-
+        storagePanel.SetActive(true);
         storageMasterPanel.SetActive(true);
     }
 
@@ -121,5 +126,15 @@ public class StorageManager : MonoBehaviour
         selectedItem = item;
         selectedSlotIndex = slotIndex;
         storageExplainPanel.ShowDescription(item);
+        sellButton.gameObject.SetActive(true);
+    }
+
+    public void SellItem()
+    {
+        inventoryManager.invData.totalMoney += selectedItem.ItemDataSellMoney;
+        inventoryManager.invUI.inventoryUI[selectedSlotIndex].UpdateSlot(null);
+
+        OnGoldChanged?.Invoke();
+        sellButton.gameObject.SetActive(false);
     }
 }
