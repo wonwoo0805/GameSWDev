@@ -24,7 +24,7 @@ public class ItemExplainPanel : MonoBehaviour
         nameText.text = item.name;
         flavorText.text = item.itemDataDescription;
         statText.text = BuildStatText(item);
-        moneyText.text = $"{item.ItemDataMoney}G";
+        moneyText.text = $"{item.ItemDataPurchaseMoney}G";
         rarityText.text = item.itemDataRarity.ToString();
     }
 

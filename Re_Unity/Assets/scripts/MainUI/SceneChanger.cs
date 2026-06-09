@@ -28,6 +28,7 @@ public class SceneChanger : MonoBehaviour
         {
             Debug.Log("SceneChanger 중복 생성 - 파괴됨");
             Destroy(gameObject);
+            return;
         }
 
         player = FindAnyObjectByType<Player_St1>();
@@ -44,7 +45,6 @@ public class SceneChanger : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        inventoryManager.sellRefunds();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -52,6 +52,10 @@ public class SceneChanger : MonoBehaviour
         HandleAudioListeners();
 
         if (player == null) return;
+        if (Instance == this && inventoryManager != null)
+        {
+            inventoryManager.sellRefunds();
+        }
 
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
@@ -66,6 +70,7 @@ public class SceneChanger : MonoBehaviour
             UnityEngine.Cursor.lockState = CursorLockMode.Locked; // 커서 중앙 고정
             UnityEngine.Cursor.visible = false; // 커서 안보이게함
         }
+
     }
 
 

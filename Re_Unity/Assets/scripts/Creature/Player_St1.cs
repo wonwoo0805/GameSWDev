@@ -8,8 +8,10 @@ public class Player_St1 : MonoBehaviour
 
     //스텟관련 변수들 모음
     public float playerMaxHealth = 150f;
-    private float currentHP;
+    public float currentHP;
     public float limitWeight = 100;
+    public float maxStamina = 100;
+    public float currentStamina;
 
     //스텟 보너스 변수들 모음
     public float weightBonus = 0;
@@ -36,7 +38,11 @@ public class Player_St1 : MonoBehaviour
     public float mouseSensitivity = 0.1f;
     public Transform playerView;
     public FireSystem currentWeapon;
-    
+
+    public GuageBar hpBar;
+    public GuageBar spBar;
+    public GuageBar weightBar;
+
 
     private Vector2 lookInput;
     private float xRotation = 0f;
@@ -67,11 +73,17 @@ public class Player_St1 : MonoBehaviour
         runSpeed = 10f;
         playerMaxHealth = playerMaxHealth + playerMaxHealth * hpBonus / 100;
         currentHP = playerMaxHealth;
+        maxStamina = maxStamina + maxStamina * staminaBonus / 100;
+        currentStamina = maxStamina;
 
         controller = GetComponent<CharacterController>();
 
         //Cursor.lockState = CursorLockMode.Locked; // 커서 중앙 고정
         //Cursor.visible = false; // 커서 안보이게함
+
+        hpBar.Initialize(playerMaxHealth, currentHP, Color.red);
+        spBar.Initialize(maxStamina, currentStamina, Color.green);
+        weightBar.Initialize(limitWeight, currentWeapon.inventoryManager.invData.totalWeight, Color.black);
     }
 
     // Update is called once per frame
@@ -134,6 +146,7 @@ public class Player_St1 : MonoBehaviour
 
     public void TakeDamage(float health)
     {
+        hpBar.UpdateBar(currentHP);
         currentHP -= health;
         if(currentHP <= 0f)
         {
@@ -153,6 +166,7 @@ public class Player_St1 : MonoBehaviour
     {
 
         isSprint = context.ReadValueAsButton();
+        spBar.UpdateBar(currentStamina);
     }
     //Actual Moving
 
