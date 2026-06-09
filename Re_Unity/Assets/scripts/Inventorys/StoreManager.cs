@@ -16,8 +16,8 @@ public class StoreManager : MonoBehaviour
     [Header("Scripts")]
     public Inventory storeData;
     public InventoryUI storeUI;
+    public ItemExplainPanel itemExplainPanel;
     private InventoryManager inventoryManager;
-    private ItemExplainPanel itemExplainPanel;
 
     [Header("Item Pool")]
     public List<ItemData> itemPool;
@@ -73,7 +73,6 @@ public class StoreManager : MonoBehaviour
     private void Start()
     {
         inventoryManager = FindAnyObjectByType<InventoryManager>();
-        itemExplainPanel = FindAnyObjectByType<ItemExplainPanel>();
 
         storePanel.gameObject.SetActive(false);
 

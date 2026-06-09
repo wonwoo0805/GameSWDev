@@ -125,7 +125,11 @@ public class InventoryManager : MonoBehaviour
             playerInput.SwitchCurrentActionMap("Player");
             //StartCoroutine(SafeSwitchActionMap("Player"));
         }
-            
+
+        if (InventoryTooltip.Instance != null)
+        {
+            InventoryTooltip.Instance.ShowDescription(null);
+        }
     }
 
     public int addItem_Button(ItemData newData)
