@@ -5019,6 +5019,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 520835676068171346, guid: 18f9dd4171447094e9c7ad20c78ab1ee, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520835676068171346, guid: 18f9dd4171447094e9c7ad20c78ab1ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a885336d7d8254c4fa370db430e1a9c9, type: 3}
     - target: {fileID: 538289443899048029, guid: 18f9dd4171447094e9c7ad20c78ab1ee, type: 3}
       propertyPath: StorePanelMoneyText
       value: 
@@ -5039,6 +5047,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2174176578408507606, guid: 18f9dd4171447094e9c7ad20c78ab1ee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 03ea034e323e89f47ba2787d99270219, type: 3}
     - target: {fileID: 3493035796275015672, guid: 18f9dd4171447094e9c7ad20c78ab1ee, type: 3}
       propertyPath: m_SizeDelta.x
       value: -1400
