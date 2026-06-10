@@ -125,11 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e16e5f03fd0b3f4586c260e10bb8b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StoryNote
-  storyText: "\uBC15\uD604\uBE48 \uC528\uBC1C Tlqkf tlqkftlqkftlqkftorltlqkftlqkfqkflqklfqkflqklfkqlfkqlfkqlkl\n\uC815\uC6D0\uC6B0
-    \uC528\uBC1C\n\uC815\uC9C0\uC6A9 \uBB58\uBD10\ntest\ntest"
+  storyText: 
   monologue:
-  - "\uC544\uB2C8\uC9C4\uC9DC\uC774\uAC8C\uB9D0\uC774\uB418\uB098\uC694"
-  - "\uBC15\uD604\uBE48\uBC14\uBCF4"
-  - "\uC815\uC6D0\uC6B0\uBC14\uBCF4"
-  - "\uC815\uC9C0\uC6A9\uAC1C\uCC9C\uC7AC"
-  - test
+  - 
+  - 
+  - 
+  - 
+  - 

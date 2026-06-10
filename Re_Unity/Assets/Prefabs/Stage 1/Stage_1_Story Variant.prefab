@@ -63,31 +63,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
       propertyPath: monologue.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
       propertyPath: 'monologue.Array.data[0]'
       value: "\"\uD754\uC801\uB4E4\uC744 \uC0B4\uD3B4\uBCF4\uB2C8 \uAC10\uC5FC\uB41C
-        \uB140\uC11D\uB4E4\uC774 \uC5BC\uB9C8\uC804\uAE4C\uC9C0 \uC5EC\uAE30\uC11C
-        \uC0B4\uC558\uB358 \uD3C9\uBC94\uD55C \uC0AC\uB78C\uB4E4\uC774\uC57C. \uC774
-        \uB9C8\uC744\uC5D0\uC11C \uC5B4\uB5A4 \uC77C\uC774 \uC77C\uC5B4\uB09C \uAC83\uC740
-        \uBD84\uBA85\uD574\""
+        \uB140\uC11D\uB4E4\uC774 \n\uC5BC\uB9C8\uC804\uAE4C\uC9C0 \uC5EC\uAE30\uC11C
+        \uC0B4\uC558\uB358  \uD3C9\uBC94\uD55C \uC0AC\uB78C\uB4E4\uC774\uC57C.\" "
       objectReference: {fileID: 0}
     - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
       propertyPath: 'monologue.Array.data[1]'
-      value: "\uC870\uAE08 \uB354 \uC218\uC0C9\uC744 \uD574\uBCF8\uB2E4"
+      value: "\"\uC774 \uB9C8\uC744\uC5D0\uC11C \uC5B4\uB5A4 \uC77C\uC774 \uC77C\uC5B4\uB09C
+        \uAC83\uC740 \uBD84\uBA85\uD574\""
       objectReference: {fileID: 0}
     - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
       propertyPath: 'monologue.Array.data[2]'
-      value: "[\uC2E4\uD5D8\uC2E4 \uB9C8\uC2A4\uD130 \uD0A4]\uB97C \uD655\uBCF4\uD588\uB2E4."
+      value: "\uC870\uAE08 \uB354 \uC218\uC0C9\uC744 \uD574\uBCF8\uB2E4."
       objectReference: {fileID: 0}
     - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
       propertyPath: 'monologue.Array.data[3]'
-      value: "\"\uB354 \uC54C\uC544\uBCF4\uB824\uBA74 \uC2E4\uD5D8\uC2E4\uB85C \uAC00\uC57C\uACA0\uC5B4.\""
+      value: "[\uC2E4\uD5D8\uC2E4 \uB9C8\uC2A4\uD130 \uD0A4]\uB97C \uD655\uBCF4\uD588\uB2E4."
       objectReference: {fileID: 0}
     - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
       propertyPath: 'monologue.Array.data[4]'
-      value: 
+      value: "\"\uB354 \uC54C\uC544\uBCF4\uB824\uBA74 \uC2E4\uD5D8\uC2E4\uB85C \uAC00\uC57C\uACA0\uC5B4.\""
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
