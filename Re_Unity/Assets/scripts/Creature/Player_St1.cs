@@ -92,6 +92,7 @@ public class Player_St1 : MonoBehaviour
         ProcessMoving();
         ProcessRotation();
         FireCheck();
+        
     }
 
 
@@ -130,6 +131,15 @@ public class Player_St1 : MonoBehaviour
         }
     }
 
+    public void OnUseHeals(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            currentWeapon.UseItem();
+        }
+        
+    }
+
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.ReadValueAsButton() && controller.isGrounded)
@@ -141,7 +151,10 @@ public class Player_St1 : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("죽음!");    
+        Debug.Log("죽음!");
+        
+
+        SceneChanger.Instance.ChangeScene("MainLobbyUI");
     }
 
     public void TakeDamage(float health)
@@ -190,7 +203,12 @@ public class Player_St1 : MonoBehaviour
         controller.Move(moveDirection * finalSpeed * Time.deltaTime);// deltaTime 사용함으로써 프레임 따라 계산되게 함
         jumpVelocity.y += gravity * Time.deltaTime;
         controller.Move(jumpVelocity * Time.deltaTime);
-
+        if (isSprint)
+            if (currentStamina > 0)
+                currentStamina--;
+            else
+            if (currentStamina < maxStamina)
+                currentStamina++;
     }
 
     private void ProcessRotation()

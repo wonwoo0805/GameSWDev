@@ -28,7 +28,6 @@ public class FireSystem : MonoBehaviour
 
     public ItemData currentItem;
     public Weapons currentWeapon;
-    public Uses currentUse;
 
     private void Awake()
     {
@@ -86,7 +85,24 @@ public class FireSystem : MonoBehaviour
         wpm.PlayFireAnimation();
     }
 
-    
+    public void UseItem()
+    {
+        
+        //아이템의 개수를 1만큼 줄이는 부분
+        SlotUI targetSlot = inventoryManager.GetEquippedSlot(ItemType.Use);
+        if(targetSlot)
+        {
+            Uses currentUse = (Uses)targetSlot.slotData.itemInSlot;
+            player.currentHP += currentUse.Heal;
+            if (player.currentHP > player.playerMaxHealth)
+                player.currentHP = player.playerMaxHealth;
+            targetSlot.slotData.quantity--;
+            if (targetSlot.slotData.quantity <= 0)
+                targetSlot.UpdateSlot(null);
+        }
+        player.hpBar.UpdateBar(player.currentHP);
+        
+    }
 
     public void Interaction()
     {
