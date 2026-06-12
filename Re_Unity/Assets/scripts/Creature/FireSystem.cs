@@ -163,7 +163,7 @@ public class FireSystem : MonoBehaviour
         wpm.ChangeItemPreview(currentItem);
     }
 
-    void UpdateWeaponStat(Weapons newWeapon)
+    public void UpdateWeaponStat(Weapons newWeapon)
     {
         damage = newWeapon.damage;
         fireRate = newWeapon.fireRate;

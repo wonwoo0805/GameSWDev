@@ -169,6 +169,8 @@ MonoBehaviour:
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0
+  slotIndex: 5
+  isEquipment: 1
 --- !u!114 &160885577 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2490372275236931734, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
@@ -978,6 +980,8 @@ MonoBehaviour:
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0
+  slotIndex: 2
+  isEquipment: 1
 --- !u!1 &352103817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1217,8 @@ MonoBehaviour:
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0
+  slotIndex: 4
+  isEquipment: 1
 --- !u!1 &442961381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1368,8 @@ MonoBehaviour:
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0
+  slotIndex: 0
+  isEquipment: 1
 --- !u!1 &580457832 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 140202294602944535, guid: 8ccbd3b9c6ae27144b0d9b325c2d0d1d, type: 3}
@@ -1666,6 +1674,8 @@ MonoBehaviour:
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0
+  slotIndex: 1
+  isEquipment: 1
 --- !u!114 &617453562 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7909067697008414803, guid: 131ad6b50837a5a4d8bcdb6ebb3baabe, type: 3}
@@ -3956,6 +3966,8 @@ MonoBehaviour:
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0
+  slotIndex: 6
+  isEquipment: 1
 --- !u!1 &1316978821
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,6 +6299,8 @@ MonoBehaviour:
   slotData:
     itemInSlot: {fileID: 0}
     quantity: 0
+  slotIndex: 3
+  isEquipment: 1
 --- !u!114 &2059552303 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5610234806202989450, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}

@@ -233,6 +233,7 @@ public class Enemy_St1 : Box
     private void Die()
     {
         enemyAnimator.Play("enemy_dying",0,0f);
+        moveSpeed = 0f;
         if (EnemySpawner.Instance is WaveController waveSpawner)
         {
             waveSpawner.EnemyDied();
