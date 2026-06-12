@@ -53,11 +53,15 @@ public class Inventory : MonoBehaviour
             {
                 Debug.Log("과중량!");
                 //이동속도 감소
+                player.runSpeed = 6f;
+                player.walkSpeed = 3f;
             }
             else if (totalWeight > player.limitWeight * 0.7)
             {
                 Debug.Log("무거움!");
                 //이동속도 소폭 감소
+                player.runSpeed = 8f;
+                player.walkSpeed = 4f;
             }
             player.weightBar.UpdateBar(totalWeight);
         }

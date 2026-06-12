@@ -72,6 +72,15 @@ public class InventoryManager : MonoBehaviour
 
     }
 
+    public void initInventory()
+    {
+        invUI.InitSlots();
+        invData.InitializeData(invUI.inventoryUI.Count);
+        eqptUI.InitSlots();
+        eqptData.InitializeData(eqptUI.inventoryUI.Count);
+        return;
+    }
+
     public void OnToggleInventory(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -176,6 +185,18 @@ public class InventoryManager : MonoBehaviour
             targetSlot.slotData.itemInSlot = defaultWeapon;
             targetSlot.UpdateSlot(targetSlot.slotData);
             return defaultWeapon;
+        } 
+
+            return null;
+    }
+
+    public SlotUI GetEquippedSlot(ItemType type)
+    {
+        SlotUI[] eqptSlots = equipmentPanel.GetComponentsInChildren<SlotUI>();
+        foreach(SlotUI slot in eqptSlots)
+        {
+            if (slot.slotType == type && !slot.slotData.isEmpty)
+                return slot;
         }
 
         return null;

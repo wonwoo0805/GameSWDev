@@ -237,9 +237,11 @@ public class Enemy_St1 : Box
         {
             waveSpawner.EnemyDied();
         }
+        //적의 이동을 멈추는 부분이 필요함
+        Destroy(gameObject, 3.0f);
         Debug.Log("좀비 사망!");
         Drop();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         currentHealth = enemyMaxHealth;
         SetState(EnemyState.Patrol);
         
