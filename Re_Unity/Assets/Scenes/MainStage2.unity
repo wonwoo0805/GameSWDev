@@ -1059,6 +1059,18 @@ PrefabInstance:
       value: 33
       objectReference: {fileID: 0}
     - target: {fileID: 2577384393070566797, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
+      propertyPath: pools.Array.data[0].size
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577384393070566797, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
+      propertyPath: pools.Array.data[1].size
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577384393070566797, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
+      propertyPath: pools.Array.data[2].size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577384393070566797, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
       propertyPath: 'spawnPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1159086754}
