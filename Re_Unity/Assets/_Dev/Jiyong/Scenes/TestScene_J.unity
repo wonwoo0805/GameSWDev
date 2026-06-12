@@ -943,6 +943,67 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &1464243076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464243078}
+  - component: {fileID: 1464243077}
+  m_Layer: 0
+  m_Name: WaveSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1464243077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464243076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb674da462d7129419cc6b05f07b95a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveController
+  pools:
+  - enemyName: 1
+    prefab: {fileID: 4257700919034631458, guid: 89266a7fa500d11499c5354b2416c071, type: 3}
+    size: 20
+  - enemyName: 2
+    prefab: {fileID: 7547902686677243916, guid: 1de73d1559e03ee468901ae3889dba55, type: 3}
+    size: 20
+  - enemyName: 3
+    prefab: {fileID: 987517468259192743, guid: 28ede09319357d646b72b291bfc820b4, type: 3}
+    size: 20
+  spawnPoints:
+  - {fileID: 177666358}
+  - {fileID: 703377043}
+  spawnInterval: 0.2
+  itemTable: {fileID: 11400000, guid: 3453cf90e6c84754cb73aa3d5db0010b, type: 2}
+  enemiesPerWave: 60
+  currentWave: 1
+--- !u!4 &1464243078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464243076}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.47692, y: 0.5, z: -4.04074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1559477317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1096,6 +1157,10 @@ PrefabInstance:
     - target: {fileID: 2354496599375703720, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354496599375703720, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2577384393070566797, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
       propertyPath: 'spawnPoints.Array.data[0]'
@@ -1383,3 +1448,4 @@ SceneRoots:
   - {fileID: 177666358}
   - {fileID: 703377043}
   - {fileID: 4629882090658363164}
+  - {fileID: 1464243078}

@@ -233,11 +233,16 @@ public class Enemy_St1 : Box
     private void Die()
     {
         enemyAnimator.Play("enemy_dying",0,0f);
+        if (EnemySpawner.Instance is WaveController waveSpawner)
+        {
+            waveSpawner.EnemyDied();
+        }
         Debug.Log("좀비 사망!");
         Drop();
         gameObject.SetActive(false);
         currentHealth = enemyMaxHealth;
         SetState(EnemyState.Patrol);
+        
     }
      public override void Drop()
      {
