@@ -19,6 +19,9 @@ public class Inventory : MonoBehaviour
         inventory.Clear();
         for (int i = 0; i < size; i++)
             inventory.Add(new ItemSlot());
+        equipment.Clear();
+        for (int i = 0; i < 7; i++)
+            equipment.Add(new ItemSlot());
     }
 
     private void OnEnable()
@@ -36,6 +39,7 @@ public class Inventory : MonoBehaviour
     {
         player = FindAnyObjectByType<Player_St1>();
         player.weightBar.UpdateBar(totalWeight);
+        //UpdateStat();
     }
 
     public int addItem(ItemData newItem)
@@ -98,26 +102,59 @@ public class Inventory : MonoBehaviour
     public void exchangeItemData(SlotUI startSlot, SlotUI endSlot)
     {
         //get info about start/end itemData
-        List<ItemSlot> startList = inventory.Contains(startSlot.slotData) ? inventory : equipment;
-        List<ItemSlot> endList = inventory.Contains(endSlot.slotData) ? inventory : equipment;
-        int startIdx = startList.IndexOf(startSlot.slotData);
-        int endIdx = endList.IndexOf(endSlot.slotData);
+        //List<ItemSlot> startList = inventory.Contains(startSlot.slotData) ? inventory : equipment;
+        //List<ItemSlot> endList = inventory.Contains(endSlot.slotData) ? inventory : equipment;
 
-        if (startIdx < 0 || endIdx < 0) return;
+        List<ItemSlot> startList = startSlot.isEquipment ? equipment : inventory;
+        List<ItemSlot> endList = endSlot.isEquipment ? equipment : inventory;
 
+        int startIdx = startSlot.slotIndex;
+        int endIdx = endSlot.slotIndex;
+
+        Debug.Log("check1");
+        Debug.Log($"[Swap] 출발({(startSlot.isEquipment ? "장비" : "인벤")}): {startIdx}번 / 도착({(endSlot.isEquipment ? "장비" : "인벤")}): {endIdx}번");
+        if (startIdx < 0 || endIdx < 0)
+        {
+            Debug.Log(startIdx);
+            Debug.Log(endIdx);
+            return;
+
+        }
+        
+        Debug.Log("check3");
         //swapping
         ItemData tempItem = startList[startIdx].itemInSlot;
         startList[startIdx].itemInSlot = endList[endIdx].itemInSlot;
         endList[endIdx].itemInSlot = tempItem;
 
+        
+        
+        
+        
+    }
+
+    public void UpdateEquipment(SlotUI startSlot, SlotUI endSlot)
+    {
         //if changed slot have stat
         if (startSlot.slotType == ItemType.Armor || startSlot.slotType == ItemType.Chip ||
         endSlot.slotType == ItemType.Armor || endSlot.slotType == ItemType.Chip)
+        {
+            Debug.Log("check4");
             UpdateStat();
-     }
+        }
+        else if (startSlot.slotType == ItemType.Weapon || endSlot.slotType == ItemType.Weapon)
+        {
+            Debug.Log("check5");
+            player.currentWeapon.currentItem = player.currentWeapon.inventoryManager.GetEquippedItem(ItemType.Weapon);
+            player.currentWeapon.wpm.ChangeItemPreview(player.currentWeapon.currentItem);
+            player.currentWeapon.currentWeapon = (Weapons)player.currentWeapon.currentItem;
+            player.currentWeapon.UpdateWeaponStat(player.currentWeapon.currentWeapon);
+        }
+    }
+            
 
     //update all statBonus
-    private void UpdateStat()
+    public void UpdateStat()
     {
         //clear all bonus
         player.hpBonus = 0;
@@ -157,5 +194,9 @@ public class Inventory : MonoBehaviour
                 player.attackPercentBonus += chip.AttackPercentBonus;
             }
         }
+
+        player.playerMaxHealth = 150f + player.hpBonus;
+        player.maxStamina = 100f + player.staminaBonus;
+        player.limitWeight = 30f + player.weightBonus;
     }
 }

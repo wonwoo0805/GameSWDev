@@ -233,7 +233,7 @@ public class Enemy_St1 : Box
     private void Die()
     {
         enemyAnimator.Play("enemy_dying",0,0f);
-        //적의 이동을 멈추는 부분이 필요함
+        moveSpeed = 0f;
         Destroy(gameObject, 3.0f);
         Debug.Log("좀비 사망!");
         Drop();

@@ -28,6 +28,7 @@ public class InventoryUI : MonoBehaviour
             if (uiComp != null)
             {
                 inventoryUI.Add(uiComp);
+                uiComp.slotIndex = i;
             }
         }
     }

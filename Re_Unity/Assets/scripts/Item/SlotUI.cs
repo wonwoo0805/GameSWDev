@@ -1,6 +1,8 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.EventSystems; 
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IDropHandler, IPointerClickHandler
 {
@@ -14,6 +16,9 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     [Header("etc")]
     public ItemSlot slotData;  //to get itemData which slot need
     private StorageManager storageManager;
+    public int slotIndex;
+    public bool isEquipment = false;
+
 
     private static GameObject dragIcon;
     private Inventory inventory;
@@ -72,13 +77,29 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     //swap slot at the aspect of UI(swap Image)
     public void SwapItems(SlotUI other)
     {
-        ItemSlot temp = new ItemSlot(this.slotData.itemInSlot, this.slotData.quantity);
+        
+        //ItemSlot temp = new ItemSlot(this.slotData.itemInSlot, this.slotData.quantity);
+        //this.UpdateSlot(new ItemSlot(other.slotData.itemInSlot, other.slotData.quantity));
+        //ItemSlot temp = this.slotData;
 
-        this.UpdateSlot(new ItemSlot(other.slotData.itemInSlot, other.slotData.quantity));
-        //swap substantial itemData)
+
+        //List<ItemSlot> thisList = this.isEquipment ? inventory.equipment : inventory.inventory;
+        //List<ItemSlot> otherList = other.isEquipment ? inventory.equipment : inventory.inventory;
+
+        ItemSlot thisData = new ItemSlot(this.slotData.itemInSlot, this.slotData.quantity);
+        ItemSlot otherData = new ItemSlot(other.slotData.itemInSlot, other.slotData.quantity);
+
         inventory.exchangeItemData(this, other);
+
+        this.UpdateSlot(otherData);
+        //swap substantial itemData)
+
         //update SlotImage
-        other.UpdateSlot(temp);
+        other.UpdateSlot(thisData);
+
+        inventory.UpdateEquipment(this, other);
+
+        
     }
 
     public void UpdateSlot(ItemSlot newItem)
