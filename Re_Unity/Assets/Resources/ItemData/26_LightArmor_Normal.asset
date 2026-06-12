@@ -19,8 +19,8 @@ MonoBehaviour:
   weight: 4
   num: 1
   Code: 26
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: 3f73073f3bc47414597af350d7a91c92, type: 3}
+  prefab: {fileID: 7415925611614600521, guid: d8d10555385b95e4e8b2206d8a9637c3, type: 3}
   itemType: 1
   itemRarity: 0
   HPBonus: 20

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 139_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 규격 불명 어댑터
-  itemDescription: 12V 2A라고 적혀있다. 커넥터 규격이 뭔지 모르겠다.
+  itemName: "\uADDC\uACA9 \uBD88\uBA85 \uC5B4\uB311\uD130"
+  itemDescription: "12V 2A\uB77C\uACE0 \uC801\uD600\uC788\uB2E4. \uCEE4\uB125\uD130
+    \uADDC\uACA9\uC774 \uBB54\uC9C0 \uBAA8\uB974\uACA0\uB2E4."
   money: 30
   weight: 1
   num: 1
   Code: 139
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 0

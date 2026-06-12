@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 136_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 빈 CD 케이스
-  itemDescription: 안에 뭐가 있었는지 알 수 없다. 케이스만 남아있다.
+  itemName: "\uBE48 CD \uCF00\uC774\uC2A4"
+  itemDescription: "\uC548\uC5D0 \uBB50\uAC00 \uC788\uC5C8\uB294\uC9C0 \uC54C \uC218
+    \uC5C6\uB2E4. \uCF00\uC774\uC2A4\uB9CC \uB0A8\uC544\uC788\uB2E4."
   money: 15
   weight: 1
   num: 1
   Code: 136
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 0

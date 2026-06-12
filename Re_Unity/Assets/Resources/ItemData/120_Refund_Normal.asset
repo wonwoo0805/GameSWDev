@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 120_Refund_Normal
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 빈 기름통
-  itemDescription: 바닥까지 긁어도 한 방울 나오지 않는다.
+  itemName: "\uBE48 \uAE30\uB984\uD1B5"
+  itemDescription: "\uBC14\uB2E5\uAE4C\uC9C0 \uAE01\uC5B4\uB3C4 \uD55C \uBC29\uC6B8
+    \uB098\uC624\uC9C0 \uC54A\uB294\uB2E4."
   money: 25
   weight: 2
   num: 1
   Code: 120
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 0

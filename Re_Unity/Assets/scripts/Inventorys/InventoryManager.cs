@@ -42,6 +42,7 @@ public class InventoryManager : MonoBehaviour
         else
         {
             Destroy(transform.root.gameObject);
+            return;
         }
 
         //inisiate Inventory Slots(seperate UI and Data)
@@ -125,7 +126,11 @@ public class InventoryManager : MonoBehaviour
             playerInput.SwitchCurrentActionMap("Player");
             //StartCoroutine(SafeSwitchActionMap("Player"));
         }
-            
+
+        if (InventoryTooltip.Instance != null)
+        {
+            InventoryTooltip.Instance.ShowDescription(null);
+        }
     }
 
     public int addItem_Button(ItemData newData)
@@ -177,6 +182,7 @@ public class InventoryManager : MonoBehaviour
     }
     public void sellRefunds()
     {
+        Debug.Log("123476324798341260");
         foreach (SlotUI slot in invUI.inventoryUI)
         {
             if (slot.slotData.isEmpty) continue;
@@ -184,7 +190,7 @@ public class InventoryManager : MonoBehaviour
 
             if (item.itemDataType == ItemType.Refund)
             {
-                invData.totalMoney += item.ItemDataMoney;
+                invData.totalMoney += item.ItemDataSellMoney;
                 slot.UpdateSlot(null);
             }
         }

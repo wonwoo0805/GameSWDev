@@ -35,12 +35,13 @@ public class Inventory : MonoBehaviour
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
     {
         player = FindAnyObjectByType<Player_St1>();
+        player.weightBar.UpdateBar(totalWeight);
     }
 
     public int addItem(ItemData newItem)
     {
         //if player is in mainLobby, ignore weight
-        if(SceneManager.GetActiveScene().buildIndex == 2)
+        if(SceneManager.GetActiveScene().buildIndex != 2)
         {
             Debug.Log("아이템 추가 함수 호출됨");
             if (totalWeight >= player.limitWeight)
@@ -58,6 +59,7 @@ public class Inventory : MonoBehaviour
                 Debug.Log("무거움!");
                 //이동속도 소폭 감소
             }
+            player.weightBar.UpdateBar(totalWeight);
         }
         
         //check all inventorySlots

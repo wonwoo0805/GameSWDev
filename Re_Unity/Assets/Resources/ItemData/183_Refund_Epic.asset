@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
   m_Name: 183_Refund_Epic
   m_EditorClassIdentifier: Assembly-CSharp::Refunds
-  itemName: 고용량 고속 저장 장치
-  itemDescription: PCIe 방식의 고속 저장 장치. 속도가 빠를수록 쓸 곳도 없어졌다.
+  itemName: "\uACE0\uC6A9\uB7C9 \uACE0\uC18D \uC800\uC7A5 \uC7A5\uCE58"
+  itemDescription: "PCIe \uBC29\uC2DD\uC758 \uACE0\uC18D \uC800\uC7A5 \uC7A5\uCE58.
+    \uC18D\uB3C4\uAC00 \uBE60\uB97C\uC218\uB85D \uC4F8 \uACF3\uB3C4 \uC5C6\uC5B4\uC84C\uB2E4."
   money: 280
   weight: 1
   num: 1
   Code: 183
-  inventoryImage: {fileID: 0}
-  prefab: {fileID: 0}
+  inventoryImage: {fileID: 21300000, guid: f01b2534a6f5bb344a6904cb57dbbe2b, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
   itemType: 5
   itemRarity: 2

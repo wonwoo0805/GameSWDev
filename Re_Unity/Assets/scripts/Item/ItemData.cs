@@ -12,7 +12,7 @@ public class ItemData : ScriptableObject
     [SerializeField] private string itemDescription;
 
     //define int type
-    [SerializeField] private int money, weight, num, Code;
+    [SerializeField] private int purchaseMoney, sellMoney, weight, num, Code;
 
     //define image(sprite, etc...) type
     [SerializeField] private Sprite inventoryImage;
@@ -30,7 +30,8 @@ public class ItemData : ScriptableObject
     public int itemDataCode => Code;
     public int itemDataNum => num;
     public int itemDataWeight => weight;
-    public int ItemDataMoney => money;
+    public int ItemDataPurchaseMoney => purchaseMoney;
+    public int ItemDataSellMoney => sellMoney;
     public string itemDataDescription => itemDescription;
 
 }
