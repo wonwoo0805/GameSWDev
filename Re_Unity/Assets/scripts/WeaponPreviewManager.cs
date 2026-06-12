@@ -41,22 +41,9 @@ public class WeaponPreviewManager : MonoBehaviour
         {
             ChangeWeaponPreview(currentWeapon);
         }
-        else if (data is Uses currentUse)
-        {
-            ChangeUsePreview(currentUse);
-        }
 
     }
-    public void ChangeUsePreview(Uses currentUse)
-    {
-        currentPreview = Instantiate(currentUse.itemPrefab, spawnPoint.position, spawnPoint.rotation);
-        currentAnimator = currentPreview.GetComponent<Animator>();
 
-        PrefareForUI(currentPreview);
-
-        SetLayerRecursively(currentPreview, LayerMask.NameToLayer("UI_3D"));
-
-    }
     public void ChangeWeaponPreview(Weapons currentWeapon)
     {
         if(currentPreview != null) Destroy(currentPreview);

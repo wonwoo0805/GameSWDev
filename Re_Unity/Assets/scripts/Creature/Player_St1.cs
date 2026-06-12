@@ -92,6 +92,7 @@ public class Player_St1 : MonoBehaviour
         ProcessMoving();
         ProcessRotation();
         FireCheck();
+        
     }
 
 
@@ -130,6 +131,15 @@ public class Player_St1 : MonoBehaviour
         }
     }
 
+    public void OnUseHeals(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            currentWeapon.UseItem();
+        }
+        
+    }
+
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.ReadValueAsButton() && controller.isGrounded)
@@ -141,7 +151,10 @@ public class Player_St1 : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("죽음!");    
+        Debug.Log("죽음!");
+        
+
+        SceneChanger.Instance.ChangeScene("MainLobbyUI");
     }
 
     public void TakeDamage(float health)
@@ -166,7 +179,6 @@ public class Player_St1 : MonoBehaviour
     {
 
         isSprint = context.ReadValueAsButton();
-        spBar.UpdateBar(currentStamina);
     }
     //Actual Moving
 
@@ -191,6 +203,17 @@ public class Player_St1 : MonoBehaviour
         jumpVelocity.y += gravity * Time.deltaTime;
         controller.Move(jumpVelocity * Time.deltaTime);
 
+        if (isSprint)
+        {
+            if (currentStamina > 0)
+                currentStamina -= 0.05f;
+        }
+        else
+        {
+            if (currentStamina < maxStamina)
+                currentStamina += 0.03f;
+        } 
+        spBar.UpdateBar(currentStamina);
     }
 
     private void ProcessRotation()
