@@ -302,7 +302,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerMaxHealth: 150
+  currentHP: 0
   limitWeight: 30
+  maxStamina: 100
+  currentStamina: 0
   weightBonus: 0
   hpBonus: 0
   staminaBonus: 0
@@ -320,6 +323,9 @@ MonoBehaviour:
   mouseSensitivity: 0.1
   playerView: {fileID: 5919275122183403148}
   currentWeapon: {fileID: 39686878688175265}
+  hpBar: {fileID: 0}
+  spBar: {fileID: 0}
+  weightBar: {fileID: 0}
 --- !u!114 &3082692560467235265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +535,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ce9c0695-e2c2-4dc4-9cfa-290072e7c1ff
     m_ActionName: 'UI/CloseMenu[/Keyboard/backquote]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18c5eedc-46f9-4109-a6b0-ca1dc42598b6
+    m_ActionName: 'Player/UseHeals[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4839726967606110270}
+        m_TargetAssemblyTypeName: Player_St1, Assembly-CSharp
+        m_MethodName: OnReload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 782c92a1-432e-4fb5-b7fc-1fcfb44cdba1
+    m_ActionName: 'Player/Reload[/Keyboard/r]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -634,7 +660,6 @@ MonoBehaviour:
   range: 100
   damage: 10
   reloadSpeed: 3
-  maxAmmo: 30
   inventoryManager: {fileID: 0}
   player: {fileID: 4839726967606110270}
   playerCamera: {fileID: 7874907829930358072}
@@ -645,6 +670,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   wpm: {fileID: 0}
+  audioSource: {fileID: 0}
   currentItem: {fileID: 0}
   currentWeapon: {fileID: 0}
-  currentUse: {fileID: 0}

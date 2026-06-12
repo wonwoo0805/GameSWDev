@@ -109,6 +109,15 @@ public class Player_St1 : MonoBehaviour
         }
     }
 
+    public void OnReload(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            currentWeapon.Reload();
+        }
+        
+    }
+
     public void OnInteraction(InputAction.CallbackContext context)
     {
         if (context.performed)

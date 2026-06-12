@@ -14,16 +14,16 @@ public class WeaponPreviewManager : MonoBehaviour
 
     private void Awake()
     {
-        // ½Ì±ÛÅæ ÆÐÅÏ: ¾ÀÀÌ ³Ñ¾î°¡µµ ÀÌ °´Ã¼°¡ À¯ÁöµÇµµ·Ï ÇÕ´Ï´Ù.
+        // ï¿½Ì±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Debug.Log("SceneChanger »ý¼ºµÊ");
+            Debug.Log("SceneChanger ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
         else
         {
-            Debug.Log("SceneChanger Áßº¹ »ý¼º - ÆÄ±«µÊ");
+            Debug.Log("SceneChanger ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ - ï¿½Ä±ï¿½ï¿½ï¿½");
             Destroy(transform.root.gameObject);
         }
     }
@@ -74,6 +74,14 @@ public class WeaponPreviewManager : MonoBehaviour
         foreach(var col in obj.GetComponentsInChildren<Collider>())
         {
             col.enabled = false;
+        }
+    }
+
+    public void PlayReloadAnimation()
+    {
+        if(currentAnimator != null)
+        {
+            currentAnimator.Play("Reload",0,0f);
         }
     }
 

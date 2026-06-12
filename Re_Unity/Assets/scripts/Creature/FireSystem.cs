@@ -10,7 +10,8 @@ public class FireSystem : MonoBehaviour
     public float range = 100f;
     public float damage = 10f;
     public float reloadSpeed = 3f;
-    public int maxAmmo = 30;
+    private int maxAmmo = 30;
+    private int currentAmmo = 30;
     private float nextFireTime = 0f;
     private float interactionRange = 4f;
 
@@ -36,7 +37,7 @@ public class FireSystem : MonoBehaviour
 
     public void TryShoot()
     {
-        if(Time.time >= nextFireTime)
+        if(Time.time >= nextFireTime && currentAmmo > 0)
         {
             Shoot();
             nextFireTime = Time.time + (1f / (fireRate + fireRate * player.fireRateBonus / 100 ));
@@ -61,6 +62,7 @@ public class FireSystem : MonoBehaviour
                 // 생성함과 동시에 0.5초 뒤 삭제 예약
                 Destroy(Instantiate(currentWeapon.FlamePrefab, currentFirePoint.position, currentFirePoint.rotation), 0.2f);
             }
+            currentAmmo--;
         }
 
         RaycastHit hit;
@@ -138,6 +140,13 @@ public class FireSystem : MonoBehaviour
 
         }
     }
+
+    public void Reload()
+    {
+        currentAmmo = maxAmmo;
+        wpm.PlayReloadAnimation();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -168,6 +177,7 @@ public class FireSystem : MonoBehaviour
         damage = newWeapon.damage;
         fireRate = newWeapon.fireRate;
         maxAmmo = newWeapon.maxAmmo;
+        currentAmmo = maxAmmo;
         reloadSpeed = newWeapon.reloadSpeed;
     }
 
