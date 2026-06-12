@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class EnemySpawner : MonoBehaviour
 {
+
+    public static EnemySpawner Instance {get;private set;}
     [System.Serializable]
     public class EnemyPool
     {
@@ -16,17 +18,19 @@ public class EnemySpawner : MonoBehaviour
     public Transform[] spawnPoints;
     public float spawnInterval = 2f;
 
-    private Dictionary<string, Queue<GameObject>> poolDictionary;
+    protected Dictionary<string, Queue<GameObject>> poolDictionary;
 
     public ItemTable itemTable;
 
 
-    void Awake()
+    protected virtual void Awake()
     {
+        Instance = this;
         poolDictionary = new Dictionary<string,Queue<GameObject>>();
 
         foreach(var pool in pools)
         {
+            
             Queue<GameObject> objectPool = new Queue<GameObject>();
 
             for(int i = 0; i < pool.size; i++)
@@ -42,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
         itemTable.Initialize();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected virtual void Start()
     {
         StartCoroutine(SpawnRoutine());
     }
@@ -62,16 +66,16 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
-    void SpawnFromPool(string key)
+    protected GameObject SpawnFromPool(string key)
     {
-        if(!poolDictionary.ContainsKey(key)) return;
+        if(!poolDictionary.ContainsKey(key)) return null;
         
         GameObject objToSpawn = poolDictionary[key].Dequeue();
 
         if (objToSpawn.activeSelf)
         {
             poolDictionary[key].Enqueue(objToSpawn);
-            return;
+            return null;
         }
 
         int spawnIndex = Random.Range(0,spawnPoints.Length);
@@ -80,6 +84,7 @@ public class EnemySpawner : MonoBehaviour
 
         poolDictionary[key].Enqueue(objToSpawn);
 
+        return objToSpawn;
     }
 
     // Update is called once per frame

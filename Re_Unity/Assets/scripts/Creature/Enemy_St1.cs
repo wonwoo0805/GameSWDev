@@ -233,6 +233,10 @@ public class Enemy_St1 : Box
     private void Die()
     {
         enemyAnimator.Play("enemy_dying",0,0f);
+        if (EnemySpawner.Instance is WaveController waveSpawner)
+        {
+            waveSpawner.EnemyDied();
+        }
         //적의 이동을 멈추는 부분이 필요함
         Destroy(gameObject, 3.0f);
         Debug.Log("좀비 사망!");
@@ -240,6 +244,7 @@ public class Enemy_St1 : Box
         //gameObject.SetActive(false);
         currentHealth = enemyMaxHealth;
         SetState(EnemyState.Patrol);
+        
     }
      public override void Drop()
      {
