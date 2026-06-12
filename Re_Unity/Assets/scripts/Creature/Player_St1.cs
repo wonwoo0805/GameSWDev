@@ -179,7 +179,6 @@ public class Player_St1 : MonoBehaviour
     {
 
         isSprint = context.ReadValueAsButton();
-        spBar.UpdateBar(currentStamina);
     }
     //Actual Moving
 
@@ -203,12 +202,18 @@ public class Player_St1 : MonoBehaviour
         controller.Move(moveDirection * finalSpeed * Time.deltaTime);// deltaTime 사용함으로써 프레임 따라 계산되게 함
         jumpVelocity.y += gravity * Time.deltaTime;
         controller.Move(jumpVelocity * Time.deltaTime);
+
         if (isSprint)
+        {
             if (currentStamina > 0)
-                currentStamina--;
-            else
+                currentStamina -= 0.05f;
+        }
+        else
+        {
             if (currentStamina < maxStamina)
-                currentStamina++;
+                currentStamina += 0.03f;
+        } 
+        spBar.UpdateBar(currentStamina);
     }
 
     private void ProcessRotation()
