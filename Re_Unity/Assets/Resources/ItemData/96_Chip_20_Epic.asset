@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chips
   itemName: Type-MK20
   itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uACE0\uC7A5\uB3C4 \uBCF5\uC7A1\uD574\uC84C\uB2E4."
-  money: 200
+  purchaseMoney: 1000
+  sellMoney: 200
   weight: 1
   num: 1
   Code: 96

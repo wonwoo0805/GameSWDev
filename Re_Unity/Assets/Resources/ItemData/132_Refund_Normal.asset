@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uB04A\uC5B4\uC9C4 HDMI \uCF00\uC774\uBE14"
   itemDescription: "\uD55C\uCABD \uCEE4\uB125\uD130\uAC00 \uAD6C\uACA8\uC838 \uC788\uB2E4.
     \uC811\uCD09 \uBD88\uB7C9 \uD655\uB960 \uB192\uC74C."
-  money: 30
+  purchaseMoney: 0
+  sellMoney: 30
   weight: 1
   num: 1
   Code: 132

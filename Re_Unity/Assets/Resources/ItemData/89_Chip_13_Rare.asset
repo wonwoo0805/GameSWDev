@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Type-MK13
   itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uC774\uBC88\uC5D4 \uB0A9\uB55C\uC774
     \uAF64 \uACE0\uB974\uB2E4."
-  money: 95
+  purchaseMoney: 500
+  sellMoney: 80
   weight: 1
   num: 1
   Code: 89

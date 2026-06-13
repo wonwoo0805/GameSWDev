@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uBC14\uC774\uB7EC\uC2A4 \uC124\uACC4\uB3C4"
   itemDescription: "\uC774 \uBAA8\uB4E0 \uC7AC\uC559\uC758 \uC2DC\uC791\uC810. \uB204\uAD70\uAC00\uB294
     \uC774\uAC83\uC744 \uB418\uCC3E\uC73C\uB824 \uD55C\uB2E4."
-  money: 1005
+  purchaseMoney: 0
+  sellMoney: 1100
   weight: 2
   num: 1
   Code: 196

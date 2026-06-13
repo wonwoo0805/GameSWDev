@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uACE0\uCD9C\uB825 EMP \uC7A5\uCE58"
   itemDescription: "\uBC18\uACBD \uB0B4 \uC804\uC790\uAE30\uAE30\uB97C \uBB34\uB825\uD654\uD55C\uB2E4.
     \uD55C \uBC88 \uC4F0\uBA74 \uB05D\uC774\uB2E4."
-  money: 335
+  purchaseMoney: 0
+  sellMoney: 420
   weight: 4
   num: 1
   Code: 177

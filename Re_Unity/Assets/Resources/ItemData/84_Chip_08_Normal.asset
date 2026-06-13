@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Type-MK08
   itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uC81C\uC870\uB0A0\uC9DC\uAC00
     \uC801\uD600\uC788\uB2E4. \uC544\uC8FC \uC624\uB798\uC804\uC774\uB2E4."
-  money: 50
+  purchaseMoney: 250
+  sellMoney: 35
   weight: 1
   num: 1
   Code: 84

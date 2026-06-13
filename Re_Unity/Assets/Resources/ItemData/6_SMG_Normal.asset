@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uC591\uC0B0\uD615 \uAE30\uAD00\uB2E8\uCD1D"
   itemDescription: "\uC18C\uD615\uC774\uB77C \uD3B8\uD558\uAC8C \uB4E4\uACE0 \uB2E4\uB2D0
     \uC218 \uC788\uB2E4. \uC815\uD655\uB3C4\uB294 \uAE30\uB300\uD558\uC9C0 \uB9D0\uC790."
-  money: 90
+  purchaseMoney: 250
+  sellMoney: 80
   weight: 2
   num: 1
   Code: 6

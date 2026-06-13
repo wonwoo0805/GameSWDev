@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uC554\uD638\uD654\uB41C USB"
   itemDescription: "\uBB34\uC2A8 \uB370\uC774\uD130\uAC00 \uB4E4\uC5B4\uC788\uB294\uC9C0
     \uC54C \uC218 \uC5C6\uB2E4. \uB204\uAD70\uAC00\uB294 \uC6D0\uD560 \uAC83\uC774\uB2E4."
-  money: 175
+  purchaseMoney: 0
+  sellMoney: 180
   weight: 1
   num: 1
   Code: 150

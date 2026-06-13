@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Chips
   itemName: "Type-\u2162"
   itemDescription: "Virtus\uC758 \uCE69\uC774\uB2E4. \uB355\uBAA9\uC758 \uD1A0\uB300."
-  money: 120
+  purchaseMoney: 500
+  sellMoney: 150
   weight: 1
   num: 1
   Code: 69

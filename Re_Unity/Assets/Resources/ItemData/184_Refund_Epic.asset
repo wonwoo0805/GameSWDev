@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uAD70\uC0AC\uC6A9 \uC554\uD638\uD654 \uCC98\uB9AC \uC7A5\uCE58"
   itemDescription: "\uBBFC\uAC04\uC6A9\uACFC\uB294 \uC124\uACC4\uAC00 \uB2E4\uB974\uB2E4.
     \uB204\uAC00 \uB9CC\uB4E4\uC5C8\uB294\uC9C0\uB3C4 \uC801\uD600\uC788\uC9C0 \uC54A\uB2E4."
-  money: 320
+  purchaseMoney: 0
+  sellMoney: 350
   weight: 2
   num: 1
   Code: 184

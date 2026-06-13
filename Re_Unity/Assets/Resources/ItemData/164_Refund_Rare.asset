@@ -16,7 +16,8 @@ MonoBehaviour:
   itemDescription: "\uB450 \uC9DD\uC774 \uD55C \uC138\uD2B8\uC600\uB294\uB370 \uD558\uB098\uB294
     \uC5B4\uB514 \uAC14\uB294\uC9C0 \uBAA8\uB978\uB2E4. \uC9DD\uC774 \uB9DE\uC544\uC57C
     \uC81C\uB300\uB85C \uC4F8 \uC218 \uC788\uB2E4."
-  money: 150
+  purchaseMoney: 0
+  sellMoney: 150
   weight: 1
   num: 1
   Code: 164

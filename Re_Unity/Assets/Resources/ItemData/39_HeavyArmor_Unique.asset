@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uD2B9\uC218\uD615 \uC911\uAC11"
   itemDescription: "EOD \uADDC\uACA9 \uAE30\uBC18. \uD3ED\uBC1C \uCDA9\uACA9\uB3C4
     \uC77C\uBD80 \uD761\uC218\uD55C\uB2E4."
-  money: 500
+  purchaseMoney: 1500
+  sellMoney: 700
   weight: 13
   num: 1
   Code: 39

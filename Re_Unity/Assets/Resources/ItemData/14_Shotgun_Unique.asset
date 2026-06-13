@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapons
   itemName: "\uD2B9\uC218\uD615 \uC0F7\uAC74"
   itemDescription: "\uD55C \uBC88 \uC7A1\uC73C\uBA74 \uB193\uAE30 \uC2EB\uC5B4\uC9C4\uB2E4."
-  money: 740
+  purchaseMoney: 1500
+  sellMoney: 800
   weight: 4
   num: 1
   Code: 14
