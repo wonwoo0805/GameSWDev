@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uBE48 CD \uCF00\uC774\uC2A4"
   itemDescription: "\uC548\uC5D0 \uBB50\uAC00 \uC788\uC5C8\uB294\uC9C0 \uC54C \uC218
     \uC5C6\uB2E4. \uCF00\uC774\uC2A4\uB9CC \uB0A8\uC544\uC788\uB2E4."
-  money: 15
+  purchaseMoney: 0
+  sellMoney: 15
   weight: 1
   num: 1
   Code: 136

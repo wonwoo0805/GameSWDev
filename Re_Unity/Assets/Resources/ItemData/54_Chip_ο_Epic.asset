@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "Type-\u03BF"
   itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uC644\uC804\uD55C \uC6D0\uC758
     \uC2DC\uC791."
-  money: 220
+  purchaseMoney: 1000
+  sellMoney: 250
   weight: 1
   num: 1
   Code: 54

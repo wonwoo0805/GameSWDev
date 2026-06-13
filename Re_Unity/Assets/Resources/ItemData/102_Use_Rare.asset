@@ -16,7 +16,8 @@ MonoBehaviour:
   itemDescription: "\uBB34\uC2A8 \uC131\uBD84\uC778\uC9C0 \uC801\uD78C \uB77C\uBCA8\uC740
     \uB5A8\uC5B4\uC9C4 \uC9C0 \uC624\uB798\uB2E4. \uADF8\uB798\uB3C4 \uC0BC\uD0A4\uBA74
     \uD1B5\uC99D\uC774 \uAC00\uC2E0\uB2E4."
-  money: 95
+  purchaseMoney: 500
+  sellMoney: 100
   weight: 1
   num: 1
   Code: 102

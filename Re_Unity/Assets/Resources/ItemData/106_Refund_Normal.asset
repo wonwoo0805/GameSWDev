@@ -16,7 +16,8 @@ MonoBehaviour:
   itemDescription: "\uACF5\uC7A5 \uC5B4\uB518\uAC00\uC5D0 \uAD74\uB7EC\uB2E4\uB2C8\uB358
     \uD30C\uC774\uD504. \uC4F8\uBAA8\uB294 \uC5C6\uC9C0\uB9CC \uD314\uB9AC\uAE34
     \uD55C\uB2E4."
-  money: 50
+  purchaseMoney: 0
+  sellMoney: 50
   weight: 3
   num: 1
   Code: 106

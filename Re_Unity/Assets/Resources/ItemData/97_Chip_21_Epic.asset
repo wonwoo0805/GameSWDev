@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: Type-MK21
   itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uC5B4\uB290 \uAE30\uAD00\uC778\uC9C0\uB294
     \uACF5\uAC1C\uD558\uC9C0 \uC54A\uB294\uB2E4."
-  money: 200
+  purchaseMoney: 1000
+  sellMoney: 200
   weight: 1
   num: 1
   Code: 97

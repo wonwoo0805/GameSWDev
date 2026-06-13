@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "Type-\u2163"
   itemDescription: "Virtus\uC758 \uCE69\uC774\uB2E4. \uB355\uC758 \uD1A0\uB300\uAC00
     \uAD73\uAC74\uD574\uC9C4\uB2E4."
-  money: 120
+  purchaseMoney: 500
+  sellMoney: 150
   weight: 1
   num: 1
   Code: 70

@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "NSA \uADDC\uACA9 \uB370\uC774\uD130 \uC2A4\uD1A0\uB9AC\uC9C0"
   itemDescription: "\uBB3C\uB9AC \uC554\uD638\uD654 \uC801\uC6A9. \uBD84\uD574 \uC2DC
     \uC790\uB3D9 \uC0AD\uC81C. \uB204\uAD70\uAC00 \uCC3E\uACE0 \uC788\uC744 \uAC83\uC774\uB2E4."
-  money: 600
+  purchaseMoney: 0
+  sellMoney: 670
   weight: 2
   num: 1
   Code: 191

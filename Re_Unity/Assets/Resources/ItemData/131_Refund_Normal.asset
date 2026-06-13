@@ -15,7 +15,8 @@ MonoBehaviour:
   itemName: "\uAD6C\uD615 HDD"
   itemDescription: "320GB. \uBC30\uB4DC\uC139\uD130\uAC00 \uC808\uBC18\uC774\uB2E4.
     \uC18C\uB9AC\uAC00 \uC2EC\uC0C1\uCE58 \uC54A\uB2E4."
-  money: 50
+  purchaseMoney: 0
+  sellMoney: 50
   weight: 1
   num: 1
   Code: 131

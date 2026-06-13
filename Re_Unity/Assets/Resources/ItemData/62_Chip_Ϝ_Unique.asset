@@ -16,7 +16,8 @@ MonoBehaviour:
   itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uC78A\uD600\uC9C4 \uBB38\uC790\uB97C
     \uB418\uC0B4\uB838\uB2E4. \uACE0\uB300\uC758 \uAE30\uC5B5\uC774 \uD68C\uB85C
     \uC548\uC5D0 \uC788\uB2E4."
-  money: 450
+  purchaseMoney: 1500
+  sellMoney: 500
   weight: 1
   num: 1
   Code: 62
