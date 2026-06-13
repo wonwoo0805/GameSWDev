@@ -1404,6 +1404,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3453cf90e6c84754cb73aa3d5db0010b, type: 2}
     - target: {fileID: 2577384393070566797, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
+      propertyPath: spawnInterval
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2577384393070566797, guid: 01644f3b5b5a49c45a9c17fcb3703979, type: 3}
       propertyPath: pools.Array.size
       value: 2
       objectReference: {fileID: 0}

@@ -21,8 +21,8 @@ public class SettingManager : MonoBehaviour
     public GameObject settingPanel;
     private Player_St1 player;
 
-    private float PlayerVolume = 0;
-    private float PlayerSensitivity = 0;
+    private float PlayerVolume = 1f;
+    private float PlayerSensitivity = 0.1f;
 
     public static SettingManager Instance;
 
