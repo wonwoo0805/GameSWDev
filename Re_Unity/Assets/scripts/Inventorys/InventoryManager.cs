@@ -1,8 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
@@ -18,8 +19,8 @@ public class InventoryManager : MonoBehaviour
     [Header("Scripts")]
     public Inventory invData;
     public InventoryUI invUI;
-    public Inventory eqptData;
-    public InventoryUI eqptUI;
+    public List<ItemData> eqptData;
+    public List<SlotUI> eqptUI;
 
     [Header("defaultWeapon")]
     public ItemData defaultWeapon;
@@ -74,10 +75,27 @@ public class InventoryManager : MonoBehaviour
 
     public void initInventory()
     {
+        //Init InventorySlots
         invUI.InitSlots();
         invData.InitializeData(invUI.inventoryUI.Count);
-        eqptUI.InitSlots();
-        eqptData.InitializeData(eqptUI.inventoryUI.Count);
+        invData.inventory.Clear();
+        foreach (SlotUI slot in invUI.inventoryUI)
+        {
+            slot.UpdateSlot(null);
+            invData.inventory.Add(slot.slotData);
+        }
+
+
+        //Init EquipSlots
+        eqptUI.Clear();
+        eqptUI.AddRange(equipmentPanel.GetComponentsInChildren<SlotUI>());
+        eqptData.Clear();
+        foreach (SlotUI slot in eqptUI)
+        {
+            slot.UpdateSlot(null);
+            eqptData.Add(slot.slotData.itemInSlot);
+        }
+            
         return;
     }
 
