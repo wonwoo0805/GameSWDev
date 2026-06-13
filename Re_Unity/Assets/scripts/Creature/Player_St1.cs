@@ -40,14 +40,17 @@ public class Player_St1 : MonoBehaviour
     public float mouseSensitivity = 0.1f;
     public Transform playerView;
     public FireSystem currentWeapon;
-
+    public AudioSource audioSource;
     public GuageBar hpBar;
     public GuageBar spBar;
     public GuageBar weightBar;
-
+    
+    public float footstepInterval = 0.5f;
+    private float footstepTimer;
 
     private Vector2 lookInput;
     private float xRotation = 0f;
+    public AudioClip[] walkSound = new AudioClip[10];
 
     public static Player_St1 Instance;
 
@@ -66,6 +69,7 @@ public class Player_St1 : MonoBehaviour
             Debug.Log("SceneChanger 중복 생성 - 파괴됨");
             Destroy(gameObject);
         }
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -182,7 +186,8 @@ public class Player_St1 : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>();
-        
+
+           
     }
 
     //RunningCheck
@@ -209,20 +214,25 @@ public class Player_St1 : MonoBehaviour
     }
     private void ProcessMoving()
     {
-
+        
         if (controller.isGrounded && jumpVelocity.y < 0)
         {
             jumpVelocity.y = -2f;
         }
 
-        //최종 속도는 isSprint 값에 의해 결정됨
+        
         finalSpeed = isSprint ? runSpeed : walkSpeed; 
 
+    
         Vector3 moveDirection = transform.right * movement.x + transform.forward * movement.y;
-        
-        controller.Move(moveDirection * finalSpeed * Time.deltaTime);// deltaTime 사용함으로써 프레임 따라 계산되게 함
+        Vector3 finalMovement = moveDirection * finalSpeed; 
+
+    
         jumpVelocity.y += gravity * Time.deltaTime;
-        controller.Move(jumpVelocity * Time.deltaTime);
+        finalMovement.y = jumpVelocity.y; 
+
+    
+        controller.Move(finalMovement * Time.deltaTime);
 
         if (isSprint)
         {
@@ -235,6 +245,27 @@ public class Player_St1 : MonoBehaviour
                 currentStamina += 0.03f;
         } 
         spBar.UpdateBar(currentStamina);
+
+        bool isMoving = controller.isGrounded && (movement.sqrMagnitude > 0.01f);
+        if(walkSound != null && isMoving == true)
+        {
+            
+            footstepTimer += Time.deltaTime;
+            
+            if (footstepTimer >= footstepInterval)
+            {
+                audioSource.PlayOneShot(walkSound[Random.Range(0, walkSound.Length)]);
+                footstepTimer = 0f;
+            }
+
+        }
+        else
+        {
+            if (movement.sqrMagnitude <= 0.01f)
+            {
+                footstepTimer = footstepInterval; 
+            } 
+        }
     }
 
     private void ProcessRotation()
