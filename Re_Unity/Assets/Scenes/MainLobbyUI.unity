@@ -3239,6 +3239,46 @@ PrefabInstance:
       propertyPath: weightBar
       value: 
       objectReference: {fileID: 1708604129}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 341f841043da34a48ab18c97b03aac1e, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: cafd4c09d3f7357418382271371d6cf0, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a0b6ca096c33af4aa5721758b2a6d1c, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ca6860dda93efe94891c77b5bfaedf45, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 690d2f976547de546973fe5cb2eda986, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[5]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 2dc643e26330f334cbc031bee947b879, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8300000, guid: a9960081fc64f7e429f8f4029832a2e1, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[7]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b010d539779dce40b4d434f6a33972f, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[8]'
+      value: 
+      objectReference: {fileID: 8300000, guid: bce668c6f2067f648a57e9a279c1eb71, type: 3}
+    - target: {fileID: 4839726967606110270, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
+      propertyPath: 'walkSound.Array.data[9]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 323c81c3428769142aecff5ffaf4ed31, type: 3}
     - target: {fileID: 8081101340711179136, guid: faba335e5dd3ccc4994d61cce921dc34, type: 3}
       propertyPath: m_Name
       value: Player_St1

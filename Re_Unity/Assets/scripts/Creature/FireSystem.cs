@@ -145,6 +145,10 @@ public class FireSystem : MonoBehaviour
     {
         currentAmmo = maxAmmo;
         wpm.PlayReloadAnimation();
+        if (currentWeapon.ReloadSound != null)
+        {
+            audioSource.PlayOneShot(currentWeapon.ReloadSound);
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
