@@ -1527,18 +1527,18 @@ MonoBehaviour:
   pools:
   - enemyName: tank
     prefab: {fileID: 8395623584303995197, guid: 8ad66a69c5559654abd87e528057665e, type: 3}
-    size: 20
+    size: 10
   - enemyName: fast
     prefab: {fileID: 8353925633108259247, guid: fb7ff34db84a52845bd2955f5bd89fa1, type: 3}
-    size: 20
+    size: 10
   - enemyName: normal
     prefab: {fileID: 5859422750228678111, guid: 33b2575feea7c4c4097162169bebe67c, type: 3}
-    size: 20
+    size: 10
   spawnPoints:
   - {fileID: 397376494}
   spawnInterval: 2
-  itemTable: {fileID: 11400000, guid: 3453cf90e6c84754cb73aa3d5db0010b, type: 2}
-  enemiesPerWave: 60
+  itemTable: {fileID: 11400000, guid: 5acb3723ed6233243a806d80ecef3d76, type: 2}
+  enemiesPerWave: 30
   currentWave: 1
 --- !u!4 &2051009905
 Transform:
