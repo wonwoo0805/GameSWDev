@@ -81,6 +81,7 @@ public class EnemySpawner : MonoBehaviour
         int spawnIndex = Random.Range(0,spawnPoints.Length);
         objToSpawn.transform.position = spawnPoints[spawnIndex].position;
         objToSpawn.SetActive(true);
+        
 
         poolDictionary[key].Enqueue(objToSpawn);
 

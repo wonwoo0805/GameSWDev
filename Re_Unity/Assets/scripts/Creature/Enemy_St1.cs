@@ -30,7 +30,7 @@ public class Enemy_St1 : Box
 
     private Animator enemyAnimator;
 
-
+    public bool isAlive = true;
 
     //NavMesh라고 유니티 지원 길찾는 ai
     private NavMeshAgent agent;
@@ -94,7 +94,10 @@ public class Enemy_St1 : Box
 
     private void DefineState()
     {
-        
+        if(isAlive == false)
+        {
+            return;
+        }
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
@@ -234,17 +237,19 @@ public class Enemy_St1 : Box
     {
         enemyAnimator.Play("enemy_dying",0,0f);
         moveSpeed = 0f;
+        agent.velocity = Vector3.zero;
         if (EnemySpawner.Instance is WaveController waveSpawner)
         {
             waveSpawner.EnemyDied();
         }
-        //적의 이동을 멈추는 부분이 필요함
+        
         Destroy(gameObject, 3.0f);
         Debug.Log("좀비 사망!");
         Drop();
         //gameObject.SetActive(false);
         currentHealth = enemyMaxHealth;
         SetState(EnemyState.Patrol);
+        isAlive = false;
         
     }
      public override void Drop()
@@ -260,8 +265,17 @@ public class Enemy_St1 : Box
 
             if(droppedItem.itemPrefab != null)
             {
+                /*
                 Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
                 Instantiate(droppedItem.itemPrefab,spawnPos,Quaternion.identity);
+                */
+                Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
+                GameObject SpawnedItem = (Instantiate(droppedItem.itemPrefab,spawnPos,Quaternion.identity));
+
+                if(SpawnedItem.TryGetComponent(out ItemObject itemObj))
+                {
+                    itemObj.itemData = droppedItem;
+                }
                     
             }
             Debug.Log($"{droppedItem.name} 드랍");
