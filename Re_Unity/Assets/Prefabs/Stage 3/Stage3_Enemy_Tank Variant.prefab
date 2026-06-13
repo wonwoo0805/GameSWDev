@@ -53,6 +53,10 @@ PrefabInstance:
       value: Stage3_Enemy_Tank Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3452003411044699920, guid: 28ede09319357d646b72b291bfc820b4, type: 3}
+      propertyPath: enemyType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3452003411044699920, guid: 28ede09319357d646b72b291bfc820b4, type: 3}
       propertyPath: itemTable
       value: 
       objectReference: {fileID: 11400000, guid: 5acb3723ed6233243a806d80ecef3d76, type: 2}

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 public class Enemy_St1 : Box
 {
@@ -6,6 +6,7 @@ public class Enemy_St1 : Box
     public enum EnemyState {Patrol, Chase, Search, Attack}
     [Header("Current State")]
     public EnemyState currentState = EnemyState.Patrol;
+    public int enemyType = 0;
     [Header("Stats")]
     public float enemyMaxHealth = 100f; // 최대체력
     private float currentHealth; // 현재체력
@@ -254,29 +255,50 @@ public class Enemy_St1 : Box
     }
      public override void Drop()
      {
-        if(itemTable != null)
+        if (enemyType == 3) return;
+
+
+        if (itemTable != null)
         {
             ItemData droppedItem = itemTable.GetRandomItem();
-            if(droppedItem == null)
+            if (droppedItem == null)
             {
                 Debug.Log("drop cancel");
                 return;
             }
 
-            if(droppedItem.itemPrefab != null)
+            if (droppedItem.itemPrefab != null)
             {
                 /*
                 Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
                 Instantiate(droppedItem.itemPrefab,spawnPos,Quaternion.identity);
                 */
                 Vector3 spawnPos = transform.position + Random.insideUnitSphere * 0.5f;
-                GameObject SpawnedItem = (Instantiate(droppedItem.itemPrefab,spawnPos,Quaternion.identity));
 
-                if(SpawnedItem.TryGetComponent(out ItemObject itemObj))
+                switch (enemyType)
                 {
-                    itemObj.itemData = droppedItem;
+                    case 0:
+                        GameObject SpawnedItem = (Instantiate(droppedItem.itemPrefab, spawnPos, Quaternion.identity));
+
+                        if (SpawnedItem.TryGetComponent(out ItemObject itemObj))
+                        {
+                            itemObj.itemData = droppedItem;
+                        }
+                        break;
+                    case 1:
+                        GameObject storyItem1 = Resources.Load<GameObject>("StoryItem/Stage_1_Story_Variant");
+                        Instantiate(storyItem1, spawnPos, Quaternion.identity);
+                        Debug.Log("stage1 boss drop");
+                        return;
+                    case 2:
+                        GameObject storyItem2 = Resources.Load<GameObject>("StoryItem/Stage_2_Story_semi_boss Variant");
+                        Instantiate(storyItem2, spawnPos, Quaternion.identity);
+                        Debug.Log("stage2 boss drop");
+                        return;
                 }
-                    
+
+                
+
             }
             Debug.Log($"{droppedItem.name} 드랍");
         }

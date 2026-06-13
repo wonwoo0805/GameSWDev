@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -13,20 +13,20 @@ public class SceneChanger : MonoBehaviour
 
     [Header("Settings")]
     //public string sceneToLoad;
-    public Vector3 nextSpawnPosition; // ´ÙÀ½ ¾À¿¡¼­ ÇÃ·¹ÀÌ¾î°¡ À§Ä¡ÇÒ ÁÂÇ¥
+    public Vector3 nextSpawnPosition; // ë‹¤ìŒ ì”¬ì—ì„œ í”Œë ˆì´ì–´ê°€ ìœ„ì¹˜í•  ì¢Œí‘œ
 
     private void Awake()
     {
-        // ½Ì±ÛÅæ ÆĞÅÏ: ¾ÀÀÌ ³Ñ¾î°¡µµ ÀÌ °´Ã¼°¡ À¯ÁöµÇµµ·Ï ÇÕ´Ï´Ù.
+        // ì‹±ê¸€í†¤ íŒ¨í„´: ì”¬ì´ ë„˜ì–´ê°€ë„ ì´ ê°ì²´ê°€ ìœ ì§€ë˜ë„ë¡ í•©ë‹ˆë‹¤.
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Debug.Log("SceneChanger »ı¼ºµÊ");
+            Debug.Log("SceneChanger ìƒì„±ë¨");
         }
         else
         {
-            Debug.Log("SceneChanger Áßº¹ »ı¼º - ÆÄ±«µÊ");
+            Debug.Log("SceneChanger ì¤‘ë³µ ìƒì„± - íŒŒê´´ë¨");
             Destroy(gameObject);
             return;
         }
@@ -39,7 +39,7 @@ public class SceneChanger : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        Debug.Log("OnSceneLoaded µî·ÏµÊ");
+        Debug.Log("OnSceneLoaded ë“±ë¡ë¨");
     }
 
     private void OnDisable()
@@ -59,16 +59,16 @@ public class SceneChanger : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            UnityEngine.Cursor.lockState = CursorLockMode.None; // °íÁ¤ÇØÁ¦
-            UnityEngine.Cursor.visible = true; // ´Ù½Ã º¸ÀÌ°Ô
+            UnityEngine.Cursor.lockState = CursorLockMode.None; // ê³ ì •í•´ì œ
+            UnityEngine.Cursor.visible = true; // ë‹¤ì‹œ ë³´ì´ê²Œ
             
         }
         else
         {
             StartCoroutine(MovePlayerToSpawnPoint());
             playerInput.SwitchCurrentActionMap("Player");
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked; // Ä¿¼­ Áß¾Ó °íÁ¤
-            UnityEngine.Cursor.visible = false; // Ä¿¼­ ¾Èº¸ÀÌ°ÔÇÔ
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked; // ì»¤ì„œ ì¤‘ì•™ ê³ ì •
+            UnityEngine.Cursor.visible = false; // ì»¤ì„œ ì•ˆë³´ì´ê²Œí•¨
         }
 
     }
@@ -80,49 +80,51 @@ public class SceneChanger : MonoBehaviour
 
         if (listeners.Length <= 1) return;
 
-        // ¸ŞÀÎ Ä«¸Ş¶óÀÇ AudioListener ÇÏ³ª¸¸ ³²±â°í ³ª¸ÓÁö ºñÈ°¼ºÈ­
+        // ë©”ì¸ ì¹´ë©”ë¼ì˜ AudioListener í•˜ë‚˜ë§Œ ë‚¨ê¸°ê³  ë‚˜ë¨¸ì§€ ë¹„í™œì„±í™”
         bool kept = false;
         foreach (AudioListener listener in listeners)
         {
             if (!kept && listener.gameObject.CompareTag("MainCamera"))
             {
-                kept = true; // ¸ŞÀÎ Ä«¸Ş¶ó °ÍÀº À¯Áö
+                kept = true; // ë©”ì¸ ì¹´ë©”ë¼ ê²ƒì€ ìœ ì§€
             }
             else
             {
-                listener.enabled = false; // ³ª¸ÓÁö´Â ºñÈ°¼ºÈ­
-                Debug.Log($"AudioListener ºñÈ°¼ºÈ­: {listener.gameObject.name}");
+                listener.enabled = false; // ë‚˜ë¨¸ì§€ëŠ” ë¹„í™œì„±í™”
+                Debug.Log($"AudioListener ë¹„í™œì„±í™”: {listener.gameObject.name}");
             }
         }
     }
 
-    // ¹öÆ°¿¡¼­ È£ÃâÇÒ ÇÔ¼ö
+    // ë²„íŠ¼ì—ì„œ í˜¸ì¶œí•  í•¨ìˆ˜
     public void ChangeScene(string targetScene)
     {
+        if ((SceneManager.GetActiveScene().buildIndex == 5) && (FindObjectsOfType<Enemy_St1>().Length > 0)) return;
+        Debug.Log(FindObjectsOfType<Enemy_St1>().Length);
         //sceneToLoad = targetScene;
-        // ¿¹: Æ¯Á¤ ÁÂÇ¥¸¦ ¹Ì¸® ÁöÁ¤ÇÏ°Å³ª ÇÔ¼ö ÀÎÀÚ·Î ¹ŞÀ» ¼ö ÀÖ½À´Ï´Ù.
+        // ì˜ˆ: íŠ¹ì • ì¢Œí‘œë¥¼ ë¯¸ë¦¬ ì§€ì •í•˜ê±°ë‚˜ í•¨ìˆ˜ ì¸ìë¡œ ë°›ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
         StartCoroutine(LoadSceneAsync(targetScene));
     }
 
     private IEnumerator LoadSceneAsync(string targetScene)
     {
-        // ºñµ¿±â ·Îµù ½ÃÀÛ (ÀüÈ¯ ¼Óµµ ÃÖÀûÈ­)
+        // ë¹„ë™ê¸° ë¡œë”© ì‹œì‘ (ì „í™˜ ì†ë„ ìµœì í™”)
         AsyncOperation operation = SceneManager.LoadSceneAsync(targetScene);
 
-        // ·ÎµùÀÌ ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ë¡œë”©ì´ ì™„ë£Œë  ë•Œê¹Œì§€ ëŒ€ê¸°
         while (!operation.isDone)
         {
             yield return null;
         }
         Debug.Log("ewqrwdfweqfdasvfd");
-        // ¾À ·ÎµùÀÌ ¿Ï·áµÈ Á÷ÈÄ ÇÃ·¹ÀÌ¾î À§Ä¡ ¼³Á¤
+        // ì”¬ ë¡œë”©ì´ ì™„ë£Œëœ ì§í›„ í”Œë ˆì´ì–´ ìœ„ì¹˜ ì„¤ì •
         
     }
 
     private IEnumerator MovePlayerToSpawnPoint()
     {
         yield return new WaitForSeconds(0.1f);
-        Debug.Log($"ÇöÀç ¾À: {SceneManager.GetActiveScene().name}");
+        Debug.Log($"í˜„ì¬ ì”¬: {SceneManager.GetActiveScene().name}");
         // find player, spawnpoint and set spawnPosition
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         //GameObject spawnPoint = GameObject.FindGameObjectWithTag("SpawnPoint");
@@ -140,7 +142,7 @@ public class SceneChanger : MonoBehaviour
 
         if (player != null)
         {
-            // Ä³¸¯ÅÍ ÄÁÆ®·Ñ·¯°¡ ÀÖ´Ù¸é Àá½Ã ²ô°í ÀÌµ¿½ÃÄÑ¾ß ¿¡·¯°¡ ³ªÁö ¾Ê½À´Ï´Ù.
+            // ìºë¦­í„° ì»¨íŠ¸ë¡¤ëŸ¬ê°€ ìˆë‹¤ë©´ ì ì‹œ ë„ê³  ì´ë™ì‹œì¼œì•¼ ì—ëŸ¬ê°€ ë‚˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
             var controller = player.GetComponent<CharacterController>();
             if (controller != null)
                 controller.enabled = false;
@@ -151,7 +153,7 @@ public class SceneChanger : MonoBehaviour
             if (controller != null)
                 controller.enabled = true;
         }
-        //Debug.Log($"{sceneToLoad}·Î ÀÌµ¿ ¿Ï·á. ½ºÆù À§Ä¡: {nextSpawnPosition}");
+        //Debug.Log($"{sceneToLoad}ë¡œ ì´ë™ ì™„ë£Œ. ìŠ¤í° ìœ„ì¹˜: {nextSpawnPosition}");
     }
     
 }

@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stage_1_boss Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3452003411044699920, guid: 28ede09319357d646b72b291bfc820b4, type: 3}
+      propertyPath: enemyType
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
