@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
@@ -17,6 +17,9 @@ public class InventoryUI : MonoBehaviour
     public void InitSlots()
     {
         if (slotPrefab == null || slotParent == null) return;
+
+        foreach (SlotUI slot in inventoryUI)
+            Destroy(slot.gameObject);
 
         inventoryUI.Clear();
 

@@ -1,4 +1,4 @@
-using UnityEditorInternal.Profiling.Memory.Experimental;
+﻿using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Audio.GeneratorInstance;
@@ -31,6 +31,7 @@ public class Player_St1 : MonoBehaviour
     public float runSpeed = 10f;
     private bool isSprint = false;
     private bool isFiring = false;
+    private bool isExhausted = false;
     private Vector2 movement;
     private Vector3 jumpVelocity;
     public float finalSpeed = 0f;
@@ -162,8 +163,8 @@ public class Player_St1 : MonoBehaviour
     public void Die()
     {
         Debug.Log("죽음!");
-        
 
+        InventoryManager.Instance.initInventory();
         SceneChanger.Instance.ChangeScene("MainLobbyUI");
     }
 
@@ -187,8 +188,18 @@ public class Player_St1 : MonoBehaviour
     //RunningCheck
     public void OnSprint(InputAction.CallbackContext context)
     {
+        
+        isSprint = (context.ReadValueAsButton() && (currentStamina > 1) && !isExhausted);
+        if(!isSprint && (currentStamina < 30))
+        {
+            isExhausted = true;
+        }
+        else
+        {
+            isExhausted = false;
+        }
 
-        isSprint = context.ReadValueAsButton();
+        return;
     }
     //Actual Moving
 

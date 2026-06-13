@@ -2975,6 +2975,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: dde77663d89bdd543ac957c037b894c1, type: 3}
     - target: {fileID: 5956448026988891260, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: eqptUI
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956448026988891260, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: eqptData
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5956448026988891260, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
       propertyPath: playerInput
       value: 
       objectReference: {fileID: 886280879}
