@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3453cf90e6c84754cb73aa3d5db0010b, type: 2}
     - target: {fileID: 1821076418360858005, guid: 89266a7fa500d11499c5354b2416c071, type: 3}
       propertyPath: moveSpeed
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1821076418360858005, guid: 89266a7fa500d11499c5354b2416c071, type: 3}
       propertyPath: enemyMaxHealth

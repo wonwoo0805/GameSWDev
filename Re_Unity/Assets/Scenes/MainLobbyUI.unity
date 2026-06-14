@@ -2725,7 +2725,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 412.09955, z: -338.4745, w: -420.22992}
+  m_margin: {x: 0, y: 352.6111, z: -338.4745, w: -420.22992}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3034,6 +3034,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 886280880}
+    - target: {fileID: 8172125650641567815, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
+      propertyPath: totalMoney
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 8482708403077194183, guid: 6b5029d6639e9f7429fc3e0090bc2595, type: 3}
       propertyPath: itemImage
       value: 
@@ -3907,7 +3911,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 652.546, y: 279.1548, z: 0, w: 99.19395}
+  m_margin: {x: 652.546, y: 242.3829, z: 0, w: 99.19395}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5019,7 +5023,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -17.744934, y: 202.13223, z: -60.86673, w: -178.12108}
+  m_margin: {x: -17.744934, y: 180.04068, z: -60.86673, w: -178.12108}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

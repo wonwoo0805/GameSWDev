@@ -24,7 +24,7 @@ public class ItemExplainPanel : MonoBehaviour
         nameText.text = item.name;
         flavorText.text = item.itemDataDescription;
         statText.text = BuildStatText(item);
-        moneyText.text = $"구매 {item.ItemDataPurchaseMoney}G / 판매 {item.ItemDataSellMoney}G";
+        moneyText.text = $"무게 {item.itemDataWeight}kg\n구매 {item.ItemDataPurchaseMoney}G / 판매 {item.ItemDataSellMoney}G";
         rarityText.text = item.itemDataRarity.ToString();
     }
 

@@ -301,10 +301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d435742828a344ca5f4015afb8fb30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  playerMaxHealth: 150
+  playerMaxHealth: 100
   currentHP: 0
-  limitWeight: 30
-  maxStamina: 100
+  limitWeight: 60
+  maxStamina: 50
   currentStamina: 0
   weightBonus: 0
   hpBonus: 0
@@ -316,16 +316,29 @@ MonoBehaviour:
   attackPercentBonus: 0
   reloadBonus: 0
   walkSpeed: 5
-  runSpeed: 10
+  runSpeed: 12
   finalSpeed: 0
   jumpHeight: 1.5
   gravity: -9.81
   mouseSensitivity: 0.1
   playerView: {fileID: 5919275122183403148}
   currentWeapon: {fileID: 39686878688175265}
+  audioSource: {fileID: 0}
   hpBar: {fileID: 0}
   spBar: {fileID: 0}
   weightBar: {fileID: 0}
+  footstepInterval: 0.5
+  walkSound:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &3082692560467235265
 MonoBehaviour:
   m_ObjectHideFlags: 0

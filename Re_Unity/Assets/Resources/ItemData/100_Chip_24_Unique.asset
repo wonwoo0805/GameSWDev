@@ -25,7 +25,7 @@ MonoBehaviour:
   itemType: 2
   itemRarity: 3
   Hpbonus: 15
-  StaminaBonus: 5
+  StaminaBonus: 10
   DamageBonus: 0
   MaxammoBonus: 0
   WeightBonus: 15

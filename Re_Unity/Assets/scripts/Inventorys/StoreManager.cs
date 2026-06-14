@@ -207,6 +207,10 @@ public class StoreManager : MonoBehaviour
 
     public void OnRerollButtonClick()
     {
+         if (inventoryManager.invData.totalMoney < rerollPrice)
+     {
+        return;
+    }
         //clear all items in slot
         for (int i = 0; i < storeData.inventory.Count; i++)
         {

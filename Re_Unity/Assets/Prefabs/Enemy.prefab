@@ -156,18 +156,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy_St1
   itemTable: {fileID: 11400000, guid: 3453cf90e6c84754cb73aa3d5db0010b, type: 2}
   currentState: 0
+  enemyType: 0
   enemyMaxHealth: 100
-  moveSpeed: 3
-  detectionRadius: 15
+  moveSpeed: 5
+  detectionRadius: 25
   attackRange: 2
-  attackRadius: 1
-  attackDamage: 10
+  attackRadius: 4
+  attackDamage: 20
   attackCooldown: 2
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  patrolRadius: 10
+  patrolRadius: 20
   patrolWaitTime: 2
+  isAlive: 1
 --- !u!195 &4695061826638335394
 NavMeshAgent:
   m_ObjectHideFlags: 0
