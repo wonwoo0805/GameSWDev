@@ -1,5 +1,5 @@
-using UnityEngine;
-using TMPro; // TextMeshPro¸¦ »ç¿ëÇÑ´Ù¸é
+ï»¿using UnityEngine;
+using TMPro; // TextMeshProë¥¼ ì‚¬ìš©í•œë‹¤ë©´
 
 public class GoldUIUpdater : MonoBehaviour
 {
@@ -8,10 +8,10 @@ public class GoldUIUpdater : MonoBehaviour
 
     void Start()
     {
-        // Ã³À½ ½ÃÀÛÇÒ ¶§ ÇÑ ¹ø ¾÷µ¥ÀÌÆ®
+        // ì²˜ìŒ ì‹œì‘í•  ë•Œ í•œ ë²ˆ ì—…ë°ì´íŠ¸
         UpdateGoldUI();
         
-        // InventoryManagerÀÇ µ· º¯°æ ÀÌº¥Æ®¿¡ ³ª¸¦ µî·Ï(±¸µ¶)
+        // InventoryManagerì˜ ëˆ ë³€ê²½ ì´ë²¤íŠ¸ì— ë‚˜ë¥¼ ë“±ë¡(êµ¬ë…)
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.OnGoldChanged += UpdateGoldUI;
@@ -20,11 +20,15 @@ public class GoldUIUpdater : MonoBehaviour
         {
             StoreManager.Instance.OnGoldChanged += UpdateGoldUI;
         }
+        if (StorageManager.Instance != null)
+        {
+            StorageManager.Instance.OnGoldChanged += UpdateGoldUI;
+        }
     }
 
     void OnDestroy()
     {
-        // ¿ÀºêÁ§Æ®°¡ ÆÄ±«µÉ ¶§ ÀÌº¥Æ® ±¸µ¶ ÇØÁ¦ (¸Ş¸ğ¸® ´©¼ö ¹æÁö)
+        // ì˜¤ë¸Œì íŠ¸ê°€ íŒŒê´´ë  ë•Œ ì´ë²¤íŠ¸ êµ¬ë… í•´ì œ (ë©”ëª¨ë¦¬ ëˆ„ìˆ˜ ë°©ì§€)
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.OnGoldChanged -= UpdateGoldUI;

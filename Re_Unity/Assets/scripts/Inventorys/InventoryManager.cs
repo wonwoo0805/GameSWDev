@@ -95,7 +95,8 @@ public class InventoryManager : MonoBehaviour
             slot.UpdateSlot(null);
             eqptData.Add(slot.slotData.itemInSlot);
         }
-            
+
+        invData.UpdateStat();
         return;
     }
 

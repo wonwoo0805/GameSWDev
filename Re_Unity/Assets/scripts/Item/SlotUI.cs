@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.EventSystems; 
 using UnityEngine.UI;
@@ -21,7 +21,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
 
     private static GameObject dragIcon;
-    private Inventory inventory;
+    private InventoryManager inventoryManager;
 
     protected void Awake()
     {
@@ -30,7 +30,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
             slotData = new ItemSlot();
             
         }
-        inventory = FindAnyObjectByType<Inventory>();
+        inventoryManager = FindAnyObjectByType<InventoryManager>();
         storageManager = FindAnyObjectByType<StorageManager>();
     }
 
@@ -89,7 +89,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         ItemSlot thisData = new ItemSlot(this.slotData.itemInSlot, this.slotData.quantity);
         ItemSlot otherData = new ItemSlot(other.slotData.itemInSlot, other.slotData.quantity);
 
-        inventory.exchangeItemData(this, other);
+        inventoryManager.invData.exchangeItemData(this, other);
 
         this.UpdateSlot(otherData);
         //swap substantial itemData)
@@ -97,7 +97,7 @@ public class SlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         //update SlotImage
         other.UpdateSlot(thisData);
 
-        inventory.UpdateEquipment(this, other);
+        inventoryManager.invData.UpdateEquipment(this, other);
 
         
     }

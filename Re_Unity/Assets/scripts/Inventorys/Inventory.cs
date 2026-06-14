@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +13,12 @@ public class Inventory : MonoBehaviour
     public Player_St1 player;
     public int totalMoney = 100;
     public int totalWeight = 0;
+
+    private void Start()
+    {
+        Debug.Log($"equipmentPanel: {equipmentPanel}");
+        Debug.Log($"equipmentPanel name: {equipmentPanel?.name}");
+    }
 
     public void InitializeData(int size)
     {
@@ -156,6 +162,7 @@ public class Inventory : MonoBehaviour
     //update all statBonus
     public void UpdateStat()
     {
+        Debug.Log($"UpdateStat - equipmentPanel: {equipmentPanel}");
         //clear all bonus
         player.hpBonus = 0;
         player.staminaBonus = 0;

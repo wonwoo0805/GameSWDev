@@ -169,6 +169,7 @@ public class Player_St1 : MonoBehaviour
         Debug.Log("죽음!");
 
         InventoryManager.Instance.initInventory();
+        currentHP = playerMaxHealth;
         SceneChanger.Instance.ChangeScene("MainLobbyUI");
     }
 
