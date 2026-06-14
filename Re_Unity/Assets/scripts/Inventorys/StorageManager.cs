@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using static UnityEditor.Progress;
-using static UnityEngine.Analytics.IAnalytic;
+//using static UnityEditor.Progress;
+//using static UnityEngine.Analytics.IAnalytic;
 
 public class StorageManager : MonoBehaviour
 {

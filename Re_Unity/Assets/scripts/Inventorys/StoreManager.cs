@@ -2,12 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq;
 using System.Xml;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 
 public class StoreManager : MonoBehaviour
 {

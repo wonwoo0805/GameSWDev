@@ -15,11 +15,11 @@ public class GameExitButton : MonoBehaviour
 
     public void ExitGame()
     {
-        Debug.Log("게임 종료 버튼 클릭됨");
+       
 
         Application.Quit();
 
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
 
     }
 }

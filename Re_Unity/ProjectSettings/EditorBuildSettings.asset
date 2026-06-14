@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/DIABULUSKIRA/BathroomPack/Scenes/Demo.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameScene_Stage1.unity
     guid: 63d619d024d043d4dbf9d132b3a9188c
   - enabled: 1
