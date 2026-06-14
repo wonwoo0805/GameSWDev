@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
+  m_Name: 91_Chip_15_Rare
+  m_EditorClassIdentifier: Assembly-CSharp::Chips
+  itemName: Type-MK15
+  itemDescription: "Markov Systems\uC758 \uCE69\uC774\uB2E4. \uD488\uC9C8\uC774 \uC548\uC815\uC801\uC778
+    \uD3B8\uC774\uB2E4. \uB9C8\uB974\uCF54\uD504 \uAE30\uC900\uC5D0\uC11C."
+  purchaseMoney: 500
+  sellMoney: 80
+  weight: 1
+  num: 1
+  Code: 91
+  inventoryImage: {fileID: 21300000, guid: 412fb3aa622f50a40af68dec06b82f34, type: 3}
+  prefab: {fileID: 4710342862220470374, guid: d77efcd6d5d8dcd43a77c33cea428058, type: 3}
+  itemType: 2
+  itemRarity: 1
+  Hpbonus: 0
+  StaminaBonus: 0
+  DamageBonus: 0
+  MaxammoBonus: 0
+  WeightBonus: 8
+  AttackBonus: 0
+  AttackPercentBonus: 0
+  FirerateBonus: 0
+  ReloadBonus: 0

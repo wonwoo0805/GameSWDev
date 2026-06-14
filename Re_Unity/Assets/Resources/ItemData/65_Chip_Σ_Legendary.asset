@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
+  m_Name: "65_Chip_\u03A3_Legendary"
+  m_EditorClassIdentifier: Assembly-CSharp::Chips
+  itemName: "Type-\u03A3"
+  itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uCD1D\uD569\uC758 \uD798. Logos\uC758
+    \uBAA8\uB4E0 \uC5F0\uAD6C\uAC00 \uC9D1\uC57D\uB410\uB2E4."
+  purchaseMoney: 2500
+  sellMoney: 1250
+  weight: 1
+  num: 1
+  Code: 65
+  inventoryImage: {fileID: 21300000, guid: 45fefbab5f014d047863c739a70b4703, type: 3}
+  prefab: {fileID: 4710342862220470374, guid: d77efcd6d5d8dcd43a77c33cea428058, type: 3}
+  itemType: 2
+  itemRarity: 4
+  Hpbonus: 0
+  StaminaBonus: 0
+  DamageBonus: 0
+  MaxammoBonus: 3
+  WeightBonus: 0
+  AttackBonus: 3
+  AttackPercentBonus: 0
+  FirerateBonus: 0
+  ReloadBonus: 0.03

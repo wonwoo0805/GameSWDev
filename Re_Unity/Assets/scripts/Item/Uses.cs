@@ -1,9 +1,7 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Use", menuName = "Item/Use")]
 public class Uses : ItemData
 {
-    public Uses()
-    {
-        itemType = "Use";
-    }
+    [SerializeField] public int Heal;
 }

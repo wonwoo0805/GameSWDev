@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
+  m_Name: 175_Refund_Epic
+  m_EditorClassIdentifier: Assembly-CSharp::Refunds
+  itemName: "\uC0DD\uCCB4 \uC778\uC2DD \uC7A0\uAE08\uC7A5\uCE58"
+  itemDescription: "\uC6D0\uB798 \uC8FC\uC778\uC758 \uC190\uBAA9\uC774 \uC5C6\uC73C\uBA74
+    \uC5F4\uB9AC\uC9C0 \uC54A\uB294\uB2E4."
+  purchaseMoney: 0
+  sellMoney: 310
+  weight: 2
+  num: 1
+  Code: 175
+  inventoryImage: {fileID: 21300000, guid: f01b2534a6f5bb344a6904cb57dbbe2b, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
+  itemType: 5
+  itemRarity: 2

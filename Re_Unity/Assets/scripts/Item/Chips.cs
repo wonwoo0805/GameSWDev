@@ -1,9 +1,8 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Chip", menuName = "Item/Chip")]
 public class Chips : ItemData
 {
-    public Chips()
-    {
-        itemType = "Chip";
-    }
+    [SerializeField] public int Hpbonus, StaminaBonus, DamageBonus, MaxammoBonus, WeightBonus, AttackBonus, AttackPercentBonus;
+    [SerializeField] public float FirerateBonus, ReloadBonus;
 }

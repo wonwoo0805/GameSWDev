@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
+  m_Name: 198_Refund_Legendary
+  m_EditorClassIdentifier: Assembly-CSharp::Refunds
+  itemName: "\uCD5C\uD6C4\uC758 \uD56D\uCCB4 \uC0D8\uD50C"
+  itemDescription: "\uC138\uC0C1\uC5D0 \uB2E8 \uD558\uB098\uBFD0\uC778 \uC644\uC804\uD55C
+    \uD56D\uCCB4 \uC0D8\uD50C. \uC774\uAC83\uC758 \uAC00\uCE58\uB294 \uB3C8\uC73C\uB85C
+    \uB9E4\uAE38 \uC218 \uC5C6\uB2E4."
+  purchaseMoney: 0
+  sellMoney: 1550
+  weight: 3
+  num: 1
+  Code: 198
+  inventoryImage: {fileID: 21300000, guid: a85ebc3ad8690634182bafa13fffd199, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
+  itemType: 5
+  itemRarity: 4

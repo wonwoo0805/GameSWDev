@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8af9bd9504a4145bcfbede5f4fe124, type: 3}
+  m_Name: 10_SMG_Legendary
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons
+  itemName: "\uC704\uB300\uD55C \uAE30\uAD00\uB2E8\uCD1D"
+  itemDescription: "\uC774 \uCD1D\uC774 \uAC70\uCCD0\uAC04 \uC791\uC804\uC758 \uC218\uB294
+    \uC140 \uC218 \uC5C6\uB2E4. \uB204\uAD70\uAC00\uC758 \uC601\uD63C\uC774 \uB4E4\uC5B4\uC788\uB294
+    \uB290\uB08C\uC774 \uB4E0\uB2E4."
+  purchaseMoney: 2500
+  sellMoney: 1500
+  weight: 2
+  num: 1
+  Code: 10
+  inventoryImage: {fileID: 21300000, guid: 16455ccea0d83a941ad3e634187fba09, type: 3}
+  prefab: {fileID: 8024522114550165285, guid: 46290a32d8357174fa298f89f74781ab, type: 3}
+  itemType: 0
+  itemRarity: 4
+  damage: 35
+  maxAmmo: 30
+  fireRate: 4
+  reloadSpeed: 3
+  weaponPrefab: {fileID: 8126806106451507091, guid: 92358b0852dd0c2488bc59e7e20131ce, type: 3}
+  flamePreFab: {fileID: 5485217128109573645, guid: d034899da75909f43b851602ddd60823, type: 3}
+  hitPrefab: {fileID: 5973450783547160408, guid: e4d65386ce6a7d54799c2aab5990af91, type: 3}
+  firePoint: {fileID: 0}
+  fireSound: {fileID: 8300000, guid: 53fe7e2b21622a545b70f0bc026673e9, type: 3}
+  reloadSound: {fileID: 8300000, guid: bcc9d20ef24f4b04e956ff9e6f04706b, type: 3}

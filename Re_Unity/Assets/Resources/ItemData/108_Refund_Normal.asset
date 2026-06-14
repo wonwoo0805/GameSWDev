@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba50dbd113477a439643d409449fe40, type: 3}
+  m_Name: 108_Refund_Normal
+  m_EditorClassIdentifier: Assembly-CSharp::Refunds
+  itemName: "\uCC0C\uADF8\uB7EC\uC9C4 \uCE94"
+  itemDescription: "\uC720\uD1B5\uAE30\uD55C\uC774 \uD55C\uCC38 \uC9C0\uB09C \uCE94.
+    \uB0B4\uC6A9\uBB3C\uC740 \uBB3B\uC9C0 \uC54A\uB294 \uAC8C \uC88B\uB2E4."
+  purchaseMoney: 0
+  sellMoney: 25
+  weight: 1
+  num: 1
+  Code: 108
+  inventoryImage: {fileID: 21300000, guid: daf88e3b0bd60594bb9a32ffed17d387, type: 3}
+  prefab: {fileID: 4365279738459282323, guid: e165b6a4203e45343b1ef8cf059ce9ef, type: 3}
+  itemType: 5
+  itemRarity: 0

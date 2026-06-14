@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353ec6117ca2c114494e7227c0ae94f1, type: 3}
+  m_Name: "47_Chip_\u03B8_Rare"
+  m_EditorClassIdentifier: Assembly-CSharp::Chips
+  itemName: "Type-\u03B8"
+  itemDescription: "Logos\uC758 \uCE69\uC774\uB2E4. \uC0AC\uC720\uC758 \uACBD\uACC4\uB97C
+    \uD655\uC7A5\uD55C\uB2E4."
+  purchaseMoney: 500
+  sellMoney: 100
+  weight: 1
+  num: 1
+  Code: 47
+  inventoryImage: {fileID: 21300000, guid: 1ec401569b4cc004fad44bb30c255dcd, type: 3}
+  prefab: {fileID: 4710342862220470374, guid: d77efcd6d5d8dcd43a77c33cea428058, type: 3}
+  itemType: 2
+  itemRarity: 1
+  Hpbonus: 10
+  StaminaBonus: 0
+  DamageBonus: 0
+  MaxammoBonus: 0
+  WeightBonus: 0
+  AttackBonus: 0
+  AttackPercentBonus: 0
+  FirerateBonus: 0
+  ReloadBonus: 0

@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6547810898414985456
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3305591269725562225, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_Name
+      value: Story_ending Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 880.83984
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 96.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 137.91248
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086022183328691981, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: storyText
+      value: "\uC815\uB9D0 \uB9CE\uC740 \uAE30\uB85D\uB4E4\uC774 \uC801\uD600\uC788\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: 'monologue.Array.data[0]'
+      value: "\u201C\uBC15\uC0AC, \uC774 \uC790\uC2DD\uB3C4 \uACB0\uAD6D \uAE30\uC5C5
+        \uB188\uB4E4 \uB3C8\uC744 \uBC1B\uACE0 \n\uC6C0\uC9C1\uC774\uB358 \uC0AC\uB0E5\uAC1C\uC5D0
+        \uBD88\uACFC\uD588\uAD70. \""
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: 'monologue.Array.data[1]'
+      value: " \"\uC775\uC2A4\uD134 \uB9C8\uC744\uC744 \uD1B5\uC9F8\uB85C \n\uC9C0\uC6CC\uBC84\uB9B0
+        \uC9C4\uC9DC \uBC30\uD6C4... \u2018\uC720\uB2C8\uC628'\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: 'monologue.Array.data[2]'
+      value: "\uB1CC \uC18D\uC758 \uCE69\uC774 \uC791\uB3D9\uD55C\uB2E4. \uBCF8\uC0AC\uC758
+        \uC790\uAE08 \uC138\uD0C1 \uB0B4\uC5ED\uACFC \n\uACE0\uC704\uCE35 \uBA85\uB2E8\uC774
+        \uB2E4\uC6B4\uB85C\uB4DC\uB41C\uB2E4."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: 'monologue.Array.data[3]'
+      value: "\u201C\uC774 \uB370\uC774\uD130 \uD30C\uC77C\uC774\uC57C\uB9D0\uB85C
+        \uC774 \uC138\uC0C1\uC5D0\uC11C \n\uAC00\uC7A5 \uBE44\uC2F8\uACE0 \uC704\uD5D8\uD55C
+        \uC804\uB9AC\uD488\uC774\uB2E4.\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8742056674378394164, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
+      propertyPath: 'monologue.Array.data[4]'
+      value: "\uC774\uC81C \uD560 \uC77C\uC740 \uC815\uD574\uC84C\uAD70 \uB2E4\uC74C
+        \uC77C\uC744\n\uD574\uACB0\uD558\uB7EC \uAC00\uBCFC\uAE4C"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7c1864eeb9ce5c6439c2b122c45cd1d3, type: 3}
