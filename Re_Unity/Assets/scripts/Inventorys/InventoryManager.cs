@@ -147,7 +147,7 @@ public class InventoryManager : MonoBehaviour
 
         
 
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

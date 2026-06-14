@@ -11,18 +11,18 @@ public class BattleCanvas : MonoBehaviour
 
     private void Awake()
     {
-        // ½Ì±ÛÅæ ÆÐÅÏ: ¾ÀÀÌ ³Ñ¾î°¡µµ ÀÌ °´Ã¼°¡ À¯ÁöµÇµµ·Ï ÇÕ´Ï´Ù.
+        // ï¿½Ì±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
         if (Instance == null)
         {
             Instance = this;
             SceneManager.sceneLoaded += OnSceneLoaded;
 
             DontDestroyOnLoad(gameObject);
-            Debug.Log("BattleCanvas »ý¼ºµÊ");
+            Debug.Log("BattleCanvas ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         }
         else
         {
-            Debug.Log("BattleCanvas Áßº¹ »ý¼º - ÆÄ±«µÊ");
+            Debug.Log("BattleCanvas ï¿½ßºï¿½ ï¿½ï¿½ï¿½ï¿½ - ï¿½Ä±ï¿½ï¿½ï¿½");
             Destroy(gameObject);
         }
     }
@@ -43,7 +43,7 @@ public class BattleCanvas : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        Debug.Log("OnSceneLoaded µî·ÏµÊ");
+        Debug.Log("OnSceneLoaded ï¿½ï¿½Ïµï¿½");
     }
 
     private void OnDisable()
@@ -53,7 +53,7 @@ public class BattleCanvas : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex == 2)
+        if (scene.buildIndex == 0)
         {
             battelPanel.SetActive(false);
         } else
