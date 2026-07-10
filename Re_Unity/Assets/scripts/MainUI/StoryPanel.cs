@@ -36,7 +36,7 @@ public class StoryPanel : MonoBehaviour
     public void Hide()
     {
         panel.SetActive(false);
-        if (SceneManager.GetActiveScene().buildIndex != 2)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;

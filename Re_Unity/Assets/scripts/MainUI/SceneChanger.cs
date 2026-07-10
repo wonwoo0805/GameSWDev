@@ -57,7 +57,7 @@ public class SceneChanger : MonoBehaviour
             inventoryManager.sellRefunds();
         }
 
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             UnityEngine.Cursor.lockState = CursorLockMode.None; // 고정해제
             UnityEngine.Cursor.visible = true; // 다시 보이게
@@ -99,7 +99,7 @@ public class SceneChanger : MonoBehaviour
     // 버튼에서 호출할 함수
     public void ChangeScene(string targetScene)
     {
-        if ((SceneManager.GetActiveScene().buildIndex == 5) && (FindObjectsOfType<Enemy_St1>().Length > 0)) return;
+        if ((SceneManager.GetActiveScene().buildIndex == 3) && (FindObjectsOfType<Enemy_St1>().Length > 0)) return;
         Debug.Log(FindObjectsOfType<Enemy_St1>().Length);
         //sceneToLoad = targetScene;
         // 예: 특정 좌표를 미리 지정하거나 함수 인자로 받을 수 있습니다.
